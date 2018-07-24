@@ -18,15 +18,15 @@
  * Created on 19. Mai 2004, 08:58
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.Iterator;
 
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 
 /**

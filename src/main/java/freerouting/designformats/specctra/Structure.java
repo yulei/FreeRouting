@@ -17,28 +17,28 @@
  *
  * Created on 13. Mai 2004, 09:57
  */
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import geometry.planar.IntBox;
-import geometry.planar.PolylineShape;
-import geometry.planar.TileShape;
-import geometry.planar.Point;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Point;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
-import rules.BoardRules;
-import rules.DefaultItemClearanceClasses.ItemClass;
+import freerouting.rules.BoardRules;
+import freerouting.rules.DefaultItemClearanceClasses.ItemClass;
 
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
-import datastructures.UndoableObjects.Storable;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
+import freerouting.datastructures.UndoableObjects.Storable;
 
-import board.FixedState;
-import board.TestLevel;
+import freerouting.board.FixedState;
+import freerouting.board.TestLevel;
 
 /**
  * Class for reading and writing structure scopes from dsn-files.

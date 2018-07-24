@@ -27,13 +27,13 @@ import freerouting.datastructures.UndoableObjects;
 import freerouting.geometry.planar.FloatPoint;
 import freerouting.geometry.planar.FloatLine;
 
-import board.Connectable;
-import board.Item;
-import board.DrillItem;
-import board.RoutingBoard;
+import freerouting.board.Connectable;
+import freerouting.board.Item;
+import freerouting.board.DrillItem;
+import freerouting.board.RoutingBoard;
 
-import interactive.BoardHandling;
-import interactive.InteractiveActionThread;
+import freerouting.interactive.BoardHandling;
+import freerouting.interactive.InteractiveActionThread;
 
 /**
  * Handles the sequencing of the batch autoroute passes.
@@ -228,7 +228,7 @@ public class BatchAutorouter
                     }
                 }
             }
-            if (routing_board.get_test_level() != board.TestLevel.ALL_DEBUGGING_OUTPUT)
+            if (routing_board.get_test_level() != freerouting.board.TestLevel.ALL_DEBUGGING_OUTPUT)
             {
                 Item.StopConnectionOption stop_connection_option;
                 if (this.remove_unconnected_vias)
@@ -296,7 +296,7 @@ public class BatchAutorouter
             {
                 for (Item curr_item : connected_set)
                 {
-                    if (curr_item instanceof board.ConductionArea)
+                    if (curr_item instanceof freerouting.board.ConductionArea)
                     {
                         return true; // already connected to plane
 

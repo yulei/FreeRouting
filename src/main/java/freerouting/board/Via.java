@@ -164,14 +164,14 @@ public class Via extends DrillItem implements java.io.Serializable
         clear_derived_data();
     }
 
-    public autoroute.ExpansionDrill get_autoroute_drill_info(ShapeSearchTree p_autoroute_tree)
+    public freerouting.autoroute.ExpansionDrill get_autoroute_drill_info(ShapeSearchTree p_autoroute_tree)
     {
         if (this.autoroute_drill_info == null)
         {
-            autoroute.ItemAutorouteInfo via_autoroute_info = this.get_autoroute_info();
+           freerouting.autoroute.ItemAutorouteInfo via_autoroute_info = this.get_autoroute_info();
             TileShape curr_drill_shape = TileShape.get_instance(this.get_center());
             this.autoroute_drill_info =
-                    new autoroute.ExpansionDrill(curr_drill_shape, this.get_center(), this.first_layer(), this.last_layer());
+                    new freerouting.autoroute.ExpansionDrill(curr_drill_shape, this.get_center(), this.first_layer(), this.last_layer());
             int via_layer_count = this.last_layer() - this.first_layer() + 1;
             for (int i = 0; i < via_layer_count; ++i)
             {
@@ -224,7 +224,7 @@ public class Via extends DrillItem implements java.io.Serializable
         return result;
     }
 
-    public double get_draw_intensity(boardgraphics.GraphicsContext p_graphics_context)
+    public double get_draw_intensity(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         double result;
         if (this.net_count() == 0)
@@ -274,5 +274,5 @@ public class Via extends DrillItem implements java.io.Serializable
     public final boolean attach_allowed;
     transient private Shape[] precalculated_shapes = null;
     /** Temporary data used in the autoroute algorithm. */
-    transient private autoroute.ExpansionDrill autoroute_drill_info = null;
+    transient private freerouting.autoroute.ExpansionDrill autoroute_drill_info = null;
 }

@@ -18,7 +18,7 @@
  * Created on 20. Mai 2004, 07:32
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 
 /**

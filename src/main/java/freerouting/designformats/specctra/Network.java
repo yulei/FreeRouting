@@ -17,23 +17,23 @@
  *
  * Created on 22. Mai 2004, 07:44
  */
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import geometry.planar.IntPoint;
-import geometry.planar.Point;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.Iterator;
 
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
-import rules.BoardRules;
-import rules.DefaultItemClearanceClasses.ItemClass;
-import board.RoutingBoard;
+import freerouting.rules.BoardRules;
+import freerouting.rules.DefaultItemClearanceClasses.ItemClass;
+import freerouting.board.RoutingBoard;
 
 /**
  * Class for reading and writing net network from dsn-files.

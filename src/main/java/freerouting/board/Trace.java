@@ -177,17 +177,17 @@ public abstract class Trace extends Item implements Connectable, java.io.Seriali
     }
     
     
-    public java.awt.Color[] get_draw_colors(boardgraphics.GraphicsContext p_graphics_context)
+    public java.awt.Color[] get_draw_colors(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         return p_graphics_context.get_trace_colors(this.is_user_fixed());
     }
     
     public int get_draw_priority()
     {
-        return boardgraphics.Drawable.MAX_DRAW_PRIORITY;
+        return freerouting.boardgraphics.Drawable.MAX_DRAW_PRIORITY;
     }
     
-    public double get_draw_intensity(boardgraphics.GraphicsContext p_graphics_context)
+    public double get_draw_intensity(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         return p_graphics_context.get_trace_color_intensity();
     }
@@ -316,10 +316,10 @@ public abstract class Trace extends Item implements Connectable, java.io.Seriali
         }
         
         // check, if the trace  belongs to a net, which is not shovable.
-        rules.Nets nets = this.board.rules.nets;
+        freerouting.rules.Nets nets = this.board.rules.nets;
         for (int curr_net_no : this.net_no_arr)
         {
-            if (rules.Nets.is_normal_net_no(curr_net_no))
+            if (freerouting.rules.Nets.is_normal_net_no(curr_net_no))
             {
                 if (nets.get(curr_net_no).get_class().is_shove_fixed())
                 {
@@ -376,7 +376,7 @@ public abstract class Trace extends Item implements Connectable, java.io.Seriali
         boolean ignore_areas = false;
         if (this.net_no_arr.length > 0)
         {
-            rules.Net curr_net = this.board.rules.nets.get(this.net_no_arr[0]);
+            freerouting.rules.Net curr_net = this.board.rules.nets.get(this.net_no_arr[0]);
             if (curr_net != null && curr_net.get_class() != null)
             {
                 ignore_areas = curr_net.get_class().get_ignore_cycles_with_areas();

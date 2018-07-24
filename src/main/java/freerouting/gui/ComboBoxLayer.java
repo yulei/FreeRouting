@@ -52,7 +52,7 @@ public class ComboBoxLayer extends javax.swing.JComboBox
         for (int i = 0; i <  signal_layer_count; ++i)
         {
             ++curr_layer_no;
-            board.Layer curr_signal_layer = p_layer_structure.get_signal_layer(i);
+            freerouting.board.Layer curr_signal_layer = p_layer_structure.get_signal_layer(i);
             layer_arr[curr_layer_no] = new Layer(curr_signal_layer.name, p_layer_structure.get_no(curr_signal_layer));
         }
         this.setModel(new javax.swing.DefaultComboBoxModel(layer_arr));

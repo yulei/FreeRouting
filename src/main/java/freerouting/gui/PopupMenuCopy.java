@@ -32,7 +32,7 @@ public class PopupMenuCopy extends PopupMenuDisplay
     PopupMenuCopy(BoardFrame p_board_frame)
     {
         super(p_board_frame);
-        board.LayerStructure layer_structure = board_panel.board_handling.get_routing_board().layer_structure;
+        freerouting.board.LayerStructure layer_structure = board_panel.board_handling.get_routing_board().layer_structure;
         
         if (layer_structure.arr.length > 0)
         {
@@ -69,7 +69,7 @@ public class PopupMenuCopy extends PopupMenuDisplay
         
         this.add(done_item, 1);
         
-        board.Layer curr_layer = layer_structure.arr[board_panel.board_handling.settings.get_layer()];
+        freerouting.board.Layer curr_layer = layer_structure.arr[board_panel.board_handling.settings.get_layer()];
         disable_layer_item(layer_structure.get_signal_layer_no(curr_layer));
     }
     

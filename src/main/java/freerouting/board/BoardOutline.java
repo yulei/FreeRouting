@@ -179,7 +179,7 @@ public class BoardOutline extends Item implements java.io.Serializable
 
     public int get_draw_priority()
     {
-        return boardgraphics.Drawable.MAX_DRAW_PRIORITY;
+        return freerouting.boardgraphics.Drawable.MAX_DRAW_PRIORITY;
     }
 
     public int shape_count()

@@ -35,7 +35,7 @@ public class PopupMenuDynamicRoute extends PopupMenuDisplay
         
         java.util.ResourceBundle resources = 
                 java.util.ResourceBundle.getBundle("gui.resources.Default", p_board_frame.get_locale());
-        board.LayerStructure layer_structure = board_panel.board_handling.get_routing_board().layer_structure;
+        freerouting.board.LayerStructure layer_structure = board_panel.board_handling.get_routing_board().layer_structure;
         
         
         javax.swing.JMenuItem end_route_item = new javax.swing.JMenuItem();
@@ -84,7 +84,7 @@ public class PopupMenuDynamicRoute extends PopupMenuDisplay
             this.change_layer_menu = null;
         }
         
-        board.Layer curr_layer = layer_structure.arr[board_panel.board_handling.settings.get_layer()];
+        freerouting.board.Layer curr_layer = layer_structure.arr[board_panel.board_handling.settings.get_layer()];
         disable_layer_item(layer_structure.get_signal_layer_no(curr_layer));
     }
     

@@ -48,7 +48,7 @@ public class Validate
      */
     public static boolean check(String p_s, BasicBoard p_board)
     {
-        if (p_board.get_test_level() == board.TestLevel.RELEASE_VERSION)
+        if (p_board.get_test_level() == freerouting.board.TestLevel.RELEASE_VERSION)
         {
             return true;
         }
@@ -271,11 +271,11 @@ public class Validate
         while (it.hasNext())
         {
             Item  curr_item = it.next();
-            if (!(curr_item instanceof board.Trace))
+            if (!(curr_item instanceof freerouting.board.Trace))
             {
                 continue;
             }
-            if(((board.Trace)curr_item).is_cycle())
+            if(((freerouting.board.Trace)curr_item).is_cycle())
             {
                 System.out.print(p_s);
                 System.out.println(": cycle found");
@@ -295,9 +295,9 @@ public class Validate
         while (it.hasNext())
         {
             Item curr_ob = it.next();
-            if(curr_ob instanceof board.Trace)
+            if(curr_ob instanceof freerouting.board.Trace)
             {
-                if (((board.Trace)curr_ob).contains_net(p_net_no))
+                if (((freerouting.board.Trace)curr_ob).contains_net(p_net_no))
                 {
                     ++found_traces;
                 }

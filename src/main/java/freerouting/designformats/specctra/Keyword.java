@@ -17,7 +17,7 @@
  *
  * Created on 8. Mai 2004, 10:23
  */
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 /**
  * Enumeration class for keywords of the specctra dsn file format

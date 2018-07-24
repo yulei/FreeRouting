@@ -18,13 +18,13 @@
  * Created on 21. Mai 2004, 09:31
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import board.Item;
+import freerouting.board.Item;
 
 /**
  * Class for reading and writing package scopes from dsn-files.

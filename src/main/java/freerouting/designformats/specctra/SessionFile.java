@@ -18,20 +18,20 @@
  * Created on 29. Oktober 2004, 08:01
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 import java.util.Collection;
 import java.util.Iterator;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Point;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
 
-import board.BasicBoard;
-import board.PolylineTrace;
-import board.Via;
-import board.ConductionArea;
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.board.BasicBoard;
+import freerouting.board.PolylineTrace;
+import freerouting.board.Via;
+import freerouting.board.ConductionArea;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Methods to handle a Specctra session file.

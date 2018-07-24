@@ -93,7 +93,7 @@ public abstract class WindowVisibility extends BoardSavableSubWindow
         slider_arr[p_no].setValue(visibility);
     }
     
-    protected interactive.BoardHandling get_board_handling()
+    protected freerouting.interactive.BoardHandling get_board_handling()
     {
         return board_panel.board_handling;
     }

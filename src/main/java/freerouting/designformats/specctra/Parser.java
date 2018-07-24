@@ -17,9 +17,9 @@
  *
  * Created on 24. Januar 2005, 08:29
  */
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import board.Communication.SpecctraParserInfo;
+import freerouting.board.Communication.SpecctraParserInfo;
 
 /**
  * Class for reading and writing parser scopes from dsn-files.

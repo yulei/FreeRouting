@@ -48,13 +48,13 @@ public class BoardFrame extends javax.swing.JFrame
     public static BoardFrame get_embedded_instance(String p_design_file_path_name,
             BoardObservers p_observers, IdNoGenerator p_id_no_generator, java.util.Locale p_locale)
     {
-        final gui.DesignFile design_file = gui.DesignFile.get_instance(p_design_file_path_name, false);
+        final DesignFile design_file = DesignFile.get_instance(p_design_file_path_name, false);
         if (design_file == null)
         {
             WindowMessage.show("designfile not found");
             return null;
         }
-        gui.BoardFrame board_frame = new gui.BoardFrame(design_file, gui.BoardFrame.Option.SINGLE_FRAME,
+        BoardFrame board_frame = new BoardFrame(design_file, BoardFrame.Option.SINGLE_FRAME,
                 TestLevel.RELEASE_VERSION, p_observers, p_id_no_generator, p_locale, false);
         
         
@@ -90,7 +90,7 @@ public class BoardFrame extends javax.swing.JFrame
             java.util.Locale p_locale, boolean p_confirm_cancel)
     {
         this(p_design, p_option, p_test_level,
-                new board.BoardObserverAdaptor(), new board.ItemIdNoGenerator(),
+                new freerouting.board.BoardObserverAdaptor(), new freerouting.board.ItemIdNoGenerator(),
                 p_locale, p_confirm_cancel);
     }
     
@@ -100,7 +100,7 @@ public class BoardFrame extends javax.swing.JFrame
      * if the frame is embedded into a host system,
      */
     BoardFrame(DesignFile p_design, Option p_option, TestLevel p_test_level, BoardObservers p_observers,
-            datastructures.IdNoGenerator p_item_id_no_generator, java.util.Locale p_locale, boolean p_confirm_cancel)
+            freerouting.datastructures.IdNoGenerator p_item_id_no_generator, java.util.Locale p_locale, boolean p_confirm_cancel)
     {
         this.design_file = p_design;
         this.is_web_start = (p_option == Option.WEBSTART);
@@ -280,7 +280,7 @@ public class BoardFrame extends javax.swing.JFrame
             }
             if (defaults_file_found)
             {
-                boolean read_ok = gui.GUIDefaultsFile.read(this, board_panel.board_handling, input_stream);
+                boolean read_ok = GUIDefaultsFile.read(this, board_panel.board_handling, input_stream);
                 if (!read_ok)
                 {
                     screen_messages.set_status_message(resources.getString("error_1"));
@@ -697,7 +697,7 @@ public class BoardFrame extends javax.swing.JFrame
     private java.util.Locale locale;
     
     private final BoardObservers  board_observers;
-    private final datastructures.IdNoGenerator item_id_no_generator;
+    private final freerouting.datastructures.IdNoGenerator item_id_no_generator;
     
     WindowAbout about_window = null;
     WindowRouteParameter route_parameter_window = null;

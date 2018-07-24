@@ -182,7 +182,7 @@ public class PolylineArea implements Area, java.io.Serializable
      * instead of Polygons, so that no intersection points are needed in the result.
      *  If p_stoppable_thread != null, this function can be interrupted.
      */
-    public TileShape[] split_to_convex(datastructures.Stoppable p_stoppable_thread)
+    public TileShape[] split_to_convex(freerouting.datastructures.Stoppable p_stoppable_thread)
     {
         if (precalculated_convex_pieces == null)
         {

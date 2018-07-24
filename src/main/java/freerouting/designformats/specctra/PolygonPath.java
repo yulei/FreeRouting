@@ -18,13 +18,13 @@
  * Created on 24. Mai 2004, 08:10
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.IntOctagon;
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 
 /**

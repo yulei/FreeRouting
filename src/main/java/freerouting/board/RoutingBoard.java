@@ -15,6 +15,12 @@
  */
 package freerouting.board;
 
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import freerouting.geometry.planar.FloatPoint;
 import freerouting.geometry.planar.IntBox;
 import freerouting.geometry.planar.IntOctagon;
@@ -25,12 +31,6 @@ import freerouting.geometry.planar.Polyline;
 import freerouting.geometry.planar.PolylineShape;
 import freerouting.geometry.planar.TileShape;
 import freerouting.geometry.planar.Vector;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import freerouting.datastructures.UndoableObjects;
 import freerouting.datastructures.Stoppable;

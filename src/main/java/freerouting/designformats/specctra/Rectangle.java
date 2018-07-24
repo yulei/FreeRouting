@@ -18,12 +18,12 @@
  * Created on 15. Mai 2004, 08:39
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Describes a rectangle in a Specctra dsn file.

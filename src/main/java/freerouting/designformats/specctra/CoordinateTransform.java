@@ -18,13 +18,13 @@
  * Created on 14. Mai 2004, 09:09
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Vector;
-import geometry.planar.Line;
-import geometry.planar.IntBox;
-import geometry.planar.PolylineShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.PolylineShape;
 
 /**
  * Computes transformations between a specctra dsn-file coordinates and board coordinates.

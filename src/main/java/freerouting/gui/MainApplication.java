@@ -20,7 +20,7 @@
  */
 package freerouting.gui;
 
-import board.TestLevel;
+import freerouting.board.TestLevel;
 
 /**
  *

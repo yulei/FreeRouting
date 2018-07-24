@@ -133,7 +133,7 @@ public class Nets implements java.io.Serializable
      * Sets the Board of this net list.
      * Used for example to get access to the Items of the net.
      */
-    public void set_board(board.BasicBoard p_board)
+    public void set_board(freerouting.board.BasicBoard p_board)
     {
         this.board = p_board;
     }
@@ -142,7 +142,7 @@ public class Nets implements java.io.Serializable
      * Gets the Board of this net list.
      * Used for example to get access to the Items of the net.
      */
-    public board.BasicBoard get_board()
+    public freerouting.board.BasicBoard get_board()
     {
         return this.board;
     }
@@ -155,5 +155,5 @@ public class Nets implements java.io.Serializable
     public static final int hidden_net_no = 10000001;
     /** The list of electrical nets on the board */
     private Vector<Net> net_arr;
-    private board.BasicBoard board;
+    private freerouting.board.BasicBoard board;
 }

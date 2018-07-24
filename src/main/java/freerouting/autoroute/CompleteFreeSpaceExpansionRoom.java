@@ -186,7 +186,7 @@ public class CompleteFreeSpaceExpansionRoom extends FreeSpaceExpansionRoom imple
     /**
      * Draws the shape of this room.
      */
-    public void draw(java.awt.Graphics p_graphics, boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
+    public void draw(java.awt.Graphics p_graphics, freerouting.boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
     {
         java.awt.Color draw_color = p_graphics_context.get_trace_colors(false)[this.get_layer()];
         double layer_visibility = p_graphics_context.get_layer_visibility(this.get_layer());

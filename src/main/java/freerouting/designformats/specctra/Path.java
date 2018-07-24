@@ -18,10 +18,10 @@
  * Created on 30. Juni 2004, 09:28
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Class for  writing path scopes from dsn-files.

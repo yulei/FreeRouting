@@ -155,7 +155,7 @@ public class BoardMenuFile extends javax.swing.JMenu
         {
             return;
         }
-        board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
+        freerouting.board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
         boolean host_cad_is_eagle = routing_board.communication.host_cad_is_eagle();
 
         javax.swing.JMenuItem write_session_file_item = new javax.swing.JMenuItem();
@@ -187,7 +187,7 @@ public class BoardMenuFile extends javax.swing.JMenu
             }
         });
 
-        if (routing_board.get_test_level() != board.TestLevel.RELEASE_VERSION || host_cad_is_eagle)
+        if (routing_board.get_test_level() != freerouting.board.TestLevel.RELEASE_VERSION || host_cad_is_eagle)
         {
             this.add(write_eagle_session_script_item);
         }
@@ -300,7 +300,7 @@ public class BoardMenuFile extends javax.swing.JMenu
         }
         else
         {
-            write_ok = gui.GUIDefaultsFile.write(board_frame, board_frame.board_panel.board_handling, output_stream);
+            write_ok = GUIDefaultsFile.write(board_frame, board_frame.board_panel.board_handling, output_stream);
         }
         if (write_ok)
         {

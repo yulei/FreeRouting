@@ -18,7 +18,7 @@
  * Created on 15. Mai 2004, 08:29
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 import java.util.Collection;
 import java.util.LinkedList;

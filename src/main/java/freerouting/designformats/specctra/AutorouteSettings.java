@@ -18,10 +18,10 @@
  * Created on 1. Maerz 2007, 07:10
  *
  */
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  *
@@ -30,9 +30,9 @@ import datastructures.IdentifierType;
 public class AutorouteSettings
 {
 
-    static interactive.AutorouteSettings read_scope(Scanner p_scanner, LayerStructure p_layer_structure)
+    static freerouting.interactive.AutorouteSettings read_scope(Scanner p_scanner, LayerStructure p_layer_structure)
     {
-        interactive.AutorouteSettings result = new interactive.AutorouteSettings(p_layer_structure.arr.length);
+        freerouting.interactive.AutorouteSettings result = new freerouting.interactive.AutorouteSettings(p_layer_structure.arr.length);
         boolean with_fanout = false;
         boolean with_autoroute = true;
         boolean with_postroute = true;
@@ -112,8 +112,8 @@ public class AutorouteSettings
         return result;
     }
 
-    static interactive.AutorouteSettings read_layer_rule(Scanner p_scanner, LayerStructure p_layer_structure,
-            interactive.AutorouteSettings p_settings)
+    static freerouting.interactive.AutorouteSettings read_layer_rule(Scanner p_scanner, LayerStructure p_layer_structure,
+            freerouting.interactive.AutorouteSettings p_settings)
     {
         p_scanner.yybegin(SpecctraFileScanner.NAME);
         Object next_token;
@@ -208,8 +208,8 @@ public class AutorouteSettings
         return p_settings;
     }
 
-    static void write_scope(IndentFileWriter p_file, interactive.AutorouteSettings p_settings,
-            board.LayerStructure p_layer_structure, IdentifierType p_identifier_type) throws java.io.IOException
+    static void write_scope(IndentFileWriter p_file, freerouting.interactive.AutorouteSettings p_settings,
+            freerouting.board.LayerStructure p_layer_structure, IdentifierType p_identifier_type) throws java.io.IOException
     {
         p_file.start_scope();
         p_file.write("autoroute_settings");
@@ -283,7 +283,7 @@ public class AutorouteSettings
         p_file.write(")");
         for (int i = 0; i < p_layer_structure.arr.length; ++i)
         {
-            board.Layer curr_layer = p_layer_structure.arr[i];
+            freerouting.board.Layer curr_layer = p_layer_structure.arr[i];
             p_file.start_scope();
             p_file.write("layer_rule ");
             p_identifier_type.write(curr_layer.name, p_file);

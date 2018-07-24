@@ -29,7 +29,7 @@ import java.util.LinkedList;
  *
  * @author Alfons Wirtz
  */
-public class ViaRule implements java.io.Serializable, board.ObjectInfoPanel.Printable
+public class ViaRule implements java.io.Serializable, freerouting.board.ObjectInfoPanel.Printable
 {
     
     /** Empty via rule. Must nott be changed. */
@@ -88,7 +88,7 @@ public class ViaRule implements java.io.Serializable, board.ObjectInfoPanel.Prin
     /**
      * Returns true, if this rule contains a via with padstack p_padstack
      */
-    public boolean contains_padstack(library.Padstack p_padstack)
+    public boolean contains_padstack(freerouting.library.Padstack p_padstack)
     {
         for (ViaInfo curr_info : this.list)
         {
@@ -137,7 +137,7 @@ public class ViaRule implements java.io.Serializable, board.ObjectInfoPanel.Prin
         return true;
     }
     
-    public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+    public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources =
                 java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);

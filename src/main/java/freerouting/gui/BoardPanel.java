@@ -20,8 +20,8 @@
 
 package freerouting.gui;
 
-import interactive.BoardHandling;
-import interactive.ScreenMessages;
+import freerouting.interactive.BoardHandling;
+import freerouting.interactive.ScreenMessages;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -295,8 +295,8 @@ public class BoardPanel extends javax.swing.JPanel
                 new java.awt.Point((int)(new_center.getX() - delta.getX()), (int)(new_center.getY() - delta.getY()));
         move_mouse(new_mouse_location);
         repaint();
-        this.board_handling.logfile.start_scope(interactive.LogfileScope.CENTER_DISPLAY);
-        geometry.planar.FloatPoint curr_corner = new geometry.planar.FloatPoint(p_new_center.getX(), p_new_center.getY());
+        this.board_handling.logfile.start_scope(freerouting.interactive.LogfileScope.CENTER_DISPLAY);
+        freerouting.geometry.planar.FloatPoint curr_corner = new freerouting.geometry.planar.FloatPoint(p_new_center.getX(), p_new_center.getY());
         this.board_handling.logfile.add_corner(curr_corner);
     }
     

@@ -170,12 +170,12 @@ public class ConductionArea extends ObstacleArea implements Connectable
         return p_filter.is_selected(ItemSelectionFilter.SelectableChoices.CONDUCTION);
     }
     
-    public java.awt.Color[] get_draw_colors(boardgraphics.GraphicsContext p_graphics_context)
+    public java.awt.Color[] get_draw_colors(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         return p_graphics_context.get_conduction_colors();
     }
     
-    public double get_draw_intensity(boardgraphics.GraphicsContext p_graphics_context)
+    public double get_draw_intensity(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         return p_graphics_context.get_conduction_color_intensity();
     }

@@ -18,7 +18,7 @@
  * Created on 30. Oktober 2004, 08:00
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 /**
  * Class for reading resolution scopes from dsn-files.

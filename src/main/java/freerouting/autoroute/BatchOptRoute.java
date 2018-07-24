@@ -219,7 +219,7 @@ public class BatchOptRoute
     private static double calc_weighted_trace_length(RoutingBoard p_board)
     {
         double result = 0;
-        int default_clearance_class = rules.BoardRules.default_clearance_class();
+        int default_clearance_class = freerouting.rules.BoardRules.default_clearance_class();
         Iterator<UndoableObjects.UndoableObjectNode> it = p_board.item_list.start_read_object();
         for (;;)
         {

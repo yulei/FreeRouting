@@ -58,15 +58,15 @@ public class ExpansionDrill implements ExpandableObject
     public boolean calculate_expansion_rooms(AutorouteEngine p_autoroute_engine)
     {
         TileShape search_shape = TileShape.get_instance(location);
-        Collection<board.SearchTreeObject> overlaps =
+        Collection<freerouting.board.SearchTreeObject> overlaps =
                 p_autoroute_engine.autoroute_search_tree.overlapping_objects(search_shape, -1);
         for (int i = this.first_layer; i <= this.last_layer; ++i)
         {
             CompleteExpansionRoom found_room = null;
-            Iterator<board.SearchTreeObject> it = overlaps.iterator();
+            Iterator<freerouting.board.SearchTreeObject> it = overlaps.iterator();
             while (it.hasNext())
             {
-                board.SearchTreeObject curr_ob = it.next();
+                freerouting.board.SearchTreeObject curr_ob = it.next();
                 if (!(curr_ob instanceof CompleteExpansionRoom))
                 {
                     it.remove();
@@ -139,7 +139,7 @@ public class ExpansionDrill implements ExpandableObject
      * Test draw of the the shape of this drill.
      */
     public void draw(java.awt.Graphics p_graphics,
-            boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
+            freerouting.boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
     {
         java.awt.Color draw_color = p_graphics_context.get_hilight_color();
         p_graphics_context.fill_area(this.shape, p_graphics, draw_color, p_intensity);

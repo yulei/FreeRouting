@@ -66,7 +66,7 @@ class ChangedArea
      /**
      * enlarges the octagon on p_layer, so that it contains p_shape
      */
-    public void join (geometry.planar.TileShape p_shape, int p_layer)
+    public void join (freerouting.geometry.planar.TileShape p_shape, int p_layer)
     {
         if (p_shape == null)
         {

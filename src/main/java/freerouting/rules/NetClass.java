@@ -24,11 +24,11 @@ package freerouting.rules;
  *
  * @author Alfons Wirtz
  */
-public class NetClass implements java.io.Serializable, board.ObjectInfoPanel.Printable
+public class NetClass implements java.io.Serializable, freerouting.board.ObjectInfoPanel.Printable
 {
 
     /** Creates a new instance of NetClass */
-    public NetClass(String p_name, board.LayerStructure p_layer_structure, ClearanceMatrix p_clearance_matrix)
+    public NetClass(String p_name, freerouting.board.LayerStructure p_layer_structure, ClearanceMatrix p_clearance_matrix)
     {
         this.name = p_name;
         this.board_layer_structure = p_layer_structure;
@@ -267,7 +267,7 @@ public class NetClass implements java.io.Serializable, board.ObjectInfoPanel.Pri
         }
     }
 
-    public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+    public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources =
                 java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);
@@ -365,7 +365,7 @@ public class NetClass implements java.io.Serializable, board.ObjectInfoPanel.Pri
     private double minimum_trace_length = 0;
     private double maximum_trace_length = 0;
     private final ClearanceMatrix clearance_matrix;
-    private final board.LayerStructure board_layer_structure;
+    private final freerouting.board.LayerStructure board_layer_structure;
     /**
      * The clearance classes of the item types, if this net class comes from a class in a Speccctra dsn-file
      * Should evtl be moved to designformats.specctra.NetClass and used only when reading a dsn-file.

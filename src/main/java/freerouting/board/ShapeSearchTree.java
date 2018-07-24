@@ -55,7 +55,7 @@ import freerouting.autoroute.CompleteFreeSpaceExpansionRoom;
  *
  * @author Alfons Wirtz
  */
-public class ShapeSearchTree extends datastructures.MinAreaTree
+public class ShapeSearchTree extends freerouting.datastructures.MinAreaTree
 {
 
     /**

@@ -199,7 +199,7 @@ public class Component implements UndoableObjects.Storable, ObjectInfoPanel.Prin
     /**
      * Returns information for pin swap and gate swap, if != null.
      */
-    public library.LogicalPart get_logical_part()
+    public freerouting.library.LogicalPart get_logical_part()
     {
         return this.logical_part;
     }
@@ -207,7 +207,7 @@ public class Component implements UndoableObjects.Storable, ObjectInfoPanel.Prin
     /**
      * Sets the infomation for pin swap and gate swap.
      */
-    public void set_logical_part(library.LogicalPart p_logical_part)
+    public void set_logical_part(freerouting.library.LogicalPart p_logical_part)
     {
         this.logical_part = p_logical_part;
     }
@@ -277,7 +277,7 @@ public class Component implements UndoableObjects.Storable, ObjectInfoPanel.Prin
     private double rotation_in_degree;
     
     /** Contains information for gate swapping and pin swapping, if != null */
-    private library.LogicalPart logical_part = null;
+    private freerouting.library.LogicalPart logical_part = null;
     
     /** If false, the component will be placed on the back side of the board. */
     private boolean on_front;

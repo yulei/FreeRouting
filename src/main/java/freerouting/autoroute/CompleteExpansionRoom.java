@@ -38,10 +38,10 @@ public interface CompleteExpansionRoom extends ExpansionRoom
     /**
      * Returns the object of tthis complete_expansion_rooom.
      */
-    board.SearchTreeObject get_object();
+    freerouting.board.SearchTreeObject get_object();
     
     /**
      * Draws the shape of this room for test purposes
      */
-    void draw(java.awt.Graphics p_graphics, boardgraphics.GraphicsContext p_graphics_context, double p_intensity);
+    void draw(java.awt.Graphics p_graphics, freerouting.boardgraphics.GraphicsContext p_graphics_context, double p_intensity);
 }

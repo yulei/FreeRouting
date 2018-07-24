@@ -18,7 +18,7 @@
  * Created on 5. Juli 2004, 08:53
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 /**
  * Class for writing placement scopes from dsn-files.

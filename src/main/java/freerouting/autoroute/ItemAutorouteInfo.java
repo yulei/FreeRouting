@@ -114,7 +114,7 @@ public class ItemAutorouteInfo
     /**
      * Draws the shapes of the expansion rooms of this info for testing purposes.
      */
-    public void draw(java.awt.Graphics p_graphics, boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
+    public void draw(java.awt.Graphics p_graphics, freerouting.boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
     {
         if (expansion_room_arr == null)
         {

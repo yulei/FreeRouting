@@ -349,7 +349,7 @@ public class PlanarDelaunayTriangulation
         /**
          * Returns an array of corners, which can be used in a planar triangulation.
          */
-        geometry.planar.Point[] get_triangulation_corners();
+        freerouting.geometry.planar.Point[] get_triangulation_corners();
     }
     
     /**

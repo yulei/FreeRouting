@@ -257,7 +257,7 @@ class BoardToolbar extends javax.swing.JPanel
         
         right_toolbar.add(unit_factor_field);
         
-        unit_combo_box.setModel(new javax.swing.DefaultComboBoxModel(board.Unit.values()));
+        unit_combo_box.setModel(new javax.swing.DefaultComboBoxModel(freerouting.board.Unit.values()));
         unit_combo_box.setFocusTraversalPolicyProvider(true);
         unit_combo_box.setInheritsPopupMenu(true);
         unit_combo_box.setMaximumSize(new java.awt.Dimension(60, 18));
@@ -268,7 +268,7 @@ class BoardToolbar extends javax.swing.JPanel
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                board.Unit new_unit = (board.Unit) unit_combo_box.getSelectedItem();
+                freerouting.board.Unit new_unit = (freerouting.board.Unit) unit_combo_box.getSelectedItem();
                 board_frame.board_panel.board_handling.change_user_unit(new_unit);
                 board_frame.refresh_windows();
             }
@@ -288,16 +288,16 @@ class BoardToolbar extends javax.swing.JPanel
      */
     void hilight_selected_button()
     {
-        interactive.InteractiveState interactive_state = this.board_frame.board_panel.board_handling.get_interactive_state();
-        if (interactive_state instanceof interactive.RouteMenuState)
+        freerouting.interactive.InteractiveState interactive_state = this.board_frame.board_panel.board_handling.get_interactive_state();
+        if (interactive_state instanceof freerouting.interactive.RouteMenuState)
         {
             this.route_button.setSelected(true);
         }
-        else if (interactive_state instanceof interactive.DragMenuState)
+        else if (interactive_state instanceof freerouting.interactive.DragMenuState)
         {
             this.drag_button.setSelected(true);
         }
-        else if (interactive_state instanceof interactive.SelectMenuState)
+        else if (interactive_state instanceof freerouting.interactive.SelectMenuState)
         {
             this.select_button.setSelected(true);
         }

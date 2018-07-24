@@ -146,7 +146,7 @@ public class ComponentOutline extends Item implements java.io.Serializable
         p_graphics_context.draw_boundary(this.get_area(), draw_width, color, p_g, intensity);
     }
 
-    public geometry.planar.IntBox bounding_box()
+    public freerouting.geometry.planar.IntBox bounding_box()
     {
         return get_area().bounding_box();
     }

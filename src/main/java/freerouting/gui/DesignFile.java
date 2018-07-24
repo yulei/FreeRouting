@@ -20,7 +20,7 @@
  */
 package freerouting.gui;
 
-import datastructures.FileFilter;
+import freerouting.datastructures.FileFilter;
 
 /**
  *  File functionality with security restrictions used, when the application is opened with Java Webstart

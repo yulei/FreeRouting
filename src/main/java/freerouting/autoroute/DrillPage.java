@@ -82,9 +82,9 @@ class DrillPage implements ExpandableObject
                 {
                     continue;
                 }
-                if (curr_item instanceof board.Pin)
+                if (curr_item instanceof freerouting.board.Pin)
                 {
-                    if (p_attach_smd && ((board.Pin) curr_item).drill_allowed())
+                    if (p_attach_smd && ((freerouting.board.Pin) curr_item).drill_allowed())
                     {
                         continue;
                     }
@@ -193,7 +193,7 @@ class DrillPage implements ExpandableObject
      * Test draw of the drills on this page.
      */
     public void draw(java.awt.Graphics p_graphics,
-            boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
+            freerouting.boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
     {
         if (true || drills == null)
         {
@@ -220,9 +220,9 @@ class DrillPage implements ExpandableObject
         Point result = null;
         for (Item curr_item : overlapping_items)
         {
-            if (curr_item instanceof board.Pin)
+            if (curr_item instanceof freerouting.board.Pin)
             {
-                board.Pin curr_pin = (board.Pin) curr_item;
+                freerouting.board.Pin curr_pin = (freerouting.board.Pin) curr_item;
                 if (curr_pin.drill_allowed() && p_drill_shape.contains_inside(curr_pin.get_center()))
                 {
                     result = curr_pin.get_center();

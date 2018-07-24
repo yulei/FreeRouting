@@ -18,11 +18,11 @@
  * Created on 21. Juni 2004, 08:37
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import board.BasicBoard;
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.board.BasicBoard;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Default parameter type used while writing a Specctra dsn-file.

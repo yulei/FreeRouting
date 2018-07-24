@@ -28,7 +28,7 @@ import java.util.LinkedList;
  *
  * @author Alfons Wirtz
  */
-public class ViaInfos implements java.io.Serializable, board.ObjectInfoPanel.Printable
+public class ViaInfos implements java.io.Serializable, freerouting.board.ObjectInfoPanel.Printable
 {
     /**
      * Adds a via info consisting of padstack, clearance class and drill_to_smd_allowed.
@@ -100,7 +100,7 @@ public class ViaInfos implements java.io.Serializable, board.ObjectInfoPanel.Pri
         return this.list.remove(p_via_info);
     }
     
-    public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+    public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
                 java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);

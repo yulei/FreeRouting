@@ -33,7 +33,7 @@ import freerouting.geometry.planar.ConvexShape;
 public class Padstacks implements java.io.Serializable
 {
     /** Creates a new instance of Padstacks */
-    public Padstacks(board.LayerStructure p_layer_structure)
+    public Padstacks(freerouting.board.LayerStructure p_layer_structure)
     {
         board_layer_structure = p_layer_structure;
         padstack_arr = new Vector<Padstack>();
@@ -130,5 +130,5 @@ public class Padstacks implements java.io.Serializable
     private Vector<Padstack> padstack_arr;
     
     /** The layer structure of each padstack. */
-    public final board.LayerStructure board_layer_structure;
+    public final freerouting.board.LayerStructure board_layer_structure;
 }

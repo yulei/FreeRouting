@@ -17,12 +17,12 @@
  *
  * Created on 10. Mai 2004, 07:43
  */
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import datastructures.IndentFileWriter;
+import freerouting.datastructures.IndentFileWriter;
 
-import board.BasicBoard;
-import board.TestLevel;
+import freerouting.board.BasicBoard;
+import freerouting.board.TestLevel;
 
 /**
  * Class for reading and writing dsn-files.

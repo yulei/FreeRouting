@@ -19,7 +19,7 @@
  *
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 /**
  *

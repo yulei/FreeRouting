@@ -48,7 +48,7 @@ public class Communication implements java.io.Serializable
     public Communication()
     {
         this(Unit.MIL, 1, new SpecctraParserInfo("\"", null, null, null, null, false), 
-                new CoordinateTransform(1, 0, 0), new board.ItemIdNoGenerator(), new BoardObserverAdaptor());
+                new CoordinateTransform(1, 0, 0), new freerouting.board.ItemIdNoGenerator(), new BoardObserverAdaptor());
     }
     
     public boolean host_cad_is_eagle()

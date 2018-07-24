@@ -18,7 +18,7 @@
  * Created on 25. November 2004, 13:21
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 /**
  * Class for reading place_control scopes from dsn-files.

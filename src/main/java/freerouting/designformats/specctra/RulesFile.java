@@ -19,11 +19,11 @@
  *
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import datastructures.IndentFileWriter;
+import freerouting.datastructures.IndentFileWriter;
 
-import  board.BasicBoard;
+import  freerouting.board.BasicBoard;
 
 /**
  * File for saving the board rules, so that they can be restored after the Board

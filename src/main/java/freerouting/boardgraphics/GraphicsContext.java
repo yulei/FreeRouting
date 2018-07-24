@@ -52,7 +52,7 @@ import java.awt.geom.AffineTransform;
 public class GraphicsContext implements java.io.Serializable
 {
     public GraphicsContext( IntBox p_design_bounds,
-            Dimension p_panel_bounds, board.LayerStructure p_layer_structure, java.util.Locale p_locale)
+            Dimension p_panel_bounds, freerouting.board.LayerStructure p_layer_structure, java.util.Locale p_locale)
     {
         coordinate_transform = new CoordinateTransform(p_design_bounds, p_panel_bounds);
         item_color_table = new ItemColorTableModel(p_layer_structure, p_locale);

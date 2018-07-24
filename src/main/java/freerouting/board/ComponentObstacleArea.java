@@ -71,12 +71,12 @@ public class ComponentObstacleArea extends ObstacleArea
     }
     
     
-    public java.awt.Color[] get_draw_colors(boardgraphics.GraphicsContext p_graphics_context)
+    public java.awt.Color[] get_draw_colors(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         return  p_graphics_context.get_place_obstacle_colors();
     }
     
-    public double get_draw_intensity(boardgraphics.GraphicsContext p_graphics_context)
+    public double get_draw_intensity(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         return p_graphics_context.get_place_obstacle_color_intensity();
     }

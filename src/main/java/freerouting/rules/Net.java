@@ -29,7 +29,7 @@ import freerouting.datastructures.UndoableObjects;
  *
  * @author  Alfons Wirtz
  */
-public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, java.io.Serializable
+public class Net implements Comparable<Net>, freerouting.board.ObjectInfoPanel.Printable, java.io.Serializable
 {
 
     /**
@@ -78,7 +78,7 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
     public java.util.Collection<Item> get_terminal_items()
     {
         java.util.Collection<Item> result = new java.util.LinkedList<Item>();
-        board.BasicBoard board = this.net_list.get_board();
+        freerouting.board.BasicBoard board = this.net_list.get_board();
         java.util.Iterator<UndoableObjects.UndoableObjectNode> it = board.item_list.start_read_object();
         for (;;)
         {
@@ -87,7 +87,7 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
             {
                 break;
             }
-            if (curr_item instanceof board.Connectable)
+            if (curr_item instanceof freerouting.board.Connectable)
             {
                 if (curr_item.contains_net(this.net_number) && !curr_item.is_route())
                 {
@@ -101,10 +101,10 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
     /**
      * Returns the pins of this net.
      */
-    public java.util.Collection<board.Pin> get_pins()
+    public java.util.Collection<freerouting.board.Pin> get_pins()
     {
-        java.util.Collection<board.Pin> result = new java.util.LinkedList<board.Pin>();
-        board.BasicBoard board = this.net_list.get_board();
+        java.util.Collection<freerouting.board.Pin> result = new java.util.LinkedList<freerouting.board.Pin>();
+        freerouting.board.BasicBoard board = this.net_list.get_board();
         java.util.Iterator<UndoableObjects.UndoableObjectNode> it = board.item_list.start_read_object();
         for (;;)
         {
@@ -113,11 +113,11 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
             {
                 break;
             }
-            if (curr_item instanceof board.Pin)
+            if (curr_item instanceof freerouting.board.Pin)
             {
                 if (curr_item.contains_net(this.net_number))
                 {
-                    result.add((board.Pin) curr_item);
+                    result.add((freerouting.board.Pin) curr_item);
                 }
             }
         }
@@ -127,10 +127,10 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
     /**
      * Returns all items of this net.
      */
-    public java.util.Collection<board.Item> get_items()
+    public java.util.Collection<freerouting.board.Item> get_items()
     {
-        java.util.Collection<board.Item> result = new java.util.LinkedList<board.Item>();
-        board.BasicBoard board = this.net_list.get_board();
+        java.util.Collection<freerouting.board.Item> result = new java.util.LinkedList<freerouting.board.Item>();
+        freerouting.board.BasicBoard board = this.net_list.get_board();
         java.util.Iterator<UndoableObjects.UndoableObjectNode> it = board.item_list.start_read_object();
         for (;;)
         {
@@ -157,9 +157,9 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
         for (Item curr_item : net_items)
         {
 
-            if (curr_item instanceof board.Trace)
+            if (curr_item instanceof freerouting.board.Trace)
             {
-                cumulative_trace_length += ((board.Trace) curr_item).get_length();
+                cumulative_trace_length += ((freerouting.board.Trace) curr_item).get_length();
             }
         }
         return cumulative_trace_length;
@@ -174,7 +174,7 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
         java.util.Collection<Item> net_items = net_list.get_board().get_connectable_items(this.net_number);
         for (Item curr_item : net_items)
         {
-            if (curr_item instanceof board.Via)
+            if (curr_item instanceof freerouting.board.Via)
             {
                 ++result;
             }
@@ -198,7 +198,7 @@ public class Net implements Comparable<Net>, board.ObjectInfoPanel.Printable, ja
         return contains_plane;
     }
 
-    public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+    public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         Integer via_count = this.get_via_count();
         double cumulative_trace_length = this.get_trace_length();

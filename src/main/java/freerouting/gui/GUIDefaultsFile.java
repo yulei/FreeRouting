@@ -20,9 +20,9 @@
 
 package freerouting.gui;
 
-import datastructures.IndentFileWriter;
+import freerouting.datastructures.IndentFileWriter;
 
-import board.ItemSelectionFilter;
+import freerouting.board.ItemSelectionFilter;
 
 /**
  * Description of a text file,  where the board independent interactive settings are stored.

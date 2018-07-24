@@ -18,11 +18,11 @@
  * Created on 20. Mai 2004, 09:22
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import geometry.planar.IntPoint;
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Class for reading and writing circle scopes from dsn-files.
@@ -53,17 +53,17 @@ public class Circle extends Shape
         coor[2] = p_center_y;
     }
     
-    public geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
     {
         double [] location = new double[2];
         location[0] = coor[1];
         location[1] = coor[2];
         IntPoint center  = p_coordinate_transform.dsn_to_board(location).round();
         int radius = (int) Math.round(p_coordinate_transform.dsn_to_board(coor[0]) / 2);
-        return new geometry.planar.Circle(center, radius);
+        return new freerouting.geometry.planar.Circle(center, radius);
     }
     
-    public geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
     {
         int [] new_coor = new int[3];
         new_coor[0] = (int) Math.round(p_coordinate_transform.dsn_to_board(coor[0]) / 2);
@@ -71,7 +71,7 @@ public class Circle extends Shape
         {
             new_coor[i] = (int) Math.round(p_coordinate_transform.dsn_to_board(coor[i]));
         }
-        return new geometry.planar.Circle(new IntPoint(new_coor[1], new_coor[2]), new_coor[0]);
+        return new freerouting.geometry.planar.Circle(new IntPoint(new_coor[1], new_coor[2]), new_coor[0]);
     }
     
     public Rectangle bounding_box()

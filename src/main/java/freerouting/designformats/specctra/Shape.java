@@ -17,15 +17,15 @@
  *
  * Created on 16. Mai 2004, 11:09
  */
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import geometry.planar.PolylineShape;
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Describes a shape in a Specctra dsn file.

@@ -30,7 +30,7 @@ import freerouting.geometry.planar.IntOctagon;
  *
  * @author  alfons
  */
-public class Padstack implements Comparable<Padstack>, board.ObjectInfoPanel.Printable, java.io.Serializable
+public class Padstack implements Comparable<Padstack>, freerouting.board.ObjectInfoPanel.Printable, java.io.Serializable
 {
     
     /**
@@ -152,7 +152,7 @@ public class Padstack implements Comparable<Padstack>, board.ObjectInfoPanel.Pri
         return result;
     }
     
-    public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+    public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
                 java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);

@@ -30,7 +30,7 @@ import java.awt.Color;
 public class ItemColorTableModel extends ColorTableModel implements java.io.Serializable
 {
     
-    public ItemColorTableModel(board.LayerStructure p_layer_structure, java.util.Locale p_locale)
+    public ItemColorTableModel(freerouting.board.LayerStructure p_layer_structure, java.util.Locale p_locale)
     {
         super(p_layer_structure.arr.length, p_locale);
   

@@ -31,7 +31,7 @@ import freerouting.geometry.planar.Area;
  *
  * @author  alfons
  */
-public class Package implements Comparable<Package>, board.ObjectInfoPanel.Printable, java.io.Serializable
+public class Package implements Comparable<Package>, freerouting.board.ObjectInfoPanel.Printable, java.io.Serializable
 {
     
     /**
@@ -103,7 +103,7 @@ public class Package implements Comparable<Package>, board.ObjectInfoPanel.Print
         return this.name;
     }
     
-    public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+    public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
                 java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);

@@ -27,7 +27,7 @@ import freerouting.library.Padstack;
  *
  * @author Alfons Wirtz
  */
-public class ViaInfo implements Comparable<ViaInfo>, board.ObjectInfoPanel.Printable, java.io.Serializable
+public class ViaInfo implements Comparable<ViaInfo>, freerouting.board.ObjectInfoPanel.Printable, java.io.Serializable
 {
     
     /** Creates a new instance of ViaRule */
@@ -91,7 +91,7 @@ public class ViaInfo implements Comparable<ViaInfo>, board.ObjectInfoPanel.Print
         return this.name.compareTo(p_other.name);
     }
     
-    public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+    public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
                 java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);

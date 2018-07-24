@@ -139,10 +139,10 @@ public class PopupMenuMove extends PopupMenuDisplay
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                interactive.InteractiveState interactive_state = board_panel.board_handling.get_interactive_state();
-                if (interactive_state instanceof interactive.MoveItemState)
+                freerouting.interactive.InteractiveState interactive_state = board_panel.board_handling.get_interactive_state();
+                if (interactive_state instanceof freerouting.interactive.MoveItemState)
                 {
-                    ((interactive.MoveItemState)interactive_state).reset_rotation();
+                    ((freerouting.interactive.MoveItemState)interactive_state).reset_rotation();
                 }
             }
         });

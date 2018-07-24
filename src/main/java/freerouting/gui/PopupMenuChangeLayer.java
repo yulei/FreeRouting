@@ -33,7 +33,7 @@ class PopupMenuChangeLayer extends javax.swing.JMenu
     {
         this.board_frame = p_board_frame;
         
-        board.LayerStructure layer_structure = board_frame.board_panel.board_handling.get_routing_board().layer_structure;
+        freerouting.board.LayerStructure layer_structure = board_frame.board_panel.board_handling.get_routing_board().layer_structure;
         this.item_arr = new LayermenuItem[layer_structure.signal_layer_count()];
         java.util.ResourceBundle resources = 
                 java.util.ResourceBundle.getBundle("gui.resources.Default", p_board_frame.get_locale());

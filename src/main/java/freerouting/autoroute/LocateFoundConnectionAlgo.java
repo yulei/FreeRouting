@@ -269,7 +269,7 @@ public abstract class LocateFoundConnectionAlgo
     protected abstract Collection<FloatPoint> calculate_next_trace_corners();
 
     /** Test display of the baktrack rooms. */
-    public void draw(java.awt.Graphics p_graphics, boardgraphics.GraphicsContext p_graphics_context)
+    public void draw(java.awt.Graphics p_graphics, freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         for (int i = 0; i < backtrack_array.length; ++i)
         {

@@ -44,7 +44,7 @@ class PopupMenuSelectedItems extends PopupMenuDisplay
             }
         });
         
-        if (board_panel.board_handling.get_routing_board().get_test_level() != board.TestLevel.RELEASE_VERSION)
+        if (board_panel.board_handling.get_routing_board().get_test_level() != freerouting.board.TestLevel.RELEASE_VERSION)
         {
             this.add(copy_item);
         }

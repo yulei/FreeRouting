@@ -32,7 +32,7 @@ public class ClearanceMatrix implements java.io.Serializable
      * Creates a new instance with the 2 clearance classes "none"and "default"
      * ans initializes it with p_default_value.
      */
-    public static ClearanceMatrix get_default_instance(board.LayerStructure p_layer_structure, int p_default_value)
+    public static ClearanceMatrix get_default_instance(freerouting.board.LayerStructure p_layer_structure, int p_default_value)
     {
         String [] name_arr = new String [2];
         name_arr[0] = "null";
@@ -47,7 +47,7 @@ public class ClearanceMatrix implements java.io.Serializable
      * p_layer_count layers.
      * p_names is an array of dimension p_class_count;
      */
-    public ClearanceMatrix(int p_class_count, board.LayerStructure p_layer_structure, String [] p_name_arr)
+    public ClearanceMatrix(int p_class_count, freerouting.board.LayerStructure p_layer_structure, String [] p_name_arr)
     {
         class_count = Math.max(p_class_count, 1);
         layer_structure = p_layer_structure;

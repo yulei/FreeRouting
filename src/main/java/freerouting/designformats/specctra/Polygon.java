@@ -18,10 +18,10 @@
  * Created on 15. Mai 2004, 08:39
  */
 
-package designformats.specctra;
-import geometry.planar.IntPoint;
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+package freerouting.designformats.specctra;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Describes a polygon in a Specctra dsn file.

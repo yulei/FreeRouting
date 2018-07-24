@@ -18,31 +18,31 @@
  * Created on 24. Mai 2004, 07:20
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Iterator;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Point;
-import geometry.planar.IntBox;
-import geometry.planar.IntPoint;
-import geometry.planar.Line;
-import geometry.planar.Polyline;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Polyline;
 
-import board.RoutingBoard;
-import board.Item;
-import board.Via;
-import board.Trace;
-import board.PolylineTrace;
-import board.FixedState;
-import board.ItemSelectionFilter;
+import freerouting.board.RoutingBoard;
+import freerouting.board.Item;
+import freerouting.board.Via;
+import freerouting.board.Trace;
+import freerouting.board.PolylineTrace;
+import freerouting.board.FixedState;
+import freerouting.board.ItemSelectionFilter;
 
-import datastructures.IndentFileWriter;
-import datastructures.IdentifierType;
+import freerouting.datastructures.IndentFileWriter;
+import freerouting.datastructures.IdentifierType;
 
 /**
  * Class for reading and writing wiring scopes from dsn-files.

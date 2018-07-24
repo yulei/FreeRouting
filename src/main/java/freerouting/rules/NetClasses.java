@@ -63,7 +63,7 @@ public class NetClasses implements java.io.Serializable
     /**
      * Appends a new empty class with name p_name to the class array
      */
-    NetClass append(String p_name, board.LayerStructure p_layer_structure, ClearanceMatrix p_clearance_matrix)
+    NetClass append(String p_name, freerouting.board.LayerStructure p_layer_structure, ClearanceMatrix p_clearance_matrix)
     {
         NetClass new_class = new NetClass(p_name, p_layer_structure, p_clearance_matrix);
         class_arr.add(new_class);
@@ -73,7 +73,7 @@ public class NetClasses implements java.io.Serializable
     /**
      * Appends a new empty class to the class array. A name for the class is created internally
      */
-    NetClass append(board.LayerStructure p_layer_structure, ClearanceMatrix p_clearance_matrix, java.util.Locale p_locale)
+    NetClass append(freerouting.board.LayerStructure p_layer_structure, ClearanceMatrix p_clearance_matrix, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
                 java.util.ResourceBundle.getBundle("rules.resources.Default", p_locale);

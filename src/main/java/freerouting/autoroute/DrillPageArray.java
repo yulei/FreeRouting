@@ -139,7 +139,7 @@ public class DrillPageArray
    /*
     * Test draw of the all drills
     */
-    public void draw(java.awt.Graphics p_graphics, boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
+    public void draw(java.awt.Graphics p_graphics, freerouting.boardgraphics.GraphicsContext p_graphics_context, double p_intensity)
     {
         for (int j = 0; j < page_arr.length; ++j)
         {

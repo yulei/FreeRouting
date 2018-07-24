@@ -18,12 +18,12 @@
  * Created on 21. Mai 2004, 08:09
  */
 
-package designformats.specctra;
+package freerouting.designformats.specctra;
 
-import geometry.planar.IntVector;
-import geometry.planar.Vector;
-import geometry.planar.PolygonShape;
-import geometry.planar.Simplex;
+import freerouting.geometry.planar.IntVector;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.PolygonShape;
+import freerouting.geometry.planar.Simplex;
 
 import java.util.Collection;
 import java.util.Iterator;
