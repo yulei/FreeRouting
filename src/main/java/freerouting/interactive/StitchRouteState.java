@@ -18,10 +18,10 @@
  * Created on 8. Dezember 2003, 08:05
  */
 
-package interactive;
+package freerouting.interactive;
 
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 /**
  * State for interactive routing by adding corners with the left mouse button.

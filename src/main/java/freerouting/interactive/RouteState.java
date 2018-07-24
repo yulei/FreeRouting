@@ -17,23 +17,23 @@
  *
  * Created on 8. November 2003, 08:22
  */
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.Point;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
 
 import java.util.Collection;
 import java.util.Set;
 
-import board.Trace;
-import board.Via;
-import board.PolylineTrace;
-import board.ConductionArea;
-import board.DrillItem;
-import board.Item;
-import board.RoutingBoard;
-import board.ItemSelectionFilter;
+import freerouting.board.Trace;
+import freerouting.board.Via;
+import freerouting.board.PolylineTrace;
+import freerouting.board.ConductionArea;
+import freerouting.board.DrillItem;
+import freerouting.board.Item;
+import freerouting.board.RoutingBoard;
+import freerouting.board.ItemSelectionFilter;
 
 /**
  * Interactive routing state.

@@ -18,7 +18,7 @@
  * Created on 11. Februar 2005, 10:17
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Creates the menu bar of a board frame together with its menu items.

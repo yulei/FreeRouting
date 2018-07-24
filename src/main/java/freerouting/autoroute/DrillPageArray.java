@@ -19,15 +19,15 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-import geometry.planar.IntBox;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.TileShape;
 
-import board.RoutingBoard;
+import freerouting.board.RoutingBoard;
 
 /**
  * Describes the 2 dimensional array of pages of ExpansionDrill`s used in the maze search algorithm.

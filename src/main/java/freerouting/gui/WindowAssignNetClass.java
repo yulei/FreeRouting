@@ -19,10 +19,10 @@
  * Created on 12. April 2005, 06:09
  */
 
-package gui;
+package freerouting.gui;
 
-import rules.Net;
-import rules.NetClass;
+import freerouting.rules.Net;
+import freerouting.rules.NetClass;
 
 /**
  *

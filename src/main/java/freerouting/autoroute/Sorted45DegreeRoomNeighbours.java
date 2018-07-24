@@ -19,7 +19,7 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -27,17 +27,17 @@ import java.util.LinkedList;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import datastructures.ShapeTree;
+import freerouting.datastructures.ShapeTree;
 
-import geometry.planar.Limits;
-import geometry.planar.IntOctagon;
-import geometry.planar.IntPoint;
-import geometry.planar.TileShape;
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Limits;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.FloatPoint;
 
-import board.ShapeSearchTree;
-import board.SearchTreeObject;
-import board.Item;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.SearchTreeObject;
+import freerouting.board.Item;
 
 /**
  *

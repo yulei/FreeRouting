@@ -17,17 +17,17 @@
  *
  * Created on 5. Juni 2003, 10:36
  */
-package board;
+package freerouting.board;
 
 import java.util.Collection;
 import java.util.Iterator;
 
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.TileShape;
-import geometry.planar.Shape;
-import geometry.planar.Vector;
-import library.Padstack;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.Vector;
+import freerouting.library.Padstack;
 
 /**
  * Class describing the functionality of an electrical Item on the board,

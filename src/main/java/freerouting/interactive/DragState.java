@@ -18,15 +18,15 @@
  * Created on 10. Dezember 2003, 09:08
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 import java.util.Iterator;
 
-import board.Trace;
-import board.DrillItem;
-import board.Item;
+import freerouting.board.Trace;
+import freerouting.board.DrillItem;
+import freerouting.board.Item;
 
 /**
  * Class implementing functionality when the mouse is dragged on a routing board

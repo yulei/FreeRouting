@@ -18,9 +18,9 @@
  * Created on 17. Dezember 2004, 07:34
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 /**
  * Class for transforming objects between user coordinate space and board coordinate space.

@@ -13,18 +13,18 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 import java.util.SortedSet;
 
-import datastructures.TimeLimit;
+import freerouting.datastructures.TimeLimit;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
-import board.RoutingBoard;
+import freerouting.board.RoutingBoard;
 
-import interactive.InteractiveActionThread;
+import freerouting.interactive.InteractiveActionThread;
 
 /**
  * Handles the sequencing of the fanout inside the batch autorouter.

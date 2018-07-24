@@ -18,7 +18,7 @@
  * Created on 2. Maerz 2006, 07:23
  *
  */
-package interactive;
+package freerouting.interactive;
 
 /**
  * Used for running an interactive action in a seperate Thread,

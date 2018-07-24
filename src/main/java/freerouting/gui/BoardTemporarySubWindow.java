@@ -19,7 +19,7 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Class for temporary subwindows of the boarrd frame

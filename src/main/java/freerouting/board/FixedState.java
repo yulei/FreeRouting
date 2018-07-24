@@ -18,7 +18,7 @@
  * Created on 15. Maerz 2005, 06:34
  */
 
-package board;
+package freerouting.board;
 
 /**
  * Sorted fixed states of board items. The strongest fixed states came last.

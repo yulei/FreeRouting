@@ -18,7 +18,7 @@
  * Created on 4. Juni 2003, 07:29
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 
 /**
  * Discribes functionality of a circle shape in the plane.

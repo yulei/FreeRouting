@@ -18,7 +18,7 @@
  * Created on 26. Maerz 2005, 06:14
  */
 
-package library;
+package freerouting.library;
 
 /**
  * Contains contain information for gate swap and pin swap for a single component.

@@ -18,10 +18,10 @@
  * Created on 29. August 2003, 11:33
  */
 
-package interactive;
+package freerouting.interactive;
 
-import board.ItemSelectionFilter;
-import board.RoutingBoard;
+import freerouting.board.ItemSelectionFilter;
+import freerouting.board.RoutingBoard;
 
 /**
  * Contains the values of the interactive settings of the board handling.

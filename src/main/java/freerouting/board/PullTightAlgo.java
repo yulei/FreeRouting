@@ -17,26 +17,26 @@
  *
  * Created on 19. Juli 2003, 12:42
  */
-package board;
+package freerouting.board;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntOctagon;
-import geometry.planar.IntPoint;
-import geometry.planar.Line;
-import geometry.planar.Point;
-import geometry.planar.Polyline;
-import geometry.planar.Side;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.Side;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-import datastructures.Signum;
-import datastructures.Stoppable;
-import datastructures.TimeLimit;
+import freerouting.datastructures.Signum;
+import freerouting.datastructures.Stoppable;
+import freerouting.datastructures.TimeLimit;
 
-import autoroute.AutorouteControl.ExpansionCostFactor;
+import freerouting.autoroute.AutorouteControl.ExpansionCostFactor;
 
 /**
  * Class with functionality for optimising traces and vias.

@@ -19,20 +19,20 @@
  *
  */
 
-package board;
+package freerouting.board;
 
 import java.util.Collection;
 
-import datastructures.TimeLimit;
+import freerouting.datastructures.TimeLimit;
 
-import geometry.planar.TileShape;
-import geometry.planar.ConvexShape;
-import geometry.planar.IntOctagon;
-import geometry.planar.IntBox;
-import geometry.planar.IntPoint;
-import geometry.planar.Point;
-import geometry.planar.Vector;
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.FloatPoint;
 
 
 /**

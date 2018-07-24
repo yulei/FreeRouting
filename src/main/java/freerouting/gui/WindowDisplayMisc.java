@@ -18,7 +18,7 @@
  * Created on 20. Dezember 2004, 08:23
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Window for interactive changing of miscellanious display properties.

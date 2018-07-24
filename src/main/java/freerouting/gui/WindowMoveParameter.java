@@ -19,7 +19,7 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Window with the parameters for moving components.

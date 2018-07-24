@@ -14,19 +14,19 @@
  *   for more details.
  */
 
-package gui;
+package freerouting.gui;
 
-import interactive.ScreenMessages;
+import freerouting.interactive.ScreenMessages;
 
 import java.io.File;
 
-import datastructures.FileFilter;
-import datastructures.IdNoGenerator;
+import freerouting.datastructures.FileFilter;
+import freerouting.datastructures.IdNoGenerator;
 
-import board.TestLevel;
-import board.BoardObservers;
+import freerouting.board.TestLevel;
+import freerouting.board.BoardObservers;
 
-import designformats.specctra.DsnFile;
+import freerouting.designformats.specctra.DsnFile;
 
 /**
  *

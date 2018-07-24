@@ -18,20 +18,20 @@
  * Created on 7. Dezember 2002, 18:26
  */
 
-package tests;
+package freerouting.tests;
 
-import geometry.planar.IntOctagon;
-import geometry.planar.IntPoint;
-import geometry.planar.Polyline;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Iterator;
 
-import board.Item;
-import board.BasicBoard;
-import board.PolylineTrace;
-import board.SearchTreeObject;
+import freerouting.board.Item;
+import freerouting.board.BasicBoard;
+import freerouting.board.PolylineTrace;
+import freerouting.board.SearchTreeObject;
 
 
 /**

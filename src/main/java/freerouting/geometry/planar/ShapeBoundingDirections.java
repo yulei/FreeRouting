@@ -14,7 +14,7 @@
  *   for more details.
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 
 /**
  *

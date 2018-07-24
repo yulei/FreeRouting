@@ -18,25 +18,25 @@
  * Created on 11. Mai 2005, 06:34
  */
 
-package interactive;
+package freerouting.interactive;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.Vector;
-import geometry.planar.Point;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Point;
 
-import library.BoardLibrary;
+import freerouting.library.BoardLibrary;
 
-import board.Component;
-import board.Item;
-import board.Via;
-import board.ClearanceViolation;
-import board.LayerStructure;
+import freerouting.board.Component;
+import freerouting.board.Item;
+import freerouting.board.Via;
+import freerouting.board.ClearanceViolation;
+import freerouting.board.LayerStructure;
 
 /**
  *

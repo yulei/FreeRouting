@@ -18,7 +18,7 @@
  * Created on 20. Dezember 2004, 09:03
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Subwindow of the board frame, whose location and visibility can be saved and read from disc.

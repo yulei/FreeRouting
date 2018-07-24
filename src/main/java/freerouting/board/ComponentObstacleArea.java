@@ -18,11 +18,11 @@
  * Created on 8. Mai 2005, 07:28
  */
 
-package board;
+package freerouting.board;
 
 
-import geometry.planar.Area;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.Vector;
 
 /**
  * Describes areas of the board, where components arre not allowed.

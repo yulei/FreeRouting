@@ -19,7 +19,7 @@
  *
  */
 
-package board;
+package freerouting.board;
 
 /**
  * Empty adaptor implementing the BoardObservers interface.

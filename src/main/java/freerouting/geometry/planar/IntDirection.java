@@ -18,8 +18,8 @@
  * Created on 3. Februar 2003, 08:17
  */
 
-package geometry.planar;
-import datastructures.Signum;
+package freerouting.geometry.planar;
+import freerouting.datastructures.Signum;
 
 /**
  *

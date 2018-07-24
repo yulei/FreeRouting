@@ -13,9 +13,9 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package geometry.planar;
+package freerouting.geometry.planar;
 
-import datastructures.Signum;
+import freerouting.datastructures.Signum;
 
 /**
  * Implements functionality for line segments.

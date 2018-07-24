@@ -18,12 +18,12 @@
  * Created on 27. Mai 2004, 06:35
  */
 
-package library;
+package freerouting.library;
 
-import geometry.planar.ConvexShape;
-import geometry.planar.Direction;
-import geometry.planar.IntBox;
-import geometry.planar.IntOctagon;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.Direction;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntOctagon;
 
 /**
  * Describes padstack masks for pins or vias located at the origin.

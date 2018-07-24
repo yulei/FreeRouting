@@ -18,7 +18,7 @@
  * Created on 1. Januar 2005, 07:28
  */
 
-package gui;
+package freerouting.gui;
 
 import java.util.Collection;
 

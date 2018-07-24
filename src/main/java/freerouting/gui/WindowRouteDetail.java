@@ -17,10 +17,10 @@
  *
  * Created on 18. November 2004, 07:31
  */
-package gui;
+package freerouting.gui;
 
-import board.BasicBoard;
-import board.BoardOutline;
+import freerouting.board.BasicBoard;
+import freerouting.board.BoardOutline;
 
 /**
  *  Window handling detail parameters of the interactive routing.

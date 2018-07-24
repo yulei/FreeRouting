@@ -18,12 +18,12 @@
  * Created on 10. Dezember 2003, 10:53
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Point;
-import board.AngleRestriction;
-import board.BasicBoard;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.board.AngleRestriction;
+import freerouting.board.BasicBoard;
 
 /**
  * Class for shoving items out of a region to make space to insert something else.

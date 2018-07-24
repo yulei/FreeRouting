@@ -14,10 +14,10 @@
  *   for more details.
  */
 
-package board;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import geometry.planar.IntOctagon;
+package freerouting.board;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntOctagon;
 
 /**
  *

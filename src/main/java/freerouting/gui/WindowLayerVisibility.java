@@ -18,7 +18,7 @@
  * Created on 5. November 2004, 11:29
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Interactive Frame to adjust the visibility of the individual board layers

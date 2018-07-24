@@ -19,19 +19,19 @@
  *
  */
 
-package interactive;
+package freerouting.interactive;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.IntBox;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.IntBox;
 
-import board.Item;
-import board.PolylineTrace;
+import freerouting.board.Item;
+import freerouting.board.PolylineTrace;
 
 /**
  *

@@ -17,11 +17,11 @@
  *
  * Created on 11. Januar 2004, 11:14
  */
-package autoroute;
+package freerouting.autoroute;
 
-import geometry.planar.Line;
-import geometry.planar.Simplex;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Simplex;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -31,16 +31,17 @@ import java.util.TreeSet;
 import java.util.Set;
 import java.util.SortedSet;
 
-import datastructures.Stoppable;
-import datastructures.TimeLimit;
+import freerouting.datastructures.Stoppable;
+import freerouting.datastructures.TimeLimit;
 
-import board.SearchTreeObject;
-import board.Item;
-import board.RoutingBoard;
-import board.ShapeSearchTree;
-import board.ShapeSearchTree90Degree;
-import board.ShapeSearchTree45Degree;
-import board.TestLevel;
+import freerouting.board.SearchTreeObject;
+import freerouting.board.Item;
+import freerouting.board.RoutingBoard;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.ShapeSearchTree90Degree;
+import freerouting.board.ShapeSearchTree45Degree;
+import freerouting.board.TestLevel;
+
 
 /**
  * Temporary autoroute data stored on the RoutingBoard.

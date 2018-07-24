@@ -18,15 +18,15 @@
  * Created on 28. November 2003, 10:04
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 import java.util.Collection;
 
-import board.Item;
-import board.ItemSelectionFilter;
-import board.TestLevel;
+import freerouting.board.Item;
+import freerouting.board.ItemSelectionFilter;
+import freerouting.board.TestLevel;
 
 /**
  * Common base class for the main menus, which can be selected in the tool bar.

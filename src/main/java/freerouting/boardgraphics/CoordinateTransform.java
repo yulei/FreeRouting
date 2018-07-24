@@ -14,11 +14,11 @@
  *   for more details.
  */
 
-package boardgraphics;
+package freerouting.boardgraphics;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import geometry.planar.Limits;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.Limits;
 
 import java.awt.Dimension;
 import java.awt.geom.Point2D;

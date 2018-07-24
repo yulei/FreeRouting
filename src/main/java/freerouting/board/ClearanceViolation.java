@@ -18,9 +18,9 @@
  * Created on 4. Oktober 2004, 08:56
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.ConvexShape;
+import freerouting.geometry.planar.ConvexShape;
 
 
 /**

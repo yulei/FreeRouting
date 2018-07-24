@@ -19,13 +19,13 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
 import java.util.Collection;
 import java.util.Set;
 import java.util.SortedSet;
 
-import board.Item;
+import freerouting.board.Item;
 
 /**
  *

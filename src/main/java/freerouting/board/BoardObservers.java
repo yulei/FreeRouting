@@ -19,9 +19,9 @@
  *
  */
 
-package board;
+package freerouting.board;
 
-import datastructures.Observers;
+import freerouting.datastructures.Observers;
 
 /**
  *

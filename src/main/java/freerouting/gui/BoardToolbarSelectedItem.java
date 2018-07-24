@@ -18,7 +18,7 @@
  * Created on 16. Februar 2005, 05:59
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Describes the toolbar of the board frame, when it is in the selected item state.

@@ -18,10 +18,10 @@
  * Created on 27. Juli 2006, 09:16
  *
  */
-package interactive;
+package freerouting.interactive;
 
-import board.RoutingBoard;
-import autoroute.AutorouteControl.ExpansionCostFactor;
+import freerouting.board.RoutingBoard;
+import freerouting.autoroute.AutorouteControl.ExpansionCostFactor;
 
 /**
  * Contains the interactive settings for the autorouter.

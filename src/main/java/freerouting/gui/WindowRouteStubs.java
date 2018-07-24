@@ -19,17 +19,17 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
 import java.util.Collection;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.Iterator;
 
-import datastructures.Signum;
-import geometry.planar.FloatPoint;
+import freerouting.datastructures.Signum;
+import freerouting.geometry.planar.FloatPoint;
 
-import board.Item;
+import freerouting.board.Item;
 
 /**
  *

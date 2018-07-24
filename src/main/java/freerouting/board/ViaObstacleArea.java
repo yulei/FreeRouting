@@ -18,10 +18,10 @@
  * Created on 19. August 2004, 07:34
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.Area;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.Vector;
 
 /**
  * Describes Areas on the board, where vias are not allowed.

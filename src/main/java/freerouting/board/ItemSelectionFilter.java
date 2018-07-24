@@ -18,7 +18,7 @@
  * Created on 14. Dezember 2004, 10:57
  */
 
-package board;
+package freerouting.board;
 
 import java.util.Set;
 import java.util.TreeSet;

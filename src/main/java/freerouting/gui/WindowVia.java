@@ -18,12 +18,12 @@
  * Created on 31. Maerz 2005, 08:36
  */
 
-package gui;
+package freerouting.gui;
 
-import rules.ViaRule;
-import rules.BoardRules;
+import freerouting.rules.ViaRule;
+import freerouting.rules.BoardRules;
 
-import board.Layer;
+import freerouting.board.Layer;
 
 /**
  * Window for interactive editing of via rules.

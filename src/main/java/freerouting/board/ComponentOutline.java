@@ -18,17 +18,17 @@
  * Created on 28. November 2005, 06:42
  *
  */
-package board;
+package freerouting.board;
 
 import java.awt.Color;
 
-import geometry.planar.Area;
-import geometry.planar.Vector;
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.FloatPoint;
 
-import boardgraphics.GraphicsContext;
+import freerouting.boardgraphics.GraphicsContext;
 
 /**
  *

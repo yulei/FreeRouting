@@ -19,18 +19,18 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.List;
 import java.util.Collection;
 
-import board.ShapeSearchTree;
-import board.SearchTreeObject;
-import board.PolylineTrace;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.SearchTreeObject;
+import freerouting.board.PolylineTrace;
 
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.TileShape;
 
-import board.Item;
+import freerouting.board.Item;
 
 /**
  * Expansion Room used for pushing and ripping obstacles in the autoroute algorithm.

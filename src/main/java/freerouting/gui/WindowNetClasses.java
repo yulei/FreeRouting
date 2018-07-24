@@ -17,13 +17,13 @@
  *
  * Created on 10. April 2005, 07:49
  */
-package gui;
+package freerouting.gui;
 
-import rules.NetClass;
-import rules.ViaRule;
-import rules.BoardRules;
+import freerouting.rules.NetClass;
+import freerouting.rules.ViaRule;
+import freerouting.rules.BoardRules;
 
-import board.ObjectInfoPanel.Printable;
+import freerouting.board.ObjectInfoPanel.Printable;
 
 /**
  * Edit window for the table of net rules.

@@ -19,7 +19,7 @@
  *
  */
 
-package datastructures;
+package freerouting.datastructures;
 
 @SuppressWarnings("unchecked")
 

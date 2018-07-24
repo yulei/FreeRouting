@@ -19,7 +19,7 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 

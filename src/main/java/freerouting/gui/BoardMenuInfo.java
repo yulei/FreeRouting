@@ -18,7 +18,7 @@
  * Created on 6. Maerz 2005, 05:37
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  *

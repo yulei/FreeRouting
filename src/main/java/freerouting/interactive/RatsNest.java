@@ -18,7 +18,7 @@
  * Created on 18. Maerz 2004, 07:30
  */
 
-package interactive;
+package freerouting.interactive;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -27,16 +27,16 @@ import java.util.Vector;
 
 import java.awt.Graphics;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
-import rules.Net;
+import freerouting.rules.Net;
 
-import board.BasicBoard;
-import board.Item;
-import board.Connectable;
-import boardgraphics.GraphicsContext;
+import freerouting.board.BasicBoard;
+import freerouting.board.Item;
+import freerouting.board.Connectable;
+import freerouting.boardgraphics.GraphicsContext;
 
 /**
  * Creates all Incompletes (Ratsnest) to display them on the screen

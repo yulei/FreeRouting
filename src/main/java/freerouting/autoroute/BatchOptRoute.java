@@ -13,24 +13,24 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Iterator;
 import java.util.Collection;
 import java.util.Set;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
-import board.Item;
-import board.Via;
-import board.Trace;
-import board.RoutingBoard;
-import board.FixedState;
-import board.TestLevel;
+import freerouting.board.Item;
+import freerouting.board.Via;
+import freerouting.board.Trace;
+import freerouting.board.RoutingBoard;
+import freerouting.board.FixedState;
+import freerouting.board.TestLevel;
 
-import interactive.InteractiveActionThread;
+import freerouting.interactive.InteractiveActionThread;
 
 /**
  * To optimize the vias and traces after the batch autorouter has completed the board.

@@ -13,17 +13,17 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package board;
+package freerouting.board;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.FloatPoint;
-import geometry.planar.TileShape;
-import geometry.planar.Vector;
-import geometry.planar.IntBox;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.IntBox;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -32,13 +32,13 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-import rules.Nets;
-import boardgraphics.Drawable;
-import boardgraphics.GraphicsContext;
+import freerouting.rules.Nets;
+import freerouting.boardgraphics.Drawable;
+import freerouting.boardgraphics.GraphicsContext;
 
-import datastructures.UndoableObjects;
-import datastructures.ShapeTree;
-import datastructures.ShapeTree.TreeEntry;
+import freerouting.datastructures.UndoableObjects;
+import freerouting.datastructures.ShapeTree;
+import freerouting.datastructures.ShapeTree.TreeEntry;
 
 /**
  * Basic class of the items on a board.

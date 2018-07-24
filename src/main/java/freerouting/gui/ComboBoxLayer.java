@@ -18,8 +18,8 @@
  * Created on 20. Februar 2005, 08:14
  */
 
-package gui;
-import board.LayerStructure;
+package freerouting.gui;
+import freerouting.board.LayerStructure;
 
 /**
  * A Combo Box with items for individuell board layers plus an additional item for all layers.

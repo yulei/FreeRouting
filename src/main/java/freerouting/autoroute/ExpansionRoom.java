@@ -19,11 +19,11 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.List;
 
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.TileShape;
 
 /**
  *

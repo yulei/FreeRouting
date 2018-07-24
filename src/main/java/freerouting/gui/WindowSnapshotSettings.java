@@ -19,7 +19,7 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Window for the settinngs of interactive snapshots.

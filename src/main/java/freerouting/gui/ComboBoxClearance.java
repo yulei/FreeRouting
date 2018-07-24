@@ -18,8 +18,8 @@
  * Created on 1. Maerz 2005, 09:27
  */
 
-package gui;
-import rules.ClearanceMatrix;
+package freerouting.gui;
+import freerouting.rules.ClearanceMatrix;
 
 /**
  * A Combo Box with an item for each clearance class of the board..

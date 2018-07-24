@@ -18,7 +18,7 @@
  * Created on 2. April 2005, 06:49
  */
 
-package rules;
+package freerouting.rules;
 
 import java.util.List;
 import java.util.LinkedList;

@@ -19,7 +19,7 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
 
 /**

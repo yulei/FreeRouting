@@ -18,7 +18,7 @@
  * Created on 17. Februar 2005, 08:05
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Popup menu containing the 2 items complete and cancel.

@@ -18,7 +18,7 @@
  * Created on 12. Februar 2005, 05:42
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Creates the display menu of a board frame.

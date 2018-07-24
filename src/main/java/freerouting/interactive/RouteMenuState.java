@@ -18,9 +18,9 @@
  * Created on 29. November 2003, 07:50
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 /**
  * Class implementing the different functionality in the route menu,

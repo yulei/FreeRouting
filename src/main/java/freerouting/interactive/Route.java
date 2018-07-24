@@ -13,19 +13,19 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package interactive;
+package freerouting.interactive;
 
-import datastructures.TimeLimit;
+import freerouting.datastructures.TimeLimit;
 
-import geometry.planar.Area;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import geometry.planar.IntOctagon;
-import geometry.planar.IntPoint;
-import geometry.planar.Vector;
-import geometry.planar.Point;
-import geometry.planar.Polyline;
-import geometry.planar.Ellipse;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.Ellipse;
 
 import java.awt.Graphics;
 import java.util.Collection;
@@ -33,24 +33,24 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 
-import library.Padstack;
+import freerouting.library.Padstack;
 
-import rules.ViaRule;
-import rules.ViaInfo;
-import rules.Net;
+import freerouting.rules.ViaRule;
+import freerouting.rules.ViaInfo;
+import freerouting.rules.Net;
 
-import board.AngleRestriction;
-import board.Trace;
-import board.ConductionArea;
-import board.DrillItem;
-import board.Item;
-import board.PolylineTrace;
-import board.RoutingBoard;
-import board.ItemSelectionFilter;
-import board.TestLevel;
-import board.Unit;
+import freerouting.board.AngleRestriction;
+import freerouting.board.Trace;
+import freerouting.board.ConductionArea;
+import freerouting.board.DrillItem;
+import freerouting.board.Item;
+import freerouting.board.PolylineTrace;
+import freerouting.board.RoutingBoard;
+import freerouting.board.ItemSelectionFilter;
+import freerouting.board.TestLevel;
+import freerouting.board.Unit;
 
-import boardgraphics.GraphicsContext;
+import freerouting.boardgraphics.GraphicsContext;
 
 /**
  *

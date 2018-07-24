@@ -17,18 +17,18 @@
  *
  * Created on 25. Januar 2004, 13:24
  */
-package autoroute;
+package freerouting.autoroute;
 
-import geometry.planar.ConvexShape;
-import geometry.planar.FloatLine;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.Point;
-import geometry.planar.Polyline;
-import geometry.planar.TileShape;
-import geometry.planar.IntBox;
-import geometry.planar.IntOctagon;
-import geometry.planar.Line;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.FloatLine;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.Line;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -36,14 +36,14 @@ import java.util.LinkedList;
 import java.util.TreeSet;
 import java.util.Set;
 
-import board.Connectable;
-import board.ForcedViaAlgo;
-import board.Item;
-import board.PolylineTrace;
-import board.ShapeSearchTree;
-import board.AngleRestriction;
-import board.SearchTreeObject;
-import board.ItemSelectionFilter;
+import freerouting.board.Connectable;
+import freerouting.board.ForcedViaAlgo;
+import freerouting.board.Item;
+import freerouting.board.PolylineTrace;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.AngleRestriction;
+import freerouting.board.SearchTreeObject;
+import freerouting.board.ItemSelectionFilter;
 
 /**
  * Class for autorouting an incomplete connection via a maze search algorithm.

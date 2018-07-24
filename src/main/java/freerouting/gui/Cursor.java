@@ -19,7 +19,7 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;

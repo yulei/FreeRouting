@@ -18,7 +18,7 @@
  * Created on 15. Februar 2005, 09:44
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Implements the toolbar panel of the board frame.

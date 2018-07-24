@@ -18,11 +18,11 @@
  * Created on 20. Februar 2005, 06:09
  */
 
-package gui;
+package freerouting.gui;
 
-import rules.ClearanceMatrix;
+import freerouting.rules.ClearanceMatrix;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
 /**
  * Window for interactive editing of the clearance Matrix.

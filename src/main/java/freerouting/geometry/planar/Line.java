@@ -14,11 +14,11 @@
  *   for more details.
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 
 import java.math.BigInteger;
 
-import datastructures.Signum;
+import freerouting.datastructures.Signum;
 
 /**
  *

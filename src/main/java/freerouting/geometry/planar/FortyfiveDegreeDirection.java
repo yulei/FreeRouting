@@ -19,7 +19,7 @@
  *
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 @SuppressWarnings("all") // Eclipse regards get_direction() as unused
 
 /**

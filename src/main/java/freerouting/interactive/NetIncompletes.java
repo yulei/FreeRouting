@@ -18,7 +18,7 @@
  * Created on 16. Maerz 2004, 06:47
  */
 
-package interactive;
+package freerouting.interactive;
 
 import java.awt.Graphics;
 import java.util.Collection;
@@ -27,16 +27,16 @@ import java.util.LinkedList;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import datastructures.PlanarDelaunayTriangulation;
+import freerouting.datastructures.PlanarDelaunayTriangulation;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Point;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
 
-import rules.Net;
+import freerouting.rules.Net;
 
-import board.Item;
-import board.BasicBoard;
-import boardgraphics.GraphicsContext;
+import freerouting.board.Item;
+import freerouting.board.BasicBoard;
+import freerouting.boardgraphics.GraphicsContext;
 
 /**
  * Creates the Incompletes (Ratsnest) of one net to display them on the screen.

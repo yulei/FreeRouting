@@ -19,14 +19,14 @@
  *
  */
 
-package board;
+package freerouting.board;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-import  datastructures.ShapeTree;
+import  freerouting.datastructures.ShapeTree;
 
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.TileShape;
 
 /**
  * Stores information about the search trees of the board items,

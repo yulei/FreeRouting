@@ -17,38 +17,38 @@
  *
  * Created on 10. November 2003, 08:02
  */
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.Point;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-import datastructures.Stoppable;
+import freerouting.datastructures.Stoppable;
 
-import library.Package;
+import freerouting.library.Package;
 
-import rules.Net;
+import freerouting.rules.Net;
 
-import autoroute.AutorouteEngine;
+import freerouting.autoroute.AutorouteEngine;
 
-import board.Component;
-import board.Connectable;
-import board.DrillItem;
-import board.Via;
-import board.Pin;
-import board.Item;
-import board.ObstacleArea;
-import board.PolylineTrace;
-import board.RoutingBoard;
-import board.FixedState;
-import board.OptViaAlgo;
-import board.TestLevel;
+import freerouting.board.Component;
+import freerouting.board.Connectable;
+import freerouting.board.DrillItem;
+import freerouting.board.Via;
+import freerouting.board.Pin;
+import freerouting.board.Item;
+import freerouting.board.ObstacleArea;
+import freerouting.board.PolylineTrace;
+import freerouting.board.RoutingBoard;
+import freerouting.board.FixedState;
+import freerouting.board.OptViaAlgo;
+import freerouting.board.TestLevel;
 
 /**
  *  Class implementing actions on the currently selected items.

@@ -14,7 +14,8 @@
  *   for more details.
  */
 
-package rules;
+package freerouting.rules;
+
 
 /**
  *

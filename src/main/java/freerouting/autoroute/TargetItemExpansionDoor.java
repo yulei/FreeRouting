@@ -17,12 +17,12 @@
  *
  * Created on 2. Februar 2004, 12:59
  */
-package autoroute;
+package freerouting.autoroute;
 
-import geometry.planar.Simplex;
-import geometry.planar.TileShape;
-import board.Item;
-import board.ShapeSearchTree;
+import freerouting.geometry.planar.Simplex;
+import freerouting.geometry.planar.TileShape;
+import freerouting.board.Item;
+import freerouting.board.ShapeSearchTree;
 
 /**
  * An expansion door leading to a start or destination item of the autoroute algorithm.

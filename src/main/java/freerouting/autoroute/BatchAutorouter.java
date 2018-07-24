@@ -13,7 +13,7 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Iterator;
 import java.util.Collection;
@@ -21,11 +21,11 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import datastructures.TimeLimit;
-import datastructures.UndoableObjects;
+import freerouting.datastructures.TimeLimit;
+import freerouting.datastructures.UndoableObjects;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.FloatLine;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatLine;
 
 import board.Connectable;
 import board.Item;

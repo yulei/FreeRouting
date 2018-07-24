@@ -18,7 +18,7 @@
  * Created on 25. Oktober 2006, 07:48
  *
  */
-package gui;
+package freerouting.gui;
 
 import datastructures.FileFilter;
 

@@ -14,9 +14,9 @@
  *   for more details.
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 import java.io.File;
 import java.io.FileWriter;

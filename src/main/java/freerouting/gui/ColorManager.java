@@ -18,7 +18,7 @@
  * Created on 3. August 2003, 11:16
  */
 
-package gui;
+package freerouting.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

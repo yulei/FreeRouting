@@ -18,7 +18,7 @@
  * Created on 5. November 2003, 13:02
  *
  */
-package interactive;
+package freerouting.interactive;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -31,25 +31,25 @@ import java.io.OutputStream;
 import java.util.Collection;
 import java.util.Set;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import geometry.planar.IntPoint;
-import geometry.planar.PolylineShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.PolylineShape;
 
-import rules.BoardRules;
-import board.LayerStructure;
-import board.RoutingBoard;
-import board.Item;
-import board.PolylineTrace;
-import board.FixedState;
-import board.ItemSelectionFilter;
+import freerouting.rules.BoardRules;
+import freerouting.board.LayerStructure;
+import freerouting.board.RoutingBoard;
+import freerouting.board.Item;
+import freerouting.board.PolylineTrace;
+import freerouting.board.FixedState;
+import freerouting.board.ItemSelectionFilter;
 
-import boardgraphics.GraphicsContext;
-import board.CoordinateTransform;
-import board.Unit;
-import board.TestLevel;
+import freerouting.boardgraphics.GraphicsContext;
+import freerouting.board.CoordinateTransform;
+import freerouting.board.Unit;
+import freerouting.board.TestLevel;
 
-import designformats.specctra.DsnFile;
+import freerouting.designformats.specctra.DsnFile;
 
 /**
  *

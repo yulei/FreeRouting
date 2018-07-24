@@ -17,10 +17,10 @@
  *
  * Created on 23. Dezember 2003, 07:56
  */
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Set;
@@ -28,16 +28,16 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.Iterator;
 
-import autoroute.AutorouteControl;
-import autoroute.CompleteFreeSpaceExpansionRoom;
-import autoroute.IncompleteFreeSpaceExpansionRoom;
-import autoroute.InsertFoundConnectionAlgo;
-import autoroute.LocateFoundConnectionAlgo;
-import autoroute.MazeSearchAlgo;
-import autoroute.AutorouteEngine;
+import freerouting.autoroute.AutorouteControl;
+import freerouting.autoroute.CompleteFreeSpaceExpansionRoom;
+import freerouting.autoroute.IncompleteFreeSpaceExpansionRoom;
+import freerouting.autoroute.InsertFoundConnectionAlgo;
+import freerouting.autoroute.LocateFoundConnectionAlgo;
+import freerouting.autoroute.MazeSearchAlgo;
+import freerouting.autoroute.AutorouteEngine;
 
-import board.Item;
-import board.RoutingBoard;
+import freerouting.board.Item;
+import freerouting.board.RoutingBoard;
 
 /**
  * State for testing the expanding algorithm of the autorouter.

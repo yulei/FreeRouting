@@ -18,7 +18,7 @@
  * Created on 16. Februar 2005, 08:11
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Panel at the lower border of the board frame containing amongst others the message line

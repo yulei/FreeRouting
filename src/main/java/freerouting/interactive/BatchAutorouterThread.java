@@ -18,16 +18,16 @@
  * Created on 25. April 2006, 07:58
  *
  */
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.FloatLine;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatLine;
 
-import board.Unit;
+import freerouting.board.Unit;
 
-import autoroute.BatchAutorouter;
-import autoroute.BatchFanout;
-import autoroute.BatchOptRoute;
+import freerouting.autoroute.BatchAutorouter;
+import freerouting.autoroute.BatchFanout;
+import freerouting.autoroute.BatchOptRoute;
 
 /**
  * Thread for the batch autorouter.

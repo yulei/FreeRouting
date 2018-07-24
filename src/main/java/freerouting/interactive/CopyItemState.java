@@ -18,12 +18,12 @@
  * Created on 11. November 2003, 08:23
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Point;
-import geometry.planar.Vector;
-import geometry.planar.ConvexShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.ConvexShape;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -31,15 +31,15 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.TreeMap;
 
-import library.Padstack;
-import library.Package;
+import freerouting.library.Padstack;
+import freerouting.library.Package;
 
-import board.Item;
-import board.DrillItem;
-import board.ObstacleArea;
-import board.Via;
-import board.Component;
-import board.RoutingBoard;
+import freerouting.board.Item;
+import freerouting.board.DrillItem;
+import freerouting.board.ObstacleArea;
+import freerouting.board.Via;
+import freerouting.board.Component;
+import freerouting.board.RoutingBoard;
 
 /**
  * Interactive copying of items.

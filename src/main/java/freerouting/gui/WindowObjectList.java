@@ -18,7 +18,7 @@
  * Created on 7. Maerz 2005, 09:26
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  *  Abstract class for windows displaying a list of objects

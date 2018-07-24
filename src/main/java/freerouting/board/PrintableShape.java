@@ -18,9 +18,9 @@
  * Created on 5. Januar 2005, 08:02
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 /**
  * Shape class used for printing a geometry.planar.Shape after transforming it to user coordinates.

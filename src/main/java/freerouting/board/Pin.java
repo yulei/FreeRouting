@@ -18,22 +18,22 @@
  * Created on 6. Juni 2003, 08:04
  */
 
-package board;
+package freerouting.board;
 
 
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.Shape;
-import geometry.planar.ConvexShape;
-import geometry.planar.TileShape;
-import geometry.planar.Vector;
-import geometry.planar.Direction;
-import geometry.planar.Line;
-import geometry.planar.Polyline;
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Direction;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.FloatPoint;
 
-import library.Package;
-import library.Padstack;
+import freerouting.library.Package;
+import freerouting.library.Padstack;
 
 /**
  * Class describing the functionality of an electrical Item on the board

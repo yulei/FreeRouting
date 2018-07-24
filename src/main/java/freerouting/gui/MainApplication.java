@@ -18,7 +18,7 @@
  * Created on 19. Oktober 2002, 17:58
  *
  */
-package gui;
+package freerouting.gui;
 
 import board.TestLevel;
 

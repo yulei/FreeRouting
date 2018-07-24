@@ -18,21 +18,21 @@
  * Created on 7. November 2003, 18:40
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.Area;
-import geometry.planar.Circle;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.PolygonShape;
-import geometry.planar.PolylineArea;
-import geometry.planar.PolylineShape;
-import geometry.planar.Shape;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.Circle;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.PolygonShape;
+import freerouting.geometry.planar.PolylineArea;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.geometry.planar.Shape;
 
 import java.util.Iterator;
 
-import board.ObstacleArea;
-import board.ItemSelectionFilter;
+import freerouting.board.ObstacleArea;
+import freerouting.board.ItemSelectionFilter;
 
 /**
  * Interactive cutting a hole into an obstacle shape

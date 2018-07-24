@@ -18,16 +18,16 @@
  * Created on 27. Mai 2004, 07:23
  */
 
-package board;
+package freerouting.board;
 
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Vector;
 
-import library.Package;
+import freerouting.library.Package;
 
 
 /**

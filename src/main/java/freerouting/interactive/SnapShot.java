@@ -18,7 +18,7 @@
  * Created on 8. November 2004, 08:01
  */
 
-package interactive;
+package freerouting.interactive;
 
 /**
  * Snapshot of the client situation in an interactive session.

@@ -18,7 +18,7 @@
  * Created on 17. Februar 2005, 08:20
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Popup menu used in the interactive copy item state.

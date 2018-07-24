@@ -18,9 +18,9 @@
  * Created on 19. November 2004, 11:12
  */
 
-package gui;
+package freerouting.gui;
 
-import board.ItemSelectionFilter;
+import freerouting.board.ItemSelectionFilter;
 
 /**
  * Window for the handling of the interactive selection parameters,

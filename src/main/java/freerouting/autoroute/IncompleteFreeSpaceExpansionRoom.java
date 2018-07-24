@@ -18,11 +18,11 @@
  * Created on 10. Februar 2004, 10:13
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.TileShape;
 
 
 /**

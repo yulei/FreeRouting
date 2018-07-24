@@ -18,7 +18,7 @@
  * Created on 7. April 2005, 07:52
  */
 
-package rules;
+package freerouting.rules;
 
 
 /**

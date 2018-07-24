@@ -18,11 +18,11 @@
  * Created on 27. Mai 2004, 06:53
  */
 
-package library;
+package freerouting.library;
 
-import geometry.planar.Vector;
-import geometry.planar.Shape;
-import geometry.planar.Area;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.Area;
 
 /**
  * Component package templates describing the padstacks and

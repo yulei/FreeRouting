@@ -19,7 +19,7 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -27,24 +27,24 @@ import java.util.TreeSet;
 import java.util.SortedSet;
 import java.util.Iterator;
 
-import datastructures.Signum;
-import datastructures.ShapeTree;
+import freerouting.datastructures.Signum;
+import freerouting.datastructures.ShapeTree;
 
-import geometry.planar.Side;
-import geometry.planar.Direction;
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.FloatPoint;
-import geometry.planar.Line;
-import geometry.planar.TileShape;
-import geometry.planar.Simplex;
+import freerouting.geometry.planar.Side;
+import freerouting.geometry.planar.Direction;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Simplex;
 
-import board.ShapeSearchTree;
-import board.SearchTreeObject;
-import board.Connectable;
-import board.Item;
-import board.PolylineTrace;
-import board.TestLevel;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.SearchTreeObject;
+import freerouting.board.Connectable;
+import freerouting.board.Item;
+import freerouting.board.PolylineTrace;
+import freerouting.board.TestLevel;
 
 /**
  * To calculate the neigbour rooms of an expansion room.

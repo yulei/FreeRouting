@@ -18,11 +18,11 @@
  * Created on 7. November 2003, 09:26
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import board.AngleRestriction;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.board.AngleRestriction;
 
 /**
  * Common class for constructing an obstacle with a polygonal shape.

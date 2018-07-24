@@ -17,26 +17,26 @@
  *
  * Created on 23. Februar 2004, 08:18
  */
-package autoroute;
+package freerouting.autoroute;
 
-import geometry.planar.IntPoint;
-import geometry.planar.Point;
-import geometry.planar.FloatPoint;
-import geometry.planar.Polyline;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Polyline;
 
 import java.util.Iterator;
 import java.util.Set;
 
-import library.Padstack;
-import rules.ViaInfo;
+import freerouting.library.Padstack;
+import freerouting.rules.ViaInfo;
 
-import board.ForcedViaAlgo;
-import board.PolylineTrace;
-import board.Trace;
-import board.Item;
-import board.RoutingBoard;
-import board.ItemSelectionFilter;
-import board.TestLevel;
+import freerouting.board.ForcedViaAlgo;
+import freerouting.board.PolylineTrace;
+import freerouting.board.Trace;
+import freerouting.board.Item;
+import freerouting.board.RoutingBoard;
+import freerouting.board.ItemSelectionFilter;
+import freerouting.board.TestLevel;
 
 /**
  * Inserts the traces and vias of the connection found by the autoroute algorithm.

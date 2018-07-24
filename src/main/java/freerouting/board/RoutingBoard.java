@@ -13,18 +13,18 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package board;
+package freerouting.board;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import geometry.planar.IntOctagon;
-import geometry.planar.IntPoint;
-import geometry.planar.LineSegment;
-import geometry.planar.Point;
-import geometry.planar.Polyline;
-import geometry.planar.PolylineShape;
-import geometry.planar.TileShape;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.LineSegment;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Vector;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -32,18 +32,18 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import datastructures.UndoableObjects;
-import datastructures.Stoppable;
-import datastructures.TimeLimit;
-import datastructures.ShapeTree.TreeEntry;
+import freerouting.datastructures.UndoableObjects;
+import freerouting.datastructures.Stoppable;
+import freerouting.datastructures.TimeLimit;
+import freerouting.datastructures.ShapeTree.TreeEntry;
 
-import rules.ViaInfo;
-import rules.BoardRules;
+import freerouting.rules.ViaInfo;
+import freerouting.rules.BoardRules;
 
-import autoroute.AutorouteControl;
-import autoroute.AutorouteEngine;
-import autoroute.AutorouteControl.ExpansionCostFactor;
-import autoroute.CompleteFreeSpaceExpansionRoom;
+import freerouting.autoroute.AutorouteControl;
+import freerouting.autoroute.AutorouteEngine;
+import freerouting.autoroute.AutorouteControl.ExpansionCostFactor;
+import freerouting.autoroute.CompleteFreeSpaceExpansionRoom;
 
 /**
  *

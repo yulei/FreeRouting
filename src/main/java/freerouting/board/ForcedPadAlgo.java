@@ -18,20 +18,20 @@
  * Created on 1. September 2003, 08:28
  */
 
-package board;
+package freerouting.board;
 
-import datastructures.TimeLimit;
+import freerouting.datastructures.TimeLimit;
 
-import geometry.planar.Direction;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.IntBox;
-import geometry.planar.IntOctagon;
-import geometry.planar.Point;
-import geometry.planar.Vector;
-import geometry.planar.Line;
-import geometry.planar.Polyline;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.Direction;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 

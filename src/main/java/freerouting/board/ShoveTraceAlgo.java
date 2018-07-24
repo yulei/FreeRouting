@@ -13,21 +13,21 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package board;
+package freerouting.board;
 
-import datastructures.TimeLimit;
+import freerouting.datastructures.TimeLimit;
 
-import geometry.planar.ConvexShape;
-import geometry.planar.Direction;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import geometry.planar.Line;
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.Vector;
-import geometry.planar.Polyline;
-import geometry.planar.TileShape;
-import geometry.planar.LineSegment;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.Direction;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.LineSegment;
 
 import java.util.Collection;
 import java.util.Iterator;

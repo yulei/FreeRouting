@@ -13,17 +13,17 @@
  *   GNU General Public License at <http://www.gnu.org/licenses/> 
  *   for more details.
  */
-package board;
+package freerouting.board;
 
-import geometry.planar.Area;
-import geometry.planar.ConvexShape;
-import geometry.planar.IntBox;
-import geometry.planar.IntOctagon;
-import geometry.planar.Point;
-import geometry.planar.Vector;
-import geometry.planar.Polyline;
-import geometry.planar.PolylineShape;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.geometry.planar.TileShape;
 
 import java.awt.Graphics;
 
@@ -34,14 +34,14 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import datastructures.ShapeTree.TreeEntry;
+import freerouting.datastructures.ShapeTree.TreeEntry;
 
-import library.BoardLibrary;
-import library.Padstack;
-import rules.BoardRules;
-import boardgraphics.GraphicsContext;
-import boardgraphics.Drawable;
-import datastructures.UndoableObjects;
+import freerouting.library.BoardLibrary;
+import freerouting.library.Padstack;
+import freerouting.rules.BoardRules;
+import freerouting.boardgraphics.GraphicsContext;
+import freerouting.boardgraphics.Drawable;
+import freerouting.datastructures.UndoableObjects;
 
 /**
  *

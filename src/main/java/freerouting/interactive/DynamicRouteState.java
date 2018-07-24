@@ -18,9 +18,9 @@
  * Created on 8. Dezember 2003, 10:00
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 /**
  * State for dynamic interactive routing, which is routing while moving the mouse pointer.

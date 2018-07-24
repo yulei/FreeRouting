@@ -14,14 +14,14 @@
  *   for more details.
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.ConvexShape;
-import geometry.planar.FloatPoint;
-import geometry.planar.Line;
-import geometry.planar.Point;
-import geometry.planar.Polyline;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Iterator;

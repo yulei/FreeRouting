@@ -18,12 +18,12 @@
  * Created on 3. Juni 2004, 09:42
  */
 
-package library;
+package freerouting.library;
 
 import java.util.Iterator;
 import java.util.Vector;
 
-import geometry.planar.ConvexShape;
+import freerouting.geometry.planar.ConvexShape;
 
 /**
  * Describes a library of padstacks for pins or vias.

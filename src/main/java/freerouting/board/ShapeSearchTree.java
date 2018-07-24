@@ -17,22 +17,22 @@
  *
  * Created on 1. September 2004, 10:13
  */
-package board;
+package freerouting.board;
 
-import geometry.planar.ConvexShape;
-import geometry.planar.ShapeBoundingDirections;
-import geometry.planar.IntOctagon;
-import geometry.planar.Line;
-import geometry.planar.LineSegment;
-import geometry.planar.Polyline;
-import geometry.planar.PolylineShape;
-import geometry.planar.RegularTileShape;
-import geometry.planar.Shape;
-import geometry.planar.Side;
-import geometry.planar.Simplex;
-import geometry.planar.TileShape;
-import geometry.planar.IntBox;
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.ConvexShape;
+import freerouting.geometry.planar.ShapeBoundingDirections;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.LineSegment;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.geometry.planar.RegularTileShape;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.Side;
+import freerouting.geometry.planar.Simplex;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.FloatPoint;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -40,12 +40,12 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
 
-import rules.ClearanceMatrix;
+import freerouting.rules.ClearanceMatrix;
 
-import datastructures.Signum;
+import freerouting.datastructures.Signum;
 
-import autoroute.IncompleteFreeSpaceExpansionRoom;
-import autoroute.CompleteFreeSpaceExpansionRoom;
+import freerouting.autoroute.IncompleteFreeSpaceExpansionRoom;
+import freerouting.autoroute.CompleteFreeSpaceExpansionRoom;
 
 /**
  *

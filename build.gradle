@@ -19,7 +19,6 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/com.sun.jnlp/jnlp-servlet
     compile group: 'javax.help', name: 'javahelp', version: '2.0.05'
     compile group: 'javax.jnlp', name: 'jnlp', version: '1.2'
 }

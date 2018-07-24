@@ -18,7 +18,7 @@
  * Created on 6. November 2003, 14:46
  */
 
-package interactive;
+package freerouting.interactive;
 
 
 import java.util.Iterator;

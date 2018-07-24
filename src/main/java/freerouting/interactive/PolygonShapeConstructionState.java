@@ -18,15 +18,15 @@
  * Created on 7. November 2003, 17:19
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.PolygonShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.PolygonShape;
 
 import java.util.Iterator;
 
-import rules.BoardRules;
+import freerouting.rules.BoardRules;
 
 /**
  * Interactive state for constructing an obstacle with a polygon shape.

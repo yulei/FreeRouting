@@ -18,7 +18,7 @@
  * Created on 6. Januar 2005, 13:15
  */
 
-package board;
+package freerouting.board;
 
 /**
  * Output window for printing information about board objects.

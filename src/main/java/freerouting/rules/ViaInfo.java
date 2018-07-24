@@ -18,8 +18,8 @@
  * Created on 31. Maerz 2005, 05:34
  */
 
-package rules;
-import library.Padstack;
+package freerouting.rules;
+import freerouting.library.Padstack;
 
 /**
  * Information about a combination of via_padstack, via clearance class and drill_to_smd_allowed

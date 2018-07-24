@@ -18,9 +18,9 @@
  * Created on 1. Juni 2004, 07:16
  */
 
-package rules;
+package freerouting.rules;
 
-import geometry.planar.ConvexShape;
+import freerouting.geometry.planar.ConvexShape;
 
 /**
  * Contains the rules and constraints required for items

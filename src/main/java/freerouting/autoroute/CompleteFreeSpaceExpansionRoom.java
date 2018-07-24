@@ -18,20 +18,20 @@
  * Created on 10. Februar 2004, 10:12
  */
 
-package autoroute;
+package freerouting.autoroute;
 
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import datastructures.ShapeTree;
+import freerouting.datastructures.ShapeTree;
 
-import board.SearchTreeObject;
-import board.ShapeSearchTree;
-import board.Connectable;
-import board.Item;
+import freerouting.board.SearchTreeObject;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.Connectable;
+import freerouting.board.Item;
 
 
 /**

@@ -18,7 +18,7 @@
  * Created on 9. November 2004, 09:42
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Window handling snapshots of the interactive situation.

@@ -18,15 +18,15 @@
  * Created on 29. Juni 2003, 11:49
  */
 
-package board;
+package freerouting.board;
 
 import java.util.Iterator;
 
-import geometry.planar.Area;
-import geometry.planar.Point;
-import geometry.planar.Vector;
-import geometry.planar.FloatPoint;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Set;
 import java.util.TreeSet;

@@ -18,7 +18,7 @@
  * Created on 17. Februar 2005, 07:47
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Popup menu used in the interactive selected item state..

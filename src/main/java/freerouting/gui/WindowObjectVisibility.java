@@ -18,7 +18,7 @@
  * Created on 7. November 2004, 07:38
  */
 
-package gui;
+package freerouting.gui;
 
 import boardgraphics.ColorIntensityTable.ObjectNames;
 

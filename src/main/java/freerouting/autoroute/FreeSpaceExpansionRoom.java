@@ -18,9 +18,9 @@
  * Created on 29. Dezember 2003, 08:37
  */
 
-package autoroute;
+package freerouting.autoroute;
 
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.TileShape;
 
 
 import java.util.Iterator;

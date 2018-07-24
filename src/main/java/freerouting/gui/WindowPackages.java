@@ -18,7 +18,7 @@
  * Created on 7. Maerz 2005, 09:14
  */
 
-package gui;
+package freerouting.gui;
 
 import library.Packages;
 import library.Package;

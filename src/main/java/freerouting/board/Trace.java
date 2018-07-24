@@ -14,12 +14,12 @@
  *   for more details.
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntOctagon;
-import geometry.planar.Point;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntOctagon;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Iterator;

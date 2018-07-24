@@ -17,19 +17,19 @@
  *
  * Created on 18. August 2004, 07:24
  */
-package board;
+package freerouting.board;
 
-import geometry.planar.IntBox;
-import geometry.planar.IntPoint;
-import geometry.planar.LineSegment;
-import geometry.planar.TileShape;
-import geometry.planar.PolylineShape;
-import geometry.planar.PolylineArea;
-import geometry.planar.Area;
-import geometry.planar.Vector;
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.LineSegment;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.geometry.planar.PolylineArea;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.Vector;
+import freerouting.geometry.planar.FloatPoint;
 
-import boardgraphics.GraphicsContext;
+import freerouting.boardgraphics.GraphicsContext;
 
 /**
  * Class describing a board outline.

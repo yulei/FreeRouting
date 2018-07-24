@@ -18,7 +18,7 @@
  * Created on 14. November 2002, 12:35
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 
 /**
  * Interface describing functionality for connected 2-dimensional shapes in the plane.

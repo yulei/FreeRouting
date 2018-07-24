@@ -17,20 +17,20 @@
  *
  * Created on 25. Oktober 2003, 09:03
  */
-package board;
+package freerouting.board;
 
-import datastructures.TimeLimit;
+import freerouting.datastructures.TimeLimit;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.Point;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Vector;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import datastructures.Signum;
+import freerouting.datastructures.Signum;
 
 /**
  * Class for moving a group of items on the board

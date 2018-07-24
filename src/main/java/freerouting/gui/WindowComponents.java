@@ -18,9 +18,9 @@
  * Created on 8. Maerz 2005, 05:56
  */
 
-package gui;
-import board.Component;
-import board.Components;
+package freerouting.gui;
+import freerouting.board.Component;
+import freerouting.board.Components;
 
 /**
  * Window displaying the components on the board.

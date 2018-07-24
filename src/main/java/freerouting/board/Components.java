@@ -19,18 +19,18 @@
  *
  */
 
-package board;
+package freerouting.board;
 
 
 import java.util.Iterator;
 import java.util.Vector;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
 
-import library.Package;
+import freerouting.library.Package;
 
 /**
  * Contains the lists of components on the board.

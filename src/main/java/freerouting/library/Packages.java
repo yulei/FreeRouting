@@ -18,12 +18,12 @@
  * Created on 3. Juni 2004, 09:29
  */
 
-package library;
+package freerouting.library;
 
 import java.util.Iterator;
 import java.util.Vector;
 
-import geometry.planar.Shape;
+import freerouting.geometry.planar.Shape;
 
 /**
  * Describes a library of component packages.

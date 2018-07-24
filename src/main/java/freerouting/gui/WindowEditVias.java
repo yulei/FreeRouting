@@ -18,11 +18,11 @@
  * Created on 4. April 2005, 07:05
  */
 
-package gui;
+package freerouting.gui;
 
-import rules.ViaInfo;
-import rules.ViaInfos;
-import rules.BoardRules;
+import freerouting.rules.ViaInfo;
+import freerouting.rules.ViaInfos;
+import freerouting.rules.BoardRules;
 
 /**
  * Edit window for the table of available vias.

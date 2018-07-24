@@ -19,17 +19,17 @@
  *
  */
 
-package board;
+package freerouting.board;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Iterator;
 
-import datastructures.UndoableObjects;
-import datastructures.ShapeTree;
+import freerouting.datastructures.UndoableObjects;
+import freerouting.datastructures.ShapeTree;
 
-import geometry.planar.FortyfiveDegreeBoundingDirections;
-import geometry.planar.Polyline;
+import freerouting.geometry.planar.FortyfiveDegreeBoundingDirections;
+import freerouting.geometry.planar.Polyline;
 
 /**
  *

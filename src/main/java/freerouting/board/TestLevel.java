@@ -19,7 +19,7 @@
  *
  */
 
-package board;
+package freerouting.board;
 
 /**
  * If > RELEASE, some features may be used, which are still in experimental state.

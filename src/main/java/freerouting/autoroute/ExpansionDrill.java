@@ -17,10 +17,10 @@
  *
  * Created on 19. April 2004, 08:00
  */
-package autoroute;
+package freerouting.autoroute;
 
-import geometry.planar.Point;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Collection;
 import java.util.Iterator;

@@ -18,7 +18,7 @@
  * Created on 2. Februar 2003, 09:14
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 
 /**
  *

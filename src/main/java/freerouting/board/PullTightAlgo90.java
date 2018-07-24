@@ -18,15 +18,15 @@
  * Created on 19. Juli 2003, 18:54
  */
 
-package board;
+package freerouting.board;
 
-import datastructures.Stoppable;
+import freerouting.datastructures.Stoppable;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Point;
-import geometry.planar.Line;
-import geometry.planar.Polyline;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.TileShape;
 
 /**
  *

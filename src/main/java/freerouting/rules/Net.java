@@ -17,12 +17,12 @@
  *
  * Created on 11. Juni 2004, 08:17
  */
-package rules;
+package freerouting.rules;
 
-import board.Item;
-import board.ObjectInfoPanel.Printable;
+import freerouting.board.Item;
+import freerouting.board.ObjectInfoPanel.Printable;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
 /**
  * Describes properties for an individual electrical net.

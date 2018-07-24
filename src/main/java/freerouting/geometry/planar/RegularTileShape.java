@@ -18,7 +18,7 @@
  * Created on 16. November 2002, 17:11
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 
 /**
  *  TileShapes whose border lines may have only directions out of

@@ -18,7 +18,7 @@
  * Created on 3. Oktober 2002, 18:47
  */
 
-package gui;
+package freerouting.gui;
 
 import interactive.BoardHandling;
 import interactive.ScreenMessages;

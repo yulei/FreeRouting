@@ -18,10 +18,10 @@
  * Created on 1. Februar 2003, 13:12
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 import java.math.BigInteger;
 
-import datastructures.BigIntAux;
+import freerouting.datastructures.BigIntAux;
 
 /**
  *

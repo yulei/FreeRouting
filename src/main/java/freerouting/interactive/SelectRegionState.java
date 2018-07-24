@@ -18,9 +18,9 @@
  * Created on 9. November 2003, 11:34
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 /**
  * Common base class for interactive selection of a rectangle.

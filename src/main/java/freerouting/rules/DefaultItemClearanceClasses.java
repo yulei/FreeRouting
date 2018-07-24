@@ -19,7 +19,7 @@
  *
  */
 
-package rules;
+package freerouting.rules;
 
 /**
  *

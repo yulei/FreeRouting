@@ -18,7 +18,7 @@
  * Created on 2. Juni 2003, 13:43
  */
 
-package board;
+package freerouting.board;
 
 /**
  * Creates unique Item identication nunbers.

@@ -18,10 +18,10 @@
  * Created on 5. Juli 2004, 07:31
  */
 
-package board;
+package freerouting.board;
 
-import datastructures.IdNoGenerator;
-import designformats.specctra.CoordinateTransform;
+import freerouting.datastructures.IdNoGenerator;
+import freerouting.designformats.specctra.CoordinateTransform;
 
 /**
  * Communication information to host systems or host design formats.

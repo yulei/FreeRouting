@@ -19,19 +19,19 @@
  *
  */
 
-package board;
+package freerouting.board;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-import geometry.planar.OrthogonalBoundingDirections;
-import geometry.planar.TileShape;
-import geometry.planar.Shape;
-import geometry.planar.IntBox;
-import geometry.planar.Polyline;
+import freerouting.geometry.planar.OrthogonalBoundingDirections;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.Polyline;
 
-import autoroute.IncompleteFreeSpaceExpansionRoom;
-import autoroute.CompleteFreeSpaceExpansionRoom;
+import freerouting.autoroute.IncompleteFreeSpaceExpansionRoom;
+import freerouting.autoroute.CompleteFreeSpaceExpansionRoom;
 
 /**
  * A special simple ShapeSearchtree, where the shapes are of class IntBox.

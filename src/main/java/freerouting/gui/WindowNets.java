@@ -18,7 +18,7 @@
  * Created on 24. Maerz 2005, 07:41
  */
 
-package gui;
+package freerouting.gui;
 
 import rules.Net;
 import rules.Nets;

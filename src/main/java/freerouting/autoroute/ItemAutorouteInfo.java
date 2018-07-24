@@ -18,11 +18,11 @@
  * Created on 22. Februar 2004, 12:09
  */
 
-package autoroute;
+package freerouting.autoroute;
 
-import board.ShapeSearchTree;
+import freerouting.board.ShapeSearchTree;
 
-import board.Item;
+import freerouting.board.Item;
 
 
 /**

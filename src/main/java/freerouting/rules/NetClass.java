@@ -17,7 +17,7 @@
  *
  * Created on 7. April 2005, 06:08
  */
-package rules;
+package freerouting.rules;
 
 /**
  * Describes routing rules for individual nets.

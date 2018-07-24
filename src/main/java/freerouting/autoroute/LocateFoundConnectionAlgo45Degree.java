@@ -19,24 +19,24 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.SortedSet;
 
-import datastructures.Signum;
+import freerouting.datastructures.Signum;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.FloatLine;
-import geometry.planar.TileShape;
-import geometry.planar.IntBox;
-import geometry.planar.Simplex;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatLine;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.Simplex;
 
-import board.ShapeSearchTree;
-import board.AngleRestriction;
-import board.Item;
-import board.TestLevel;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.AngleRestriction;
+import freerouting.board.Item;
+import freerouting.board.TestLevel;
 
 /**
  *

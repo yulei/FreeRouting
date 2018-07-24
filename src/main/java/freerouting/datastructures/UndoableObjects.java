@@ -17,7 +17,7 @@
  *
  * Created on 24. August 2003, 06:41
  */
-package datastructures;
+package freerouting.datastructures;
 
 import java.util.Collection;
 import java.util.Iterator;

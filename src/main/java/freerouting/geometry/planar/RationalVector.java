@@ -18,11 +18,11 @@
  * Created on 1. Februar 2003, 09:16
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 import java.math.BigInteger;
 
-import datastructures.BigIntAux;
-import datastructures.Signum;
+import freerouting.datastructures.BigIntAux;
+import freerouting.datastructures.Signum;
 
 /**
  *

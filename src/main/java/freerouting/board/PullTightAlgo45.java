@@ -17,21 +17,21 @@
  *
  * Created on 19. Juli 2003, 18:59
  */
-package board;
+package freerouting.board;
 
-import datastructures.Stoppable;
+import freerouting.datastructures.Stoppable;
 
-import geometry.planar.Direction;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.Limits;
-import geometry.planar.Line;
-import geometry.planar.Point;
-import geometry.planar.Polyline;
-import geometry.planar.Side;
-import geometry.planar.TileShape;
-import geometry.planar.Vector;
-import datastructures.Signum;
+import freerouting.geometry.planar.Direction;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Limits;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.Side;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Vector;
+import freerouting.datastructures.Signum;
 
 /**
  *

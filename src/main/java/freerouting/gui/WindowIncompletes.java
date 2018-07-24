@@ -18,9 +18,9 @@
  * Created on 21. Maerz 2005, 05:30
  */
 
-package gui;
+package freerouting.gui;
 
-import interactive.RatsNest;
+import freerouting.interactive.RatsNest;
 
 /**
  *

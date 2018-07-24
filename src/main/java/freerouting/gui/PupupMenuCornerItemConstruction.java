@@ -18,7 +18,7 @@
  * Created on 17. Februar 2005, 07:31
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Popup menu used while constructing a cornered shape..

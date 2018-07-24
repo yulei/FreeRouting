@@ -17,7 +17,7 @@
  *
  * Created on 5. August 2003, 10:18
  */
-package boardgraphics;
+package freerouting.boardgraphics;
 
 import javax.swing.table.AbstractTableModel;
 

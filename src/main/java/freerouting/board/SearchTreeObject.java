@@ -18,7 +18,7 @@
  * Created on 10. Januar 2004, 10:08
  */
 
-package board;
+package freerouting.board;
 
 /**
  * Common ShapeSearchTree functionality for board.Items and autoroute.ExpansionRooms

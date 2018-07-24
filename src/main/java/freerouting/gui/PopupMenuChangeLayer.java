@@ -18,7 +18,7 @@
  * Created on 17. Februar 2005, 08:58
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Used as submenu in a popup menu for change layer actions.

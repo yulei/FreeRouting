@@ -18,9 +18,9 @@
  * Created on 12. November 2003, 11:10
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 
 /**

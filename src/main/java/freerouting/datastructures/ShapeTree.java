@@ -18,12 +18,12 @@
  * Created on 1. September 2004, 10:50
  */
 
-package datastructures;
+package freerouting.datastructures;
 
-import geometry.planar.ShapeBoundingDirections;
-import geometry.planar.RegularTileShape;
-import geometry.planar.Shape;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.ShapeBoundingDirections;
+import freerouting.geometry.planar.RegularTileShape;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.TileShape;
 
 /**
  * Abstract binary search tree for shapes in the plane.

@@ -17,7 +17,7 @@
  *
  * Created on 18. November 2004, 09:08
  */
-package gui;
+package freerouting.gui;
 
 /**
  * Used for manual choice of trace widths in interactive routing.

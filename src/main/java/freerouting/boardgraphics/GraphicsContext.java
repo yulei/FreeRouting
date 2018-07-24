@@ -14,16 +14,16 @@
  *   for more details.
  */
 
-package boardgraphics;
+package freerouting.boardgraphics;
 
-import geometry.planar.Area;
-import geometry.planar.Circle;
-import geometry.planar.Ellipse;
-import geometry.planar.FloatPoint;
-import geometry.planar.IntBox;
-import geometry.planar.PolylineShape;
-import geometry.planar.Shape;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.Area;
+import freerouting.geometry.planar.Circle;
+import freerouting.geometry.planar.Ellipse;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.PolylineShape;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.TileShape;
 
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;

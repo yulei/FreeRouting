@@ -18,7 +18,7 @@
  * Created on 26. Mai 2004, 06:37
  */
 
-package board;
+package freerouting.board;
 
 /**
  * Describes the layer structure of the board.

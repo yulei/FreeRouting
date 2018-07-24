@@ -18,7 +18,7 @@
  * Created on 5. August 2003, 07:39
  */
 
-package boardgraphics;
+package freerouting.boardgraphics;
 
 import java.awt.Color;
 

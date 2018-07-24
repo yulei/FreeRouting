@@ -18,15 +18,15 @@
  * Created on 17. August 2003, 07:36
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.Line;
-import geometry.planar.LineSegment;
-import geometry.planar.Point;
-import geometry.planar.Polyline;
-import geometry.planar.TileShape;
-import geometry.planar.Side;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.LineSegment;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.Polyline;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Side;
 
 /**
  *

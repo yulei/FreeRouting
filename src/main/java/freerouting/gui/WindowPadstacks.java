@@ -18,7 +18,7 @@
  * Created on 6. Maerz 2005, 06:47
  */
 
-package gui;
+package freerouting.gui;
 
 import datastructures.UndoableObjects;
 

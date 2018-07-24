@@ -18,7 +18,7 @@
  * Created on 4. Juni 2004, 06:37
  */
 
-package library;
+package freerouting.library;
 
 import java.util.List;
 import java.util.Vector;

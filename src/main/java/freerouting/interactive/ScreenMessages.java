@@ -18,7 +18,7 @@
  * Created on 8. August 2003, 19:10
  */
 
-package interactive;
+package freerouting.interactive;
 
 import javax.swing.JLabel;
 

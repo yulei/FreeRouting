@@ -18,7 +18,7 @@
  * Created on 24. Juli 2006, 07:20
  *
  */
-package gui;
+package freerouting.gui;
 
 /**
  * Window handling parameters of the automatic routing.

@@ -18,7 +18,7 @@
  * Created on 20. Februar 2005, 06:00
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Creates the rules menu of a board frame.

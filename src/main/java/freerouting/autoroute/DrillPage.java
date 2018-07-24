@@ -19,22 +19,22 @@
  *
  */
 
-package autoroute;
+package freerouting.autoroute;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Iterator;
 
-import geometry.planar.Point;
-import geometry.planar.IntBox;
-import geometry.planar.TileShape;
-import geometry.planar.PolylineArea;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.PolylineArea;
 
-import datastructures.ShapeTree.TreeEntry;
+import freerouting.datastructures.ShapeTree.TreeEntry;
 
-import board.RoutingBoard;
-import board.ShapeSearchTree;
-import board.Item;
+import freerouting.board.RoutingBoard;
+import freerouting.board.ShapeSearchTree;
+import freerouting.board.Item;
 
 /**
  *

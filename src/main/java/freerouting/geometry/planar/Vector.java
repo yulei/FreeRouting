@@ -18,11 +18,11 @@
  * Created on 1. Februar 2003, 14:28
  */
 
-package geometry.planar;
+package freerouting.geometry.planar;
 
 import java.math.BigInteger;
 
-import datastructures.Signum;
+import freerouting.datastructures.Signum;
 
 /**
  * Abstract class describing functionality of Vectors.

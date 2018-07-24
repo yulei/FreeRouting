@@ -14,9 +14,9 @@
  *   for more details.
  */
 
-package board;
+package freerouting.board;
 
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.TileShape;
 
 import java.util.Set;
 

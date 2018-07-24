@@ -19,13 +19,13 @@
  *
  */
 
-package gui;
+package freerouting.gui;
 
-import rules.Net;
-import rules.Nets;
-import rules.NetClass;
+import freerouting.rules.Net;
+import freerouting.rules.Nets;
+import freerouting.rules.NetClass;
 
-import interactive.RatsNest;
+import freerouting.interactive.RatsNest;
 
 /**
  *

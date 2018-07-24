@@ -18,12 +18,12 @@
  * Created on 22. Maerz 2005, 05:40
  */
 
-package gui;
+package freerouting.gui;
 
-import geometry.planar.FloatPoint;
-import board.ClearanceViolation;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.board.ClearanceViolation;
 
-import interactive.ClearanceViolations;
+import freerouting.interactive.ClearanceViolations;
 
 /**
  *

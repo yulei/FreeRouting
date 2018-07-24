@@ -18,23 +18,23 @@
  * Created on 27. Juni 2003, 11:38
  */
 
-package board;
+package freerouting.board;
 
 
-import geometry.planar.IntBox;
-import geometry.planar.FloatPoint;
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.Shape;
-import geometry.planar.TileShape;
-import geometry.planar.Vector;
+import freerouting.geometry.planar.IntBox;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Shape;
+import freerouting.geometry.planar.TileShape;
+import freerouting.geometry.planar.Vector;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-import library.Padstack;
+import freerouting.library.Padstack;
 
 /**
  * Common superclass for Pins and Vias

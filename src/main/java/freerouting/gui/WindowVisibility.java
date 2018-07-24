@@ -18,7 +18,7 @@
  * Created on 7. November 2004, 11:29
  */
 
-package gui;
+package freerouting.gui;
 
 /**
  * Interactive Frame to adjust the visibility of a set of objects

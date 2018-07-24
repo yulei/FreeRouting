@@ -18,9 +18,9 @@
  * Created on 5. November 2003, 12:55
  */
 
-package interactive;
+package freerouting.interactive;
 
-import geometry.planar.FloatPoint;
+import freerouting.geometry.planar.FloatPoint;
 
 import java.awt.Graphics;
 

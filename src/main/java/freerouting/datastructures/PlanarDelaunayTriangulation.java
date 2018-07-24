@@ -18,7 +18,7 @@
  * Created on 8. Januar 2005, 10:12
  */
 
-package datastructures;
+package freerouting.datastructures;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -27,10 +27,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import geometry.planar.Point;
-import geometry.planar.IntPoint;
-import geometry.planar.Side;
-import geometry.planar.Limits;
+import freerouting.geometry.planar.Point;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Side;
+import freerouting.geometry.planar.Limits;
 
 /**
  * Creates a Delaunay triangulation in the plane for the input objects.

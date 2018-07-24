@@ -18,7 +18,7 @@
  * Created on 26. Dezember 2004, 08:29
  */
 
-package gui;
+package freerouting.gui;
 
 import datastructures.IndentFileWriter;
 
