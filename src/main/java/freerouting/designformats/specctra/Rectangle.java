@@ -61,7 +61,7 @@ public class Rectangle extends Shape
              return new Rectangle(this.layer, result_coor);
     }
     
-    public geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
     {
         int box_coor[] = new int[4];
         for (int i = 0; i < 4; ++i)
@@ -83,7 +83,7 @@ public class Rectangle extends Shape
         return result;
     }
     
-    public geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
     {
         double [] curr_point = new double [2];
         curr_point[0] = Math.min(coor[0], coor[2]);

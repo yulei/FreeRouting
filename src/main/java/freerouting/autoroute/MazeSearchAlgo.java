@@ -630,7 +630,7 @@ public class MazeSearchAlgo
             Item from_item = ((TargetItemExpansionDoor) p_from_element.backtrack_door).item;
             if (from_item instanceof freerouting.board.Pin)
             {
-                FloatPoint nearest_exit_corner = ((board.Pin) from_item).nearest_trace_exit_corner(p_drill.location.to_float(), trace_half_width, layer);
+                FloatPoint nearest_exit_corner = ((freerouting.board.Pin) from_item).nearest_trace_exit_corner(p_drill.location.to_float(), trace_half_width, layer);
                 if (nearest_exit_corner != null)
                 {
                     compare_corner = nearest_exit_corner;
@@ -755,16 +755,16 @@ public class MazeSearchAlgo
             for (;;)
             {
                 TileShape curr_room_shape = curr_drill.room_arr[curr_layer - curr_drill.first_layer].get_shape();
-                board.ForcedPadAlgo.CheckDrillResult drill_result =
+                freerouting.board.ForcedPadAlgo.CheckDrillResult drill_result =
                         ForcedViaAlgo.check_layer(ctrl.via_radius_arr[curr_layer], ctrl.via_clearance_class,
                         ctrl.attach_smd_allowed, curr_room_shape, curr_drill.location, curr_layer, net_no_arr,
                         ctrl.max_shove_trace_recursion_depth, 0, autoroute_engine.board);
-                if (drill_result == board.ForcedPadAlgo.CheckDrillResult.NOT_DRILLABLE)
+                if (drill_result == freerouting.board.ForcedPadAlgo.CheckDrillResult.NOT_DRILLABLE)
                 {
                     via_lower_bound = curr_layer + 1;
                     break;
                 }
-                else if (drill_result == board.ForcedPadAlgo.CheckDrillResult.DRILLABLE_WITH_ATTACH_SMD)
+                else if (drill_result == freerouting.board.ForcedPadAlgo.CheckDrillResult.DRILLABLE_WITH_ATTACH_SMD)
                 {
                     if (curr_layer == 0)
                     {

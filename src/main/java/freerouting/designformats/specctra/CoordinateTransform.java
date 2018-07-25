@@ -197,7 +197,7 @@ public class CoordinateTransform implements java.io.Serializable
     /**
      * Transforms a board shape to a dsn shape.
      */
-    public Shape board_to_dsn(geometry.planar.Shape p_board_shape, Layer p_layer)
+    public Shape board_to_dsn(freerouting.geometry.planar.Shape p_board_shape, Layer p_layer)
     {
         Shape result;
         if (p_board_shape instanceof IntBox)
@@ -210,9 +210,9 @@ public class CoordinateTransform implements java.io.Serializable
             double [] coors = board_to_dsn(corners);
             result  = new Polygon(p_layer, coors);
         }
-        else if (p_board_shape instanceof geometry.planar.Circle)
+        else if (p_board_shape instanceof freerouting.geometry.planar.Circle)
         {
-            geometry.planar.Circle board_circle = (geometry.planar.Circle) p_board_shape;
+            freerouting.geometry.planar.Circle board_circle = (freerouting.geometry.planar.Circle) p_board_shape;
             double diameter = 2 * board_to_dsn(board_circle.radius);
             double [] center_coor = board_to_dsn(board_circle.center.to_float());
             result  = new Circle(p_layer, diameter, center_coor[0], center_coor[1]);
@@ -228,7 +228,7 @@ public class CoordinateTransform implements java.io.Serializable
     /**
      * Transforms the relative (vector) coordinates of a geometry.planar.Shape to a specctra dsn shape.
      */
-    public Shape board_to_dsn_rel(geometry.planar.Shape p_board_shape, Layer p_layer)
+    public Shape board_to_dsn_rel(freerouting.geometry.planar.Shape p_board_shape, Layer p_layer)
     {
         Shape result;
         if (p_board_shape instanceof IntBox)
@@ -241,9 +241,9 @@ public class CoordinateTransform implements java.io.Serializable
             double [] coors = board_to_dsn_rel(corners);
             result  = new Polygon(p_layer, coors);
         }
-        else if (p_board_shape instanceof geometry.planar.Circle)
+        else if (p_board_shape instanceof freerouting.geometry.planar.Circle)
         {
-            geometry.planar.Circle board_circle = (geometry.planar.Circle) p_board_shape;
+            freerouting.geometry.planar.Circle board_circle = (freerouting.geometry.planar.Circle) p_board_shape;
             double diameter = 2 * board_to_dsn(board_circle.radius);
             double [] center_coor = board_to_dsn_rel(board_circle.center.to_float());
             result  = new Circle(p_layer, diameter, center_coor[0], center_coor[1]);

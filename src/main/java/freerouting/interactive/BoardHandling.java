@@ -64,7 +64,7 @@ public class BoardHandling
     /**
      * Creates a new BoardHandling
      */
-    public BoardHandling(gui.BoardPanel p_panel, java.util.Locale p_locale)
+    public BoardHandling(freerouting.gui.BoardPanel p_panel, java.util.Locale p_locale)
     {
         this.locale = p_locale;
         this.panel = p_panel;
@@ -161,8 +161,8 @@ public class BoardHandling
         if (edge_to_turn_dist != board.rules.get_pin_edge_to_turn_dist())
         {
             // unfix the pin exit stubs
-            Collection<board.Pin> pin_list = board.get_pins();
-            for (board.Pin curr_pin : pin_list)
+            Collection<freerouting.board.Pin> pin_list = board.get_pins();
+            for (freerouting.board.Pin curr_pin : pin_list)
             {
                 if (curr_pin.has_trace_exit_restrictions())
                 {
@@ -236,12 +236,12 @@ public class BoardHandling
         {
             return true;
         }
-        rules.Net curr_net = this.board.rules.nets.get(p_net_no);
+        freerouting.rules.Net curr_net = this.board.rules.nets.get(p_net_no);
         if (curr_net == null)
         {
             return true;
         }
-        rules.NetClass curr_net_class = curr_net.get_class();
+        freerouting.rules.NetClass curr_net_class = curr_net.get_class();
         if (curr_net_class == null)
         {
             return true;
@@ -265,9 +265,9 @@ public class BoardHandling
     }
 
     /** Gets the via rule used in interactive routing. */
-    public rules.ViaRule get_via_rule(int p_net_no)
+    public freerouting.rules.ViaRule get_via_rule(int p_net_no)
     {
-        rules.ViaRule result = null;
+        freerouting.rules.ViaRule result = null;
         if (settings.manual_rule_selection)
         {
             result = board.rules.via_rules.get(this.settings.manual_via_rule_index);
@@ -312,7 +312,7 @@ public class BoardHandling
     /**
      * Changes the current snap angle in the interactive board handling.
      */
-    public void set_current_snap_angle(board.AngleRestriction p_snap_angle)
+    public void set_current_snap_angle(freerouting.board.AngleRestriction p_snap_angle)
     {
         if (board_is_read_only)
         {
@@ -343,7 +343,7 @@ public class BoardHandling
      */
     void set_layer(int p_layer_no)
     {
-        board.Layer curr_layer = board.layer_structure.arr[p_layer_no];
+        freerouting.board.Layer curr_layer = board.layer_structure.arr[p_layer_no];
         screen_messages.set_layer(curr_layer.name);
         settings.layer = p_layer_no;
 
@@ -371,7 +371,7 @@ public class BoardHandling
     public void display_layer_messsage()
     {
         screen_messages.clear_add_field();
-        board.Layer curr_layer = board.layer_structure.arr[this.settings.layer];
+        freerouting.board.Layer curr_layer = board.layer_structure.arr[this.settings.layer];
         screen_messages.set_layer(curr_layer.name);
     }
 
@@ -392,14 +392,14 @@ public class BoardHandling
      */
     public void set_manual_trace_half_width(int p_layer_no, int p_value)
     {
-        if (p_layer_no == gui.ComboBoxLayer.ALL_LAYER_INDEX)
+        if (p_layer_no == freerouting.gui.ComboBoxLayer.ALL_LAYER_INDEX)
         {
             for (int i = 0; i < settings.manual_trace_half_width_arr.length; ++i)
             {
                 this.settings.set_manual_trace_half_width(i, p_value);
             }
         }
-        else if (p_layer_no == gui.ComboBoxLayer.INNER_LAYER_INDEX)
+        else if (p_layer_no == freerouting.gui.ComboBoxLayer.INNER_LAYER_INDEX)
         {
             for (int i = 1; i < settings.manual_trace_half_width_arr.length - 1; ++i)
             {
@@ -585,7 +585,7 @@ public class BoardHandling
      */
     public void create_board(IntBox p_bounding_box, LayerStructure p_layer_structure,
                              PolylineShape[] p_outline_shapes, String p_outline_clearance_class_name,
-                             BoardRules p_rules, board.Communication p_board_communication, TestLevel p_test_level)
+                             BoardRules p_rules, freerouting.board.Communication p_board_communication, TestLevel p_test_level)
     {
         if (this.board != null)
         {
@@ -603,7 +603,7 @@ public class BoardHandling
             else
             {
                 outline_cl_class_no =
-                        p_rules.get_default_net_class().default_item_clearance_classes.get(rules.DefaultItemClearanceClasses.ItemClass.AREA);
+                        p_rules.get_default_net_class().default_item_clearance_classes.get(freerouting.rules.DefaultItemClearanceClasses.ItemClass.AREA);
             }
         }
         this.board =
@@ -688,7 +688,7 @@ public class BoardHandling
     /**
      * Gets the panel for graphical display of the board.
      */
-    gui.BoardPanel get_panel()
+    freerouting.gui.BoardPanel get_panel()
     {
         return this.panel;
     }
@@ -1069,8 +1069,8 @@ public class BoardHandling
      * Returns false, if the dsn-file is currupted.
      */
     public DsnFile.ReadResult import_design(java.io.InputStream p_design,
-                                            board.BoardObservers p_observers,
-                                            datastructures.IdNoGenerator p_item_id_no_generator, TestLevel p_test_level)
+                                            freerouting.board.BoardObservers p_observers,
+                                            freerouting.datastructures.IdNoGenerator p_item_id_no_generator, TestLevel p_test_level)
     {
         if (p_design == null)
         {
@@ -1122,7 +1122,7 @@ public class BoardHandling
         {
             return false;
         }
-        return designformats.specctra.DsnFile.write(this, p_output_stream, p_design_name, p_compat_mode);
+        return freerouting.designformats.specctra.DsnFile.write(this, p_output_stream, p_design_name, p_compat_mode);
     }
 
     /**
@@ -1134,7 +1134,7 @@ public class BoardHandling
         {
             return false;
         }
-        return designformats.specctra.SessionToEagle.get_instance(p_input_stream, p_output_stream, this.board);
+        return freerouting.designformats.specctra.SessionToEagle.get_instance(p_input_stream, p_output_stream, this.board);
     }
 
     /**
@@ -1146,7 +1146,7 @@ public class BoardHandling
         {
             return false;
         }
-        return designformats.specctra.SessionFile.write(this.get_routing_board(), p_output_stream, p_design_name);
+        return freerouting.designformats.specctra.SessionFile.write(this.get_routing_board(), p_output_stream, p_design_name);
     }
 
     /**
@@ -1797,7 +1797,7 @@ public class BoardHandling
     /** The board database used in this interactive handling. */
     private RoutingBoard board = null;
     /** The graphical panel used for displaying the board. */
-    private final gui.BoardPanel panel;
+    private final freerouting.gui.BoardPanel panel;
     /**
      * The file used for logging interactive action,
      * so that they can be replayed later

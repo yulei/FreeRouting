@@ -242,7 +242,7 @@ public class RatsNest
     /**
      * Describes a single incomplete connection of the ratsnest.
      */
-    public static class AirLine implements Comparable<AirLine>, board.ObjectInfoPanel.Printable
+    public static class AirLine implements Comparable<AirLine>, freerouting.board.ObjectInfoPanel.Printable
     {
         AirLine(Net p_net, Item p_from_item, FloatPoint p_from_corner, Item p_to_item, 
                 FloatPoint p_to_corner, java.util.Locale p_locale)
@@ -272,20 +272,20 @@ public class RatsNest
             java.util.ResourceBundle resources =
                     java.util.ResourceBundle.getBundle("interactive.resources.RatsNest", this.locale);
             String result;
-            if (p_item instanceof board.Pin)
+            if (p_item instanceof freerouting.board.Pin)
             {
-                board.Pin curr_pin = (board.Pin) p_item;
+                freerouting.board.Pin curr_pin = (freerouting.board.Pin) p_item;
                 result = curr_pin.component_name() + ", " + curr_pin.name();
             }
-            else if (p_item instanceof board.Via)
+            else if (p_item instanceof freerouting.board.Via)
             {
                 result = resources.getString("via");
             }
-            else if (p_item instanceof board.Trace)
+            else if (p_item instanceof freerouting.board.Trace)
             {
                 result = resources.getString("trace");
             }
-            else if (p_item instanceof board.ConductionArea)
+            else if (p_item instanceof freerouting.board.ConductionArea)
             {
                 result = resources.getString("conduction_area");
             }
@@ -296,7 +296,7 @@ public class RatsNest
             return result;
         }
         
-        public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+        public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
         {
             java.util.ResourceBundle resources =
                     java.util.ResourceBundle.getBundle("interactive.resources.RatsNest", p_locale);

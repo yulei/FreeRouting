@@ -119,21 +119,21 @@ public class SessionFile
      * Writes all components with the package p_package to the session file.
      */
     public static void write_components(BasicBoard p_board, IdentifierType p_identifier_type, CoordinateTransform p_coordinate_transform,
-            IndentFileWriter p_file, library.Package p_package) throws java.io.IOException
+            IndentFileWriter p_file, freerouting.library.Package p_package) throws java.io.IOException
     {
-        Collection<board.Item> board_items =  p_board.get_items();
+        Collection<freerouting.board.Item> board_items =  p_board.get_items();
         boolean component_found = false;
         for (int i = 1; i <= p_board.components.count(); ++i)
         {
-            board.Component curr_component =  p_board.components.get(i);
+            freerouting.board.Component curr_component =  p_board.components.get(i);
             if (curr_component.get_package() == p_package)
             {
                 // check, if not all items of the component are deleted
                 boolean undeleted_item_found = false;
-                Iterator<board.Item> it = board_items.iterator();
+                Iterator<freerouting.board.Item> it = board_items.iterator();
                 while (it.hasNext())
                 {
-                    board.Item curr_item = it.next();
+                    freerouting.board.Item curr_item = it.next();
                     if (curr_item.get_component_no() == curr_component.no)
                     {
                         undeleted_item_found = true;
@@ -161,7 +161,7 @@ public class SessionFile
     }
     
     public static void write_component(BasicBoard p_board, IdentifierType p_identifier_type, CoordinateTransform p_coordinate_transform,
-            IndentFileWriter p_file, board.Component p_component) throws java.io.IOException
+            IndentFileWriter p_file, freerouting.board.Component p_component) throws java.io.IOException
     {
         p_file.new_line();
         p_file.write("(place ");
@@ -196,20 +196,20 @@ public class SessionFile
     {
         p_file.start_scope();
         p_file.write("was_is");
-        Collection<board.Pin> board_pins = p_board.get_pins();
-        for (board.Pin curr_pin : board_pins)
+        Collection<freerouting.board.Pin> board_pins = p_board.get_pins();
+        for (freerouting.board.Pin curr_pin : board_pins)
         {
-            board.Pin swapped_with = curr_pin.get_changed_to();
+            freerouting.board.Pin swapped_with = curr_pin.get_changed_to();
             if (curr_pin.get_changed_to() != curr_pin)
             {
                 p_file.new_line();
                 p_file.write("(pins ");
-                board.Component curr_cmp = p_board.components.get(curr_pin.get_component_no());
+                freerouting.board.Component curr_cmp = p_board.components.get(curr_pin.get_component_no());
                 if (curr_cmp != null)
                 {
                     p_identifier_type.write(curr_cmp.name, p_file);
                     p_file.write("-");
-                    library.Package.Pin package_pin = curr_cmp.get_package().get_pin(curr_pin.get_index_in_package());
+                    freerouting.library.Package.Pin package_pin = curr_cmp.get_package().get_pin(curr_pin.get_index_in_package());
                     p_identifier_type.write(package_pin.name, p_file);
                 }
                 else
@@ -217,12 +217,12 @@ public class SessionFile
                     System.out.println("SessionFile.write_was_is: component not found");
                 }
                 p_file.write(" ");
-                board.Component swap_cmp = p_board.components.get(swapped_with.get_component_no());
+                freerouting.board.Component swap_cmp = p_board.components.get(swapped_with.get_component_no());
                 if (swap_cmp != null)
                 {
                     p_identifier_type.write(swap_cmp.name, p_file);
                     p_file.write("-");
-                    library.Package.Pin package_pin = swap_cmp.get_package().get_pin(swapped_with.get_index_in_package());
+                    freerouting.library.Package.Pin package_pin = swap_cmp.get_package().get_pin(swapped_with.get_index_in_package());
                     p_identifier_type.write(package_pin.name, p_file);
                 }
                 else
@@ -259,7 +259,7 @@ public class SessionFile
         p_file.end_scope();
     }
     
-    private static void write_padstack(library.Padstack p_padstack, BasicBoard p_board, IdentifierType p_identifier_type,
+    private static void write_padstack(freerouting.library.Padstack p_padstack, BasicBoard p_board, IdentifierType p_identifier_type,
             CoordinateTransform p_coordinate_transform, IndentFileWriter p_file)
             throws java.io.IOException
     {
@@ -293,12 +293,12 @@ public class SessionFile
         p_identifier_type.write(p_padstack.name, p_file);
         for (int i = first_layer_no; i <= last_layer_no; ++i)
         {
-            geometry.planar.Shape curr_board_shape = p_padstack.get_shape(i);
+            freerouting.geometry.planar.Shape curr_board_shape = p_padstack.get_shape(i);
             if (curr_board_shape == null)
             {
                 continue;
             }
-            board.Layer board_layer = p_board.layer_structure.arr[i];
+            freerouting.board.Layer board_layer = p_board.layer_structure.arr[i];
             Layer curr_layer = new Layer(board_layer.name, i, board_layer.is_signal);
             Shape curr_shape = p_coordinate_transform.board_to_dsn_rel(curr_board_shape, curr_layer);
             p_file.start_scope();
@@ -331,13 +331,13 @@ public class SessionFile
     private static void write_net(int p_net_no, BasicBoard p_board, IdentifierType p_identifier_type, CoordinateTransform p_coordinate_transform,
             IndentFileWriter p_file) throws java.io.IOException
     {
-        Collection<board.Item> net_items = p_board.get_connectable_items(p_net_no);
+        Collection<freerouting.board.Item> net_items = p_board.get_connectable_items(p_net_no);
         boolean header_written = false;
-        Iterator<board.Item> it = net_items.iterator();
+        Iterator<freerouting.board.Item> it = net_items.iterator();
         while (it.hasNext())
         {
-            board.Item curr_item = it.next();
-            if (curr_item.get_fixed_state() == board.FixedState.SYSTEM_FIXED)
+            freerouting.board.Item curr_item = it.next();
+            if (curr_item.get_fixed_state() == freerouting.board.FixedState.SYSTEM_FIXED)
             {
                 continue;
             }
@@ -349,7 +349,7 @@ public class SessionFile
             {
                 p_file.start_scope();
                 p_file.write("net ");
-                rules.Net curr_net = p_board.rules.nets.get(p_net_no);
+                freerouting.rules.Net curr_net = p_board.rules.nets.get(p_net_no);
                 if (curr_net == null)
                 {
                     System.out.println("SessionFile.write_net: net not found");
@@ -384,7 +384,7 @@ public class SessionFile
             CoordinateTransform p_coordinate_transform, IndentFileWriter p_file) throws java.io.IOException
     {
         int layer_no = p_wire.get_layer();
-        board.Layer board_layer = p_board.layer_structure.arr[layer_no];
+        freerouting.board.Layer board_layer = p_board.layer_structure.arr[layer_no];
         int wire_width = (int) Math.round(p_coordinate_transform.board_to_dsn(2 * p_wire.get_half_width()));
         p_file.start_scope();
         p_file.write("wire");
@@ -425,7 +425,7 @@ public class SessionFile
     private static void write_via(Via p_via, BasicBoard p_board, IdentifierType p_identifier_type,
             CoordinateTransform p_coordinate_transform, IndentFileWriter p_file) throws java.io.IOException
     {
-        library.Padstack via_padstack = p_via.get_padstack();
+        freerouting.library.Padstack via_padstack = p_via.get_padstack();
         FloatPoint via_location = p_via.get_center().to_float();
         p_file.start_scope();
         p_file.write("via ");
@@ -441,15 +441,15 @@ public class SessionFile
         p_file.end_scope();
     }
     
-    static private void write_fixed_state(IndentFileWriter p_file, board.FixedState p_fixed_state) throws java.io.IOException
+    static private void write_fixed_state(IndentFileWriter p_file, freerouting.board.FixedState p_fixed_state) throws java.io.IOException
     {
-        if (p_fixed_state.ordinal() <= board.FixedState.SHOVE_FIXED.ordinal())
+        if (p_fixed_state.ordinal() <= freerouting.board.FixedState.SHOVE_FIXED.ordinal())
         {
             return;
         }
         p_file.new_line();
         p_file.write("(type ");
-        if (p_fixed_state == board.FixedState.SYSTEM_FIXED)
+        if (p_fixed_state == freerouting.board.FixedState.SYSTEM_FIXED)
         {
             p_file.write("fix)");
         }
@@ -489,16 +489,16 @@ public class SessionFile
             System.out.println("SessionFile.write_conduction_area: unexpected net count");
             return;
         }
-        geometry.planar.Area curr_area = p_conduction_area.get_area();
+        freerouting.geometry.planar.Area curr_area = p_conduction_area.get_area();
         int layer_no = p_conduction_area.get_layer();
-        board.Layer board_layer = p_board.layer_structure.arr[ layer_no];
+        freerouting.board.Layer board_layer = p_board.layer_structure.arr[ layer_no];
         Layer conduction_layer = new Layer(board_layer.name, layer_no, board_layer.is_signal);
-        geometry.planar.Shape boundary_shape;
-        geometry.planar.Shape [] holes;
-        if (curr_area instanceof geometry.planar.Shape)
+        freerouting.geometry.planar.Shape boundary_shape;
+        freerouting.geometry.planar.Shape [] holes;
+        if (curr_area instanceof freerouting.geometry.planar.Shape)
         {
-            boundary_shape = (geometry.planar.Shape) curr_area;
-            holes = new geometry.planar.Shape [0];
+            boundary_shape = (freerouting.geometry.planar.Shape) curr_area;
+            holes = new freerouting.geometry.planar.Shape [0];
         }
         else
         {

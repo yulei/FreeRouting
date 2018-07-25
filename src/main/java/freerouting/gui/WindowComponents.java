@@ -66,14 +66,14 @@ public class WindowComponents extends WindowObjectListWithFilter
         {
             return;
         }
-        board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
-        java.util.Set<board.Item> selected_items = new java.util.TreeSet<board.Item>();
-        java.util.Collection<board.Item> board_items = routing_board.get_items();
-        for (board.Item curr_item : board_items)
+        freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+        java.util.Set<freerouting.board.Item> selected_items = new java.util.TreeSet<freerouting.board.Item>();
+        java.util.Collection<freerouting.board.Item> board_items = routing_board.get_items();
+        for (freerouting.board.Item curr_item : board_items)
         {
             if (curr_item.get_component_no() > 0)
             {
-                board.Component curr_component = routing_board.components.get(curr_item.get_component_no());
+                freerouting.board.Component curr_component = routing_board.components.get(curr_item.get_component_no());
                 boolean component_matches = false;
                 for (int i = 0; i < selected_components.length; ++i)
                 {

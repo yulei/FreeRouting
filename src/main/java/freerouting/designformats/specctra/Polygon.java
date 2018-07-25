@@ -41,7 +41,7 @@ public class Polygon extends Shape
         coor = p_coor;
     }
     
-    public geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
     {
         IntPoint [] corner_arr = new IntPoint[coor.length / 2];
         double [] curr_point = new double [2];
@@ -51,14 +51,14 @@ public class Polygon extends Shape
             curr_point[1] = coor[2 * i + 1];
             corner_arr[i] =  p_coordinate_transform.dsn_to_board(curr_point).round();
         }
-        return new geometry.planar.PolygonShape(corner_arr);
+        return new freerouting.geometry.planar.PolygonShape(corner_arr);
     }
     
-    public geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
     {
         if (coor.length < 2)
         {
-            return geometry.planar.Simplex.EMPTY;
+            return freerouting.geometry.planar.Simplex.EMPTY;
         }
         IntPoint [] corner_arr = new IntPoint[coor.length / 2];
         for (int i = 0; i < corner_arr.length; ++i)
@@ -67,7 +67,7 @@ public class Polygon extends Shape
             int curr_y = (int) Math.round(p_coordinate_transform.dsn_to_board(coor[2 * i + 1]));
             corner_arr[i] = new IntPoint(curr_x, curr_y);
         }
-        return new geometry.planar.PolygonShape(corner_arr);
+        return new freerouting.geometry.planar.PolygonShape(corner_arr);
     }
     
     public Rectangle bounding_box()

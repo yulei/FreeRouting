@@ -649,7 +649,7 @@ public class PolylineTrace extends Trace implements java.io.Serializable
                     boolean ignore_areas = false;
                     if (this.net_no_arr.length > 0)
                     {
-                        rules.Net curr_net = this.board.rules.nets.get(this.net_no_arr[0]);
+                        freerouting.rules.Net curr_net = this.board.rules.nets.get(this.net_no_arr[0]);
                         if (curr_net != null && curr_net.get_class() != null)
                         {
                             ignore_areas = curr_net.get_class().get_ignore_cycles_with_areas();

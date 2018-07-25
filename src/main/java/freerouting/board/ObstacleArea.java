@@ -250,7 +250,7 @@ public class ObstacleArea extends Item implements java.io.Serializable
     
     public int get_draw_priority()
     {
-        return boardgraphics.Drawable.MIN_DRAW_PRIORITY;
+        return freerouting.boardgraphics.Drawable.MIN_DRAW_PRIORITY;
     }
     
     public void draw(java.awt.Graphics p_g, GraphicsContext p_graphics_context, Color[] p_color_arr, double p_intensity)
@@ -317,7 +317,7 @@ public class ObstacleArea extends Item implements java.io.Serializable
         java.util.ResourceBundle resources =
                 java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);
         p_window.append(" " + resources.getString("at") + " ");
-        geometry.planar.FloatPoint center = this.get_area().get_border().centre_of_gravity();
+        freerouting.geometry.planar.FloatPoint center = this.get_area().get_border().centre_of_gravity();
         p_window.append(center);
         Integer hole_count = this.relative_area.get_holes().length;
         if(hole_count > 0)

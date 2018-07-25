@@ -106,10 +106,10 @@ public class CopyItemState extends InteractiveState
         if (!current_position.equals(previous_position))
         {
             Vector translate_vector = current_position.difference_by(previous_position);
-            Iterator<board.Item> it = item_list.iterator();
+            Iterator<freerouting.board.Item> it = item_list.iterator();
             while (it.hasNext())
             {
-                board.Item curr_item = it.next();
+                freerouting.board.Item curr_item = it.next();
                 curr_item.translate_by(translate_vector);
             }
             previous_position = current_position;

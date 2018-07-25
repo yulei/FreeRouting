@@ -73,13 +73,13 @@ public class WindowLengthViolations  extends WindowObjectListWithFilter
         {
             return;
         }
-        java.util.Set<board.Item> selected_items = new java.util.TreeSet<board.Item>();
+        java.util.Set<freerouting.board.Item> selected_items = new java.util.TreeSet<freerouting.board.Item>();
         for (int i = 0; i < selected_violations.length; ++i)
         {
             LengthViolation curr_violation = ((LengthViolation) selected_violations[i]);
             selected_items.addAll(curr_violation.net.get_items());            
         }
-        interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+        freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
         board_handling.select_items(selected_items);
         board_handling.zoom_selection();
     }
@@ -101,7 +101,7 @@ public class WindowLengthViolations  extends WindowObjectListWithFilter
         
         public String toString()
         {
-            board.CoordinateTransform coordinate_transform = board_frame.board_panel.board_handling.coordinate_transform;
+           freerouting.board.CoordinateTransform coordinate_transform = board_frame.board_panel.board_handling.coordinate_transform;
             NetClass net_class = this.net.get_class();
             Float allowed_length;
             String allowed_string;

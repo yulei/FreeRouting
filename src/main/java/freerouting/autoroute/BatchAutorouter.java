@@ -263,7 +263,7 @@ public class BatchAutorouter
         try
         {
             boolean contains_plane = false;
-            rules.Net route_net = routing_board.rules.nets.get(p_route_net_no);
+            freerouting.rules.Net route_net = routing_board.rules.nets.get(p_route_net_no);
             if (route_net != null)
             {
                 contains_plane = route_net.contains_plane();

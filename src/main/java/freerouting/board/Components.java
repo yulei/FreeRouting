@@ -168,7 +168,7 @@ public class Components implements java.io.Serializable
      * Moves the component with number p_component_no.
      * Works contrary to Component.translate_by with the undo algorithm of the board.
      */
-    public void move(int p_component_no, geometry.planar.Vector p_vector )
+    public void move(int p_component_no, freerouting.geometry.planar.Vector p_vector )
     {
         Component curr_component = this.get(p_component_no);
         this.undo_list.save_for_undo(curr_component);

@@ -46,8 +46,8 @@ public class Library extends ScopeKeyword
     
     public boolean read_scope(ReadScopeParameter p_par)
     {
-        board.RoutingBoard board = p_par.board_handling.get_routing_board();
-        board.library.padstacks = new library.Padstacks(p_par.board_handling.get_routing_board().layer_structure);
+        freerouting.board.RoutingBoard board = p_par.board_handling.get_routing_board();
+        board.library.padstacks = new freerouting.library.Padstacks(p_par.board_handling.get_routing_board().layer_structure);
         Collection<Package> package_list = new LinkedList<Package>();
         Object next_token = null;
         for (;;)
@@ -102,13 +102,13 @@ public class Library extends ScopeKeyword
         // Set the via padstacks.
         if (p_par.via_padstack_names != null)
         {
-            library.Padstack[] via_padstacks = new library.Padstack[p_par.via_padstack_names.size()];
+            freerouting.library.Padstack[] via_padstacks = new freerouting.library.Padstack[p_par.via_padstack_names.size()];
             Iterator<String> it = p_par.via_padstack_names.iterator();
             int found_padstack_count = 0;
             for (int i = 0; i < via_padstacks.length; ++i)
             {
                 String curr_padstack_name = it.next();
-                library.Padstack curr_padstack = board.library.padstacks.get(curr_padstack_name);
+                freerouting.library.Padstack curr_padstack = board.library.padstacks.get(curr_padstack_name);
                 if (curr_padstack != null)
                 {
                     via_padstacks[found_padstack_count] = curr_padstack;
@@ -124,7 +124,7 @@ public class Library extends ScopeKeyword
             if (found_padstack_count != via_padstacks.length)
             {
                 // Some via padstacks were not found in the padstacks scope of the dsn-file.
-                library.Padstack[] corrected_padstacks = new library.Padstack[found_padstack_count];
+                freerouting.library.Padstack[] corrected_padstacks = new freerouting.library.Padstack[found_padstack_count];
                 System.arraycopy(via_padstacks, 0, corrected_padstacks, 0, found_padstack_count);
                 via_padstacks = corrected_padstacks;
             }
@@ -132,27 +132,27 @@ public class Library extends ScopeKeyword
         }
         
         // Create the library packages on the board
-        board.library.packages = new library.Packages(board.library.padstacks);
+        board.library.packages = new freerouting.library.Packages(board.library.padstacks);
         Iterator<Package> it = package_list.iterator();
         while (it.hasNext())
         {
             Package curr_package  = it.next();
-            library.Package.Pin[] pin_arr = new library.Package.Pin[curr_package.pin_info_arr.length];
+            freerouting.library.Package.Pin[] pin_arr = new freerouting.library.Package.Pin[curr_package.pin_info_arr.length];
             for (int i = 0; i < pin_arr.length; ++i)
             {
                 Package.PinInfo pin_info = curr_package.pin_info_arr[i];
                 int rel_x = (int) Math.round(p_par.coordinate_transform.dsn_to_board(pin_info.rel_coor[0]));
                 int rel_y = (int) Math.round(p_par.coordinate_transform.dsn_to_board(pin_info.rel_coor[1]));
                 Vector rel_coor = new IntVector(rel_x, rel_y);
-                library.Padstack board_padstack = board.library.padstacks.get(pin_info.padstack_name);
+                freerouting.library.Padstack board_padstack = board.library.padstacks.get(pin_info.padstack_name);
                 if (board_padstack  == null)
                 {
                     System.out.println("Library.read_scope: board padstack not found");
                     return false;
                 }
-                pin_arr[i] = new library.Package.Pin(pin_info.pin_name, board_padstack.no, rel_coor, pin_info.rotation);
+                pin_arr[i] = new freerouting.library.Package.Pin(pin_info.pin_name, board_padstack.no, rel_coor, pin_info.rotation);
             }
-            geometry.planar.Shape[] outline_arr = new geometry.planar.Shape[curr_package.outline.size()];
+            freerouting.geometry.planar.Shape[] outline_arr = new freerouting.geometry.planar.Shape[curr_package.outline.size()];
             
             Iterator<Shape> it3 = curr_package.outline.iterator();
             for (int i = 0; i < outline_arr.length; ++i)
@@ -170,32 +170,32 @@ public class Library extends ScopeKeyword
             generate_missing_keepout_names("keepout_", curr_package.keepouts);
             generate_missing_keepout_names("via_keepout_", curr_package.via_keepouts);
             generate_missing_keepout_names("place_keepout_", curr_package.place_keepouts);
-            library.Package.Keepout []  keepout_arr = new library.Package.Keepout [curr_package.keepouts.size()];
+            freerouting.library.Package.Keepout []  keepout_arr = new freerouting.library.Package.Keepout [curr_package.keepouts.size()];
             Iterator<Shape.ReadAreaScopeResult> it2 = curr_package.keepouts.iterator();
             for (int i = 0; i < keepout_arr.length; ++i)
             {
                 Shape.ReadAreaScopeResult curr_keepout = it2.next();
                 Layer curr_layer = curr_keepout.shape_list.iterator().next().layer;
-                geometry.planar.Area curr_area = Shape.transform_area_to_board_rel(curr_keepout.shape_list, p_par.coordinate_transform);
-                keepout_arr[i] = new library.Package.Keepout(curr_keepout.area_name, curr_area, curr_layer.no);
+                freerouting.geometry.planar.Area curr_area = Shape.transform_area_to_board_rel(curr_keepout.shape_list, p_par.coordinate_transform);
+                keepout_arr[i] = new freerouting.library.Package.Keepout(curr_keepout.area_name, curr_area, curr_layer.no);
             }
-            library.Package.Keepout []  via_keepout_arr = new library.Package.Keepout [curr_package.via_keepouts.size()];
+            freerouting.library.Package.Keepout []  via_keepout_arr = new freerouting.library.Package.Keepout [curr_package.via_keepouts.size()];
             it2 = curr_package.via_keepouts.iterator();
             for (int i = 0; i < via_keepout_arr.length; ++i)
             {
                 Shape.ReadAreaScopeResult curr_keepout = it2.next();
                 Layer curr_layer = (curr_keepout.shape_list.iterator().next()).layer;
-                geometry.planar.Area curr_area = Shape.transform_area_to_board_rel(curr_keepout.shape_list, p_par.coordinate_transform);
-                via_keepout_arr[i] = new library.Package.Keepout(curr_keepout.area_name, curr_area, curr_layer.no);
+                freerouting.geometry.planar.Area curr_area = Shape.transform_area_to_board_rel(curr_keepout.shape_list, p_par.coordinate_transform);
+                via_keepout_arr[i] = new freerouting.library.Package.Keepout(curr_keepout.area_name, curr_area, curr_layer.no);
             }
-            library.Package.Keepout []  place_keepout_arr = new library.Package.Keepout [curr_package.place_keepouts.size()];
+            freerouting.library.Package.Keepout []  place_keepout_arr = new freerouting.library.Package.Keepout [curr_package.place_keepouts.size()];
             it2 = curr_package.place_keepouts.iterator();
             for (int i = 0; i < place_keepout_arr.length; ++i)
             {
                 Shape.ReadAreaScopeResult curr_keepout = it2.next();
                 Layer curr_layer = (curr_keepout.shape_list.iterator().next()).layer;
-                geometry.planar.Area curr_area = Shape.transform_area_to_board_rel(curr_keepout.shape_list, p_par.coordinate_transform);
-                place_keepout_arr[i] = new library.Package.Keepout(curr_keepout.area_name, curr_area, curr_layer.no);
+                freerouting.geometry.planar.Area curr_area = Shape.transform_area_to_board_rel(curr_keepout.shape_list, p_par.coordinate_transform);
+                place_keepout_arr[i] = new freerouting.library.Package.Keepout(curr_keepout.area_name, curr_area, curr_layer.no);
             }
             board.library.packages.add(curr_package.name, pin_arr, outline_arr,
                     keepout_arr, via_keepout_arr, place_keepout_arr, curr_package.is_front);
@@ -218,7 +218,7 @@ public class Library extends ScopeKeyword
         p_par.file.end_scope();
     }
     
-    public static void write_padstack_scope(WriteScopeParameter p_par, library.Padstack p_padstack) throws java.io.IOException
+    public static void write_padstack_scope(WriteScopeParameter p_par, freerouting.library.Padstack p_padstack) throws java.io.IOException
     {
         // search the layer range of the padstack
         int first_layer_no = 0;
@@ -250,12 +250,12 @@ public class Library extends ScopeKeyword
         p_par.identifier_type.write(p_padstack.name, p_par.file);
         for (int i = first_layer_no; i <= last_layer_no; ++i)
         {
-            geometry.planar.Shape curr_board_shape = p_padstack.get_shape(i);
+            freerouting.geometry.planar.Shape curr_board_shape = p_padstack.get_shape(i);
             if (curr_board_shape == null)
             {
                 continue;
             }
-            board.Layer board_layer = p_par.board.layer_structure.arr[i];
+            freerouting.board.Layer board_layer = p_par.board.layer_structure.arr[i];
             Layer curr_layer = new Layer(board_layer.name, i, board_layer.is_signal);
             Shape curr_shape = p_par.coordinate_transform.board_to_dsn_rel(curr_board_shape, curr_layer);
             p_par.file.start_scope();
@@ -277,7 +277,7 @@ public class Library extends ScopeKeyword
     }
     
     static boolean  read_padstack_scope(Scanner p_scanner, LayerStructure p_layer_structure,
-            CoordinateTransform p_coordinate_transform, library.Padstacks p_board_padstacks)
+            CoordinateTransform p_coordinate_transform, freerouting.library.Padstacks p_board_padstacks)
     {
         String padstack_name = null;
         boolean is_drilllable = true;
@@ -355,16 +355,16 @@ public class Library extends ScopeKeyword
             System.out.println(padstack_name);
             return true;
         }
-        geometry.planar.ConvexShape[] padstack_shapes = new geometry.planar.ConvexShape[p_layer_structure.arr.length];
+        freerouting.geometry.planar.ConvexShape[] padstack_shapes = new freerouting.geometry.planar.ConvexShape[p_layer_structure.arr.length];
         Iterator<Shape> it = shape_list.iterator();
         while (it.hasNext())
         {
             Shape pad_shape = it.next();
-            geometry.planar.Shape curr_shape = pad_shape.transform_to_board_rel(p_coordinate_transform);
-            geometry.planar.ConvexShape convex_shape;
-            if (curr_shape instanceof geometry.planar.ConvexShape)
+            freerouting.geometry.planar.Shape curr_shape = pad_shape.transform_to_board_rel(p_coordinate_transform);
+            freerouting.geometry.planar.ConvexShape convex_shape;
+            if (curr_shape instanceof freerouting.geometry.planar.ConvexShape)
             {
-                convex_shape = (geometry.planar.ConvexShape) curr_shape;
+                convex_shape = (freerouting.geometry.planar.ConvexShape) curr_shape;
             }
             else
             {
@@ -372,7 +372,7 @@ public class Library extends ScopeKeyword
                 {
                     curr_shape = ((PolygonShape)curr_shape).convex_hull();
                 }
-                geometry.planar.TileShape[] convex_shapes = curr_shape.split_to_convex();
+                freerouting.geometry.planar.TileShape[] convex_shapes = curr_shape.split_to_convex();
                 if (convex_shapes.length != 1)
                 {
                     System.out.println("Library.read_padstack_scope: convex shape expected");
@@ -383,7 +383,7 @@ public class Library extends ScopeKeyword
                     convex_shape = ((Simplex) convex_shape).simplify();
                 }
             }
-            geometry.planar.ConvexShape padstack_shape = convex_shape;
+            freerouting.geometry.planar.ConvexShape padstack_shape = convex_shape;
             if (padstack_shape != null)
             {
                 if (padstack_shape.dimension() < 2)

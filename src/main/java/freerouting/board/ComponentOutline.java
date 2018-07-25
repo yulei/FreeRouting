@@ -103,9 +103,9 @@ public class ComponentOutline extends Item implements java.io.Serializable
         return 0;
     }
 
-    protected geometry.planar.TileShape[] calculate_tree_shapes(ShapeSearchTree p_search_tree)
+    protected freerouting.geometry.planar.TileShape[] calculate_tree_shapes(ShapeSearchTree p_search_tree)
     {
-        return new geometry.planar.TileShape[0];
+        return new freerouting.geometry.planar.TileShape[0];
     }
 
     public double get_draw_intensity(GraphicsContext p_graphics_context)
@@ -130,7 +130,7 @@ public class ComponentOutline extends Item implements java.io.Serializable
 
     public int get_draw_priority()
     {
-        return boardgraphics.Drawable.MIDDLE_DRAW_PRIORITY;
+        return freerouting.boardgraphics.Drawable.MIDDLE_DRAW_PRIORITY;
     }
 
     public void draw(java.awt.Graphics p_g, GraphicsContext p_graphics_context, Color[] p_color_arr, double p_intensity)

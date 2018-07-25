@@ -101,7 +101,7 @@ public class WindowSelectParameter extends BoardSavableSubWindow
         
         // Create buttongroup for the current layer:
         
-        board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
+        freerouting.board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
         int signal_layer_count = layer_structure.signal_layer_count();
         javax.swing.JLabel current_layer_label = new javax.swing.JLabel(resources.getString("current_layer"));
         current_layer_label.setToolTipText(resources.getString("current_layer_tooltip"));
@@ -113,7 +113,7 @@ public class WindowSelectParameter extends BoardSavableSubWindow
         gridbag_constraints.gridheight = 1;
         for (int i = 0; i <  signal_layer_count; ++i)
         {
-            board.Layer curr_signal_layer = layer_structure.get_signal_layer(i);
+            freerouting.board.Layer curr_signal_layer = layer_structure.get_signal_layer(i);
             layer_name_arr[i] = new javax.swing.JRadioButton();
             layer_name_arr[i].setText(curr_signal_layer.name);
             gridbag.setConstraints(layer_name_arr[i], gridbag_constraints);
@@ -159,8 +159,8 @@ public class WindowSelectParameter extends BoardSavableSubWindow
                 this.item_selection_choices[i].setSelected(item_selection_filter.is_selected(filter_values[i])) ;
             }
         }
-        board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
-        board.Layer current_layer = layer_structure.arr[this.board_handling.settings.get_layer()];
+        freerouting.board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
+        freerouting.board.Layer current_layer = layer_structure.arr[this.board_handling.settings.get_layer()];
         layer_name_arr[layer_structure.get_signal_layer_no(current_layer)].setSelected(true);
     }
     
@@ -172,7 +172,7 @@ public class WindowSelectParameter extends BoardSavableSubWindow
         layer_name_arr[p_signal_layer_no].setSelected(true);
     }
     
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     
     private final javax.swing.JRadioButton [] layer_name_arr;
     

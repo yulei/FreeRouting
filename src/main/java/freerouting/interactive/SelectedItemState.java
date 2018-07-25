@@ -434,7 +434,7 @@ public class SelectedItemState extends InteractiveState
                 continue;
             }
             boolean contains_plane = false;
-            rules.Net route_net = hdlg.get_routing_board().rules.nets.get(curr_item.get_net_no(0));
+            freerouting.rules.Net route_net = hdlg.get_routing_board().rules.nets.get(curr_item.get_net_no(0));
             if (route_net != null)
             {
                 contains_plane = route_net.contains_plane();
@@ -658,7 +658,7 @@ public class SelectedItemState extends InteractiveState
      */
     public InteractiveState assign_clearance_class(int p_cl_class_index)
     {
-        board.BasicBoard routing_board = this.hdlg.get_routing_board();
+        freerouting.board.BasicBoard routing_board = this.hdlg.get_routing_board();
         if (p_cl_class_index < 0 || p_cl_class_index >= routing_board.rules.clearance_matrix.get_class_count())
         {
             return this.return_state;
@@ -901,7 +901,7 @@ public class SelectedItemState extends InteractiveState
      */
     public SelectedItemState info()
     {
-        gui.WindowObjectInfo.display(this.item_list, hdlg.get_panel().board_frame, hdlg.coordinate_transform, new java.awt.Point(100, 100));
+        freerouting.gui.WindowObjectInfo.display(this.item_list, hdlg.get_panel().board_frame, hdlg.coordinate_transform, new java.awt.Point(100, 100));
         return this;
     }
 
@@ -917,7 +917,7 @@ public class SelectedItemState extends InteractiveState
             return;
         }
 
-        for (board.Item curr_item : item_list)
+        for (freerouting.board.Item curr_item : item_list)
         {
             curr_item.draw(p_graphics, hdlg.graphics_context, hdlg.graphics_context.get_hilight_color(),
                     hdlg.graphics_context.get_hilight_color_intensity());

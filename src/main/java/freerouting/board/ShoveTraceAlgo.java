@@ -244,7 +244,7 @@ public class ShoveTraceAlgo
         FloatPoint end_corner_appprox = p_line_segment.end_point_approx();
         double segment_length = end_corner_appprox.distance(start_corner_appprox);
 
-        rules.ClearanceMatrix cl_matrix = p_board.rules.clearance_matrix;
+        freerouting.rules.ClearanceMatrix cl_matrix = p_board.rules.clearance_matrix;
 
         double result = Integer.MAX_VALUE;
 

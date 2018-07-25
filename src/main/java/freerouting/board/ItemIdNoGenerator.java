@@ -25,7 +25,7 @@ package freerouting.board;
  *
  * @author  Alfons Wirtz
  */
-public class ItemIdNoGenerator implements datastructures.IdNoGenerator, java.io.Serializable
+public class ItemIdNoGenerator implements freerouting.datastructures.IdNoGenerator, java.io.Serializable
 {
     
     /**

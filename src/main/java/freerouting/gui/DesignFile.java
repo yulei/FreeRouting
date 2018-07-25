@@ -312,7 +312,7 @@ public class DesignFile
     /**
      * Saves the board rule to file, so that they can be reused later on.
      */
-    private boolean write_rules_file(String p_design_name, interactive.BoardHandling p_board_handling)
+    private boolean write_rules_file(String p_design_name, freerouting.interactive.BoardHandling p_board_handling)
     {
         String rules_file_name = p_design_name + RULES_FILE_EXTENSION;
         java.io.OutputStream output_stream;
@@ -332,12 +332,12 @@ public class DesignFile
                 return false;
             }
         }
-        designformats.specctra.RulesFile.write(p_board_handling, output_stream, p_design_name);
+        freerouting.designformats.specctra.RulesFile.write(p_board_handling, output_stream, p_design_name);
         return true;
     }
 
     public static boolean read_rules_file(String p_design_name, String p_parent_name,
-            interactive.BoardHandling p_board_handling, boolean p_is_web_start, String p_confirm_message)
+            freerouting.interactive.BoardHandling p_board_handling, boolean p_is_web_start, String p_confirm_message)
     {
 
         boolean result = true;
@@ -348,7 +348,7 @@ public class DesignFile
             java.io.InputStream input_stream = WebStart.get_file_input_stream(rule_file_name);
             if (input_stream != null && dsn_file_generated_by_host && WindowMessage.confirm(p_confirm_message))
             {
-                result = designformats.specctra.RulesFile.read(input_stream, p_design_name, p_board_handling);
+                result = freerouting.designformats.specctra.RulesFile.read(input_stream, p_design_name, p_board_handling);
                 try
                 {
                     input_stream.close();
@@ -371,7 +371,7 @@ public class DesignFile
                 java.io.InputStream input_stream = new java.io.FileInputStream(rules_file);
                 if (input_stream != null && dsn_file_generated_by_host && WindowMessage.confirm(p_confirm_message))
                 {
-                    result = designformats.specctra.RulesFile.read(input_stream, p_design_name, p_board_handling);
+                    result = freerouting.designformats.specctra.RulesFile.read(input_stream, p_design_name, p_board_handling);
                 }
                 else
                 {

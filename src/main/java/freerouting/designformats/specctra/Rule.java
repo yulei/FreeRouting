@@ -169,7 +169,7 @@ public abstract class Rule
         }
     }
     
-    public static void write_scope(rules.NetClass p_net_class, WriteScopeParameter p_par) throws java.io.IOException
+    public static void write_scope(freerouting.rules.NetClass p_net_class, WriteScopeParameter p_par) throws java.io.IOException
     {
         p_par.file.start_scope();
         p_par.file.write("rule");
@@ -191,12 +191,12 @@ public abstract class Rule
         }
     }
     
-    private static void write_layer_rule(rules.NetClass p_net_class, int p_layer_no, WriteScopeParameter p_par) throws java.io.IOException
+    private static void write_layer_rule(freerouting.rules.NetClass p_net_class, int p_layer_no, WriteScopeParameter p_par) throws java.io.IOException
     {
         p_par.file.start_scope();
         p_par.file.write("layer_rule ");
         
-        board.Layer curr_board_layer = p_par.board.layer_structure.arr[p_layer_no];
+        freerouting.board.Layer curr_board_layer = p_par.board.layer_structure.arr[p_layer_no];
         
         p_par.file.write(curr_board_layer.name);
         p_par.file.start_scope();
@@ -228,7 +228,7 @@ public abstract class Rule
         p_par.file.write((new Double(trace_width)).toString());
         p_par.file.write(")");
         // write the default clearance rule
-        int default_cl_no = rules.BoardRules.default_clearance_class();
+        int default_cl_no = freerouting.rules.BoardRules.default_clearance_class();
         int default_board_clearance = p_par.board.rules.clearance_matrix.value(default_cl_no, default_cl_no, p_layer);
         double default_clearance = p_par.coordinate_transform.board_to_dsn(default_board_clearance);
         p_par.file.new_line();
@@ -255,7 +255,7 @@ public abstract class Rule
     private static void write_clearance_rules(WriteScopeParameter p_par,
             int p_layer, int p_cl_class, int p_max_cl_class, int p_default_clearance) throws java.io.IOException
     {
-        rules.ClearanceMatrix cl_matrix = p_par.board.rules.clearance_matrix;
+        freerouting.rules.ClearanceMatrix cl_matrix = p_par.board.rules.clearance_matrix;
         for (int i = p_cl_class; i < p_max_cl_class; ++i)
         {
             int curr_board_clearance = cl_matrix.value(p_cl_class, i, p_layer);
@@ -341,8 +341,8 @@ public abstract class Rule
         
     }
     
-    static public void write_item_clearance_class( String p_name, datastructures.IndentFileWriter p_file,
-            datastructures.IdentifierType p_identifier_type) throws java.io.IOException
+    static public void write_item_clearance_class( String p_name, freerouting.datastructures.IndentFileWriter p_file,
+            freerouting.datastructures.IdentifierType p_identifier_type) throws java.io.IOException
     {
         p_file.new_line();
         p_file.write("(clearance_class ");

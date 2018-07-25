@@ -26,7 +26,7 @@ package freerouting.interactive;
  *
  * @author Alfons Wirtz
  */
-public abstract class InteractiveActionThread extends Thread implements datastructures.Stoppable
+public abstract class InteractiveActionThread extends Thread implements freerouting.datastructures.Stoppable
 {
 
     public static InteractiveActionThread get_autoroute_instance(BoardHandling p_board_handling)

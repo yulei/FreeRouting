@@ -82,13 +82,13 @@ public class PolylinePath extends Path
         p_file.end_scope();
     }
     
-    public geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
     {
         System.out.println("PolylinePath.transform_to_board_rel not implemented");
         return null;
     }
     
-    public geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
     {
         System.out.println("PolylinePath.transform_to_board_rel not implemented");
         return null;

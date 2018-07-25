@@ -48,9 +48,9 @@ public class MakeSpaceState extends DragState
             layer_active_arr[i] = true;
         }
         int [] route_net_no_arr = new int[1];
-        route_net_no_arr[0] = rules.Nets.hidden_net_no;
+        route_net_no_arr[0] = freerouting.rules.Nets.hidden_net_no;
         route = new Route(p_location.round(), hdlg.settings.layer, shove_trace_width_arr, layer_active_arr,
-                route_net_no_arr, 0, rules.ViaRule.EMPTY, true, hdlg.settings.trace_pull_tight_region_width,
+                route_net_no_arr, 0, freerouting.rules.ViaRule.EMPTY, true, hdlg.settings.trace_pull_tight_region_width,
                 hdlg.settings.trace_pull_tight_accuracy, null, null, hdlg.get_routing_board(),
                 false, false, false, hdlg.settings.hilight_routing_obstacle);
     }
@@ -91,7 +91,7 @@ public class MakeSpaceState extends DragState
     
     public InteractiveState button_released()
     {
-        int delete_net_no = rules.Nets.hidden_net_no;
+        int delete_net_no = freerouting.rules.Nets.hidden_net_no;
         BasicBoard board = hdlg.get_routing_board();
         board.remove_items(board.get_connectable_items(delete_net_no), false);
         if (this.observers_activated)

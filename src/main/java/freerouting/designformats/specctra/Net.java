@@ -43,17 +43,17 @@ public class Net
         id = p_net_id;
     }
     
-    public static void write_scope(WriteScopeParameter p_par, rules.Net p_net, Collection<board.Pin> p_pin_list) throws java.io.IOException
+    public static void write_scope(WriteScopeParameter p_par, freerouting.rules.Net p_net, Collection<freerouting.board.Pin> p_pin_list) throws java.io.IOException
     {
         p_par.file.start_scope();
         write_net_id(p_net, p_par.file, p_par.identifier_type);
         // write the pins scope
         p_par.file.start_scope();
         p_par.file.write("pins");
-        Iterator<board.Pin> it = p_pin_list.iterator();
+        Iterator<freerouting.board.Pin> it = p_pin_list.iterator();
         while (it.hasNext())
         {
-            board.Pin curr_pin = it.next();
+            freerouting.board.Pin curr_pin = it.next();
             if (curr_pin.contains_net(p_net.net_number))
             {
                 write_pin(p_par, curr_pin);
@@ -63,7 +63,7 @@ public class Net
         p_par.file.end_scope();
     }
     
-    public static void write_net_id( rules.Net p_net, IndentFileWriter p_file, IdentifierType p_identifier_type) throws java.io.IOException
+    public static void write_net_id( freerouting.rules.Net p_net, IndentFileWriter p_file, IdentifierType p_identifier_type) throws java.io.IOException
     {
         p_file.write("net ");
         p_identifier_type.write(p_net.name, p_file);
@@ -72,15 +72,15 @@ public class Net
         p_file.write(subnet_number.toString());
     }
     
-    public static void write_pin(WriteScopeParameter p_par, board.Pin p_pin) throws java.io.IOException
+    public static void write_pin(WriteScopeParameter p_par, freerouting.board.Pin p_pin) throws java.io.IOException
     {
-        board.Component curr_component = p_par.board.components.get(p_pin.get_component_no());
+        freerouting.board.Component curr_component = p_par.board.components.get(p_pin.get_component_no());
         if (curr_component == null)
         {
             System.out.println("Net.write_scope: component not found");
             return;
         }
-        library.Package.Pin lib_pin = curr_component.get_package().get_pin(p_pin.get_index_in_package());
+        freerouting.library.Package.Pin lib_pin = curr_component.get_package().get_pin(p_pin.get_index_in_package());
         if (lib_pin == null)
         {
             System.out.println("Net.write_scope:  pin number out of range");

@@ -34,7 +34,7 @@ import  freerouting.board.BasicBoard;
 public class RulesFile
 {
     
-    public static void write(interactive.BoardHandling p_board_handling, java.io.OutputStream p_output_stream, String p_design_name)
+    public static void write(freerouting.interactive.BoardHandling p_board_handling, java.io.OutputStream p_output_stream, String p_design_name)
     {
         IndentFileWriter output_file = new IndentFileWriter(p_output_stream);
         BasicBoard routing_board = p_board_handling.get_routing_board();
@@ -61,7 +61,7 @@ public class RulesFile
     }
     
     public static boolean read(java.io.InputStream p_input_stream, String p_design_name, 
-            interactive.BoardHandling p_board_handling)
+            freerouting.interactive.BoardHandling p_board_handling)
     {
         BasicBoard routing_board = p_board_handling.get_routing_board();
         Scanner scanner =  new SpecctraFileScanner(p_input_stream);
@@ -153,7 +153,7 @@ public class RulesFile
                 else if (next_token == Keyword.SNAP_ANGLE)
                 {
                     
-                    board.AngleRestriction snap_angle = Structure.read_snap_angle(scanner);
+                    freerouting.board.AngleRestriction snap_angle = Structure.read_snap_angle(scanner);
                     if (snap_angle != null)
                     {
                         routing_board.rules.set_trace_angle_restriction(snap_angle);
@@ -161,7 +161,7 @@ public class RulesFile
                 }
                 else if (next_token == Keyword.AUTOROUTE_SETTINGS)
                 {
-                      interactive.AutorouteSettings autoroute_settings 
+                      freerouting.interactive.AutorouteSettings autoroute_settings 
                               = AutorouteSettings.read_scope(scanner, layer_structure);
                       if (autoroute_settings != null)
                       {
@@ -194,7 +194,7 @@ public class RulesFile
         // write the via padstacks
         for (int i = 1; i <= p_par.board.library.padstacks.count(); ++i)
         {
-            library.Padstack curr_padstack = p_par.board.library.padstacks.get(i);
+            freerouting.library.Padstack curr_padstack = p_par.board.library.padstacks.get(i);
             if (p_par.board.library.get_via_padstack(curr_padstack.name )!= null)
             {
                 Library.write_padstack_scope(p_par, curr_padstack);
@@ -282,12 +282,12 @@ public class RulesFile
     }
     private static boolean read_via_info(Scanner p_scanner, BasicBoard p_board)
     {
-        rules.ViaInfo curr_via_info = Network.read_via_info(p_scanner, p_board);
+        freerouting.rules.ViaInfo curr_via_info = Network.read_via_info(p_scanner, p_board);
         if (curr_via_info == null)
         {
             return false;
         }
-        rules.ViaInfo existing_via = p_board.rules.via_infos.get(curr_via_info.get_name());
+        freerouting.rules.ViaInfo existing_via = p_board.rules.via_infos.get(curr_via_info.get_name());
         if (existing_via != null)
         {
             // replace existing via info

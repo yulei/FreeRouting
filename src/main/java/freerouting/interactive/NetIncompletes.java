@@ -178,8 +178,8 @@ public class NetIncompletes
             return;
         }
         // draw the length violation around every Pin of the net.
-        Collection<board.Pin> net_pins = this.net.get_pins();
-        for (board.Pin curr_pin : net_pins)
+        Collection<freerouting.board.Pin> net_pins = this.net.get_pins();
+        for (freerouting.board.Pin curr_pin : net_pins)
         {
             draw_length_violation_marker(curr_pin.get_center().to_float(), this.length_violation, p_graphics, p_graphics_context);
         }
@@ -321,7 +321,7 @@ public class NetIncompletes
                     result = this.to_corner.y - p_other.to_corner.y;
                 }
             }
-            return datastructures.Signum.as_int(result);
+            return freerouting.datastructures.Signum.as_int(result);
         }
     }
     

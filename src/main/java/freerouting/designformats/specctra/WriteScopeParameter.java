@@ -37,7 +37,7 @@ public class WriteScopeParameter
      * If p_compat_mode is true, only standard speecctra dsb scopes are written, so that any
      * host system with an specctra interface can read them.
      */
-    WriteScopeParameter(BasicBoard p_board, interactive.AutorouteSettings p_autoroute_settings,
+    WriteScopeParameter(BasicBoard p_board, freerouting.interactive.AutorouteSettings p_autoroute_settings,
             IndentFileWriter p_file, String p_string_quote, CoordinateTransform p_coordinate_transform, 
             boolean p_compat_mode)
     {
@@ -51,7 +51,7 @@ public class WriteScopeParameter
     }
     
     final BasicBoard board;
-    final interactive.AutorouteSettings autoroute_settings;
+    final freerouting.interactive.AutorouteSettings autoroute_settings;
     final IndentFileWriter file;
     final CoordinateTransform coordinate_transform;
     final boolean compat_mode;

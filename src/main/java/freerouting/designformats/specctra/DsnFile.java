@@ -44,8 +44,8 @@ public class DsnFile
      * in case the board is embedded into a host system.
      * Returns false, if an error occured.
      */
-    public static ReadResult read(java.io.InputStream p_input_stream, interactive.BoardHandling p_board_handling,
-                                  board.BoardObservers p_observers, datastructures.IdNoGenerator p_item_id_no_generator, TestLevel p_test_level)
+    public static ReadResult read(java.io.InputStream p_input_stream, freerouting.interactive.BoardHandling p_board_handling,
+                                  freerouting.board.BoardObservers p_observers, freerouting.datastructures.IdNoGenerator p_item_id_no_generator, TestLevel p_test_level)
     {
         Scanner scanner = new SpecctraFileScanner(p_input_stream);
         Object curr_token = null;
@@ -108,15 +108,15 @@ public class DsnFile
      * This is useful in case the layer type was not set correctly to plane in the dsn-file.
      * Returns true, if something was changed.
      */
-    private static boolean adjust_plane_autoroute_settings(interactive.BoardHandling p_board_handling)
+    private static boolean adjust_plane_autoroute_settings(freerouting.interactive.BoardHandling p_board_handling)
     {
         BasicBoard routing_board = p_board_handling.get_routing_board();
-        board.LayerStructure board_layer_structure = routing_board.layer_structure;
+        freerouting.board.LayerStructure board_layer_structure = routing_board.layer_structure;
         if (board_layer_structure.arr.length <= 2)
         {
             return false;
         }
-        for (board.Layer curr_layer : board_layer_structure.arr)
+        for (freerouting.board.Layer curr_layer : board_layer_structure.arr)
         {
             if (!curr_layer.is_signal)
             {
@@ -130,50 +130,50 @@ public class DsnFile
             layer_contains_wires_arr[i] = false;
             changed_layer_arr[i] = false;
         }
-        java.util.Collection<board.ConductionArea> conduction_area_list = new java.util.LinkedList<board.ConductionArea>();
-        java.util.Collection<board.Item> item_list = routing_board.get_items();
-        for (board.Item curr_item : item_list)
+        java.util.Collection<freerouting.board.ConductionArea> conduction_area_list = new java.util.LinkedList<freerouting.board.ConductionArea>();
+        java.util.Collection<freerouting.board.Item> item_list = routing_board.get_items();
+        for (freerouting.board.Item curr_item : item_list)
         {
-            if (curr_item instanceof board.Trace)
+            if (curr_item instanceof freerouting.board.Trace)
             {
-                int curr_layer = ((board.Trace) curr_item).get_layer();
+                int curr_layer = ((freerouting.board.Trace) curr_item).get_layer();
                 layer_contains_wires_arr[curr_layer] = true;
             }
-            else if (curr_item instanceof board.ConductionArea)
+            else if (curr_item instanceof freerouting.board.ConductionArea)
             {
-                conduction_area_list.add((board.ConductionArea) curr_item);
+                conduction_area_list.add((freerouting.board.ConductionArea) curr_item);
             }
         }
         boolean nothing_changed = true;
 
-        board.BoardOutline board_outline = routing_board.get_outline();
+        freerouting.board.BoardOutline board_outline = routing_board.get_outline();
         double board_area = 0;
         for (int i = 0; i < board_outline.shape_count(); ++i)
         {
-            geometry.planar.TileShape[] curr_piece_arr = board_outline.get_shape(i).split_to_convex();
+            freerouting.geometry.planar.TileShape[] curr_piece_arr = board_outline.get_shape(i).split_to_convex();
             if (curr_piece_arr != null)
             {
-                for (geometry.planar.TileShape curr_piece : curr_piece_arr)
+                for (freerouting.geometry.planar.TileShape curr_piece : curr_piece_arr)
                 {
                     board_area += curr_piece.area();
                 }
             }
         }
-        for (board.ConductionArea curr_conduction_area : conduction_area_list)
+        for (freerouting.board.ConductionArea curr_conduction_area : conduction_area_list)
         {
             int layer_no = curr_conduction_area.get_layer();
             if (layer_contains_wires_arr[layer_no])
             {
                 continue;
             }
-            board.Layer curr_layer = routing_board.layer_structure.arr[layer_no];
+            freerouting.board.Layer curr_layer = routing_board.layer_structure.arr[layer_no];
             if (!curr_layer.is_signal || layer_no == 0 || layer_no == board_layer_structure.arr.length - 1)
             {
                 continue;
             }
-            geometry.planar.TileShape[] convex_pieces = curr_conduction_area.get_area().split_to_convex();
+            freerouting.geometry.planar.TileShape[] convex_pieces = curr_conduction_area.get_area().split_to_convex();
             double curr_area = 0;
-            for (geometry.planar.TileShape curr_piece : convex_pieces)
+            for (freerouting.geometry.planar.TileShape curr_piece : convex_pieces)
             {
                 curr_area += curr_piece.area();
             }
@@ -185,15 +185,15 @@ public class DsnFile
 
             for (int i = 0; i < curr_conduction_area.net_count(); ++i)
             {
-                rules.Net curr_net = routing_board.rules.nets.get(curr_conduction_area.get_net_no(i));
+                freerouting.rules.Net curr_net = routing_board.rules.nets.get(curr_conduction_area.get_net_no(i));
                 curr_net.set_contains_plane(true);
                 nothing_changed = false;
             }
 
             changed_layer_arr[layer_no] = true;
-            if (curr_conduction_area.get_fixed_state().ordinal() < board.FixedState.USER_FIXED.ordinal())
+            if (curr_conduction_area.get_fixed_state().ordinal() < freerouting.board.FixedState.USER_FIXED.ordinal())
             {
-                curr_conduction_area.set_fixed_state(board.FixedState.USER_FIXED);
+                curr_conduction_area.set_fixed_state(freerouting.board.FixedState.USER_FIXED);
             }
         }
         if (nothing_changed)
@@ -202,7 +202,7 @@ public class DsnFile
         }
         // Adjust the layer prefered directions in the autoroute settings.
         // and deactivate the changed layers.
-        interactive.AutorouteSettings autoroute_settings = p_board_handling.settings.autoroute_settings;
+        freerouting.interactive.AutorouteSettings autoroute_settings = p_board_handling.settings.autoroute_settings;
         int layer_count = routing_board.get_layer_count();
         boolean curr_preferred_direction_is_horizontal =
                 autoroute_settings.get_preferred_direction_is_horizontal(0);
@@ -227,7 +227,7 @@ public class DsnFile
      * If p_compat_mode is true, only standard speecctra dsn scopes are written, so that any
      * host system with an specctra interface can read them.
      */
-    public static boolean write(interactive.BoardHandling p_board_handling, java.io.OutputStream p_file, String p_design_name, boolean p_compat_mode)
+    public static boolean write(freerouting.interactive.BoardHandling p_board_handling, java.io.OutputStream p_file, String p_design_name, boolean p_compat_mode)
     {
         //tests.Validate.check("before writing dsn", p_board);
         IndentFileWriter output_file = new IndentFileWriter(p_file);
@@ -258,7 +258,7 @@ public class DsnFile
         return true;
     }
 
-    private static void write_pcb_scope(interactive.BoardHandling p_board_handling, IndentFileWriter p_file, String p_design_name, boolean p_compat_mode)
+    private static void write_pcb_scope(freerouting.interactive.BoardHandling p_board_handling, IndentFileWriter p_file, String p_design_name, boolean p_compat_mode)
             throws java.io.IOException
     {
         BasicBoard routing_board = p_board_handling.get_routing_board();

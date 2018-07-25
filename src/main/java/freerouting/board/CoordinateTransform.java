@@ -76,20 +76,20 @@ public class CoordinateTransform implements java.io.Serializable
         return  new FloatPoint(user_to_board(p_point.x), user_to_board(p_point.y));
     }
     
-    public PrintableShape board_to_user(geometry.planar.Shape p_shape, java.util.Locale p_locale)
+    public PrintableShape board_to_user(freerouting.geometry.planar.Shape p_shape, java.util.Locale p_locale)
     {
         PrintableShape result;
-        if (p_shape instanceof geometry.planar.Circle)
+        if (p_shape instanceof freerouting.geometry.planar.Circle)
         {
-            result = board_to_user((geometry.planar.Circle) p_shape, p_locale);
+            result = board_to_user((freerouting.geometry.planar.Circle) p_shape, p_locale);
         }
-        else if (p_shape instanceof geometry.planar.IntBox)
+        else if (p_shape instanceof freerouting.geometry.planar.IntBox)
         {
-            result = board_to_user((geometry.planar.IntBox) p_shape, p_locale);
+            result = board_to_user((freerouting.geometry.planar.IntBox) p_shape, p_locale);
         }
-        else if (p_shape instanceof geometry.planar.PolylineShape)
+        else if (p_shape instanceof freerouting.geometry.planar.PolylineShape)
         {
-            result =  board_to_user((geometry.planar.PolylineShape) p_shape, p_locale);
+            result =  board_to_user((freerouting.geometry.planar.PolylineShape) p_shape, p_locale);
         }
         else
         {
@@ -99,19 +99,19 @@ public class CoordinateTransform implements java.io.Serializable
         return result;
     }
     
-    public PrintableShape.Circle board_to_user(geometry.planar.Circle p_circle, java.util.Locale p_locale)
+    public PrintableShape.Circle board_to_user(freerouting.geometry.planar.Circle p_circle, java.util.Locale p_locale)
     {
         return new PrintableShape.Circle(board_to_user(p_circle.center.to_float()),
                 board_to_user(p_circle.radius), p_locale);
     }
     
-    public PrintableShape.Rectangle board_to_user(geometry.planar.IntBox p_box, java.util.Locale p_locale)
+    public PrintableShape.Rectangle board_to_user(freerouting.geometry.planar.IntBox p_box, java.util.Locale p_locale)
     {
         return new PrintableShape.Rectangle(board_to_user(p_box.ll.to_float()),
                 board_to_user(p_box.ur.to_float()), p_locale);
     }
     
-    public PrintableShape.Polygon board_to_user(geometry.planar.PolylineShape p_shape, java.util.Locale p_locale)
+    public PrintableShape.Polygon board_to_user(freerouting.geometry.planar.PolylineShape p_shape, java.util.Locale p_locale)
     {
         FloatPoint[] corners = p_shape.corner_approx_arr();
         FloatPoint[] transformed_corners = new FloatPoint[corners.length];

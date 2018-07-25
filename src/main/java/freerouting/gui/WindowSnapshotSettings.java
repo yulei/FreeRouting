@@ -193,7 +193,7 @@ public class WindowSnapshotSettings extends BoardSavableSubWindow
      */
     public void refresh()
     {
-        interactive.SnapShot.Attributes attributes = this.board_handling.settings.get_snapshot_attributes();
+        freerouting.interactive.SnapShot.Attributes attributes = this.board_handling.settings.get_snapshot_attributes();
         this.object_color_check_box.setSelected(attributes.object_colors);
         this.object_visibility_check_box.setSelected(attributes.object_visibility);
         this.layer_visibility_check_box.setSelected(attributes.layer_visibility);
@@ -211,7 +211,7 @@ public class WindowSnapshotSettings extends BoardSavableSubWindow
         info_list_filter_check_box.setSelected(attributes.info_list_selections);
     }
     
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     
     final javax.swing.JCheckBox object_color_check_box;
     final javax.swing.JCheckBox object_visibility_check_box;

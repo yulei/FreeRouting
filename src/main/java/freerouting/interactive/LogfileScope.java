@@ -345,7 +345,7 @@ public abstract class LogfileScope
             InteractiveState result;
             if (p_return_state instanceof SelectedItemState)
             {
-                java.util.Collection<board.Item> item_list = ((SelectedItemState) p_return_state).get_item_list();
+                java.util.Collection<freerouting.board.Item> item_list = ((SelectedItemState) p_return_state).get_item_list();
                 result =  CopyItemState.get_instance(p_location, item_list, p_return_state.return_state, p_board_handling, null);
             }
             else
@@ -371,7 +371,7 @@ public abstract class LogfileScope
             InteractiveState result;
             if (p_return_state instanceof SelectedItemState)
             {
-                java.util.Collection<board.Item> item_list = ((SelectedItemState) p_return_state).get_item_list();
+                java.util.Collection<freerouting.board.Item> item_list = ((SelectedItemState) p_return_state).get_item_list();
                 result =  MoveItemState.get_instance(p_location, item_list, p_return_state.return_state, p_board_handling, null);
             }
             else
@@ -602,7 +602,7 @@ public abstract class LogfileScope
             {
                 System.out.println("CutoutRouteScope.read_scope: electedItemState expected");
             }
-            java.util.Collection<board.Item> item_list = ((SelectedItemState) p_return_state).get_item_list();
+            java.util.Collection<freerouting.board.Item> item_list = ((SelectedItemState) p_return_state).get_item_list();
             FloatPoint lower_left = p_logfile.read_corner();
             if (lower_left == null)
             {
@@ -1162,7 +1162,7 @@ public abstract class LogfileScope
         public InteractiveState read_scope(Logfile p_logfile, InteractiveState p_return_state, BoardHandling p_board_handling)
         {
             int new_snap_angle_no = p_logfile.read_int();
-            p_board_handling.get_routing_board().rules.set_trace_angle_restriction(board.AngleRestriction.arr[new_snap_angle_no]);
+            p_board_handling.get_routing_board().rules.set_trace_angle_restriction(freerouting.board.AngleRestriction.arr[new_snap_angle_no]);
             return p_return_state;
         }
     }
@@ -1209,7 +1209,7 @@ public abstract class LogfileScope
         {
             int item_type_no = p_logfile.read_int();
             int selection = p_logfile.read_int();
-            board.ItemSelectionFilter.SelectableChoices item_type = board.ItemSelectionFilter.SelectableChoices.values()[item_type_no];
+            freerouting.board.ItemSelectionFilter.SelectableChoices item_type = freerouting.board.ItemSelectionFilter.SelectableChoices.values()[item_type_no];
             if (selection == 0)
             {
                 p_board_handling.settings.item_selection_filter.set_selected(item_type, false);

@@ -28,15 +28,15 @@ import java.util.Collection;
  *
  * @author Alfons Wirtz
  */
-public class WindowObjectInfo extends BoardTemporarySubWindow implements board.ObjectInfoPanel
+public class WindowObjectInfo extends BoardTemporarySubWindow implements freerouting.board.ObjectInfoPanel
 {
     /**
      * Displays a new ObjectInfoWindow with information about the items in p_item_list.
      * p_coordinate_transform is for transforming board to user coordinates,
      * and p_location is the location of the window.
      */
-    public static void display(Collection<board.Item> p_item_list,
-            BoardFrame p_board_frame, board.CoordinateTransform p_coordinate_transform, java.awt.Point p_location)
+    public static void display(Collection<freerouting.board.Item> p_item_list,
+            BoardFrame p_board_frame, freerouting.board.CoordinateTransform p_coordinate_transform, java.awt.Point p_location)
     {
         WindowObjectInfo new_instance = new WindowObjectInfo(p_board_frame, p_coordinate_transform);
         new_instance.setTitle(new_instance.resources.getString("title"));
@@ -47,18 +47,18 @@ public class WindowObjectInfo extends BoardTemporarySubWindow implements board.O
         for (WindowObjectInfo.Printable curr_object : p_item_list)
         {
             curr_object.print_info(new_instance, p_board_frame.get_locale());
-            if (curr_object instanceof board.Pin)
+            if (curr_object instanceof freerouting.board.Pin)
             {
                 ++pin_count;
             }
-            else if (curr_object instanceof board.Via)
+            else if (curr_object instanceof freerouting.board.Via)
             {
                 ++via_count;
             }
-            else if (curr_object instanceof board.Trace)
+            else if (curr_object instanceof freerouting.board.Trace)
             {
                 ++trace_count;
-                cumulative_trace_length += ((board.Trace) curr_object).get_length();
+                cumulative_trace_length += ((freerouting.board.Trace) curr_object).get_length();
             }
         }
         new_instance.append_bold(new_instance.resources.getString("summary") + " ");
@@ -128,7 +128,7 @@ public class WindowObjectInfo extends BoardTemporarySubWindow implements board.O
      * and p_location is the location of the window.
      */
     public static WindowObjectInfo display(String p_title, Collection<Printable> p_object_list,
-            BoardFrame p_board_frame, board.CoordinateTransform p_coordinate_transform)
+            BoardFrame p_board_frame, freerouting.board.CoordinateTransform p_coordinate_transform)
     {
         WindowObjectInfo new_window = new WindowObjectInfo(p_board_frame, p_coordinate_transform);
         new_window.setTitle(p_title);
@@ -153,7 +153,7 @@ public class WindowObjectInfo extends BoardTemporarySubWindow implements board.O
     }
     
     /** Creates a new instance of ItemInfoWindow */
-    private WindowObjectInfo(BoardFrame p_board_frame, board.CoordinateTransform p_coordinate_transform)
+    private WindowObjectInfo(BoardFrame p_board_frame, freerouting.board.CoordinateTransform p_coordinate_transform)
     {
         super(p_board_frame);
         this.resources = 
@@ -259,9 +259,9 @@ public class WindowObjectInfo extends BoardTemporarySubWindow implements board.O
      * after transforming to the user coordinate sytem.
      * Returns false, if that was not possible.
      */
-    public boolean append(geometry.planar.FloatPoint p_point)
+    public boolean append(freerouting.geometry.planar.FloatPoint p_point)
     {
-        geometry.planar.FloatPoint transformed_point = this.coordinate_transform.board_to_user(p_point);
+        freerouting.geometry.planar.FloatPoint transformed_point = this.coordinate_transform.board_to_user(p_point);
         return append(transformed_point.to_string(board_frame.get_locale()));
     }
     
@@ -270,9 +270,9 @@ public class WindowObjectInfo extends BoardTemporarySubWindow implements board.O
      * after transforming to the user coordinate sytem.
      * Returns false, if that was not possible.
      */
-    public boolean append(geometry.planar.Shape p_shape, java.util.Locale p_locale)
+    public boolean append(freerouting.geometry.planar.Shape p_shape, java.util.Locale p_locale)
     {
-        board.PrintableShape transformed_shape = this.coordinate_transform.board_to_user(p_shape, p_locale);
+        freerouting.board.PrintableShape transformed_shape = this.coordinate_transform.board_to_user(p_shape, p_locale);
         if (transformed_shape == null)
         {
             return false;
@@ -311,7 +311,7 @@ public class WindowObjectInfo extends BoardTemporarySubWindow implements board.O
      * Appends a button for creating a new ObjectInfoWindow with the information
      * of p_items to the text pane. Returns false, if that was not possible.
      */
-    public boolean append_items( String p_button_name, String p_window_title, java.util.Collection<board.Item> p_items)
+    public boolean append_items( String p_button_name, String p_window_title, java.util.Collection<freerouting.board.Item> p_items)
     {
         java.util.Collection<WindowObjectInfo.Printable> object_list = new java.util.LinkedList<WindowObjectInfo.Printable>();
         object_list.addAll(p_items);
@@ -371,7 +371,7 @@ public class WindowObjectInfo extends BoardTemporarySubWindow implements board.O
     }
     
     private final javax.swing.JTextPane text_pane;
-    private final board.CoordinateTransform coordinate_transform;
+    private final freerouting.board.CoordinateTransform coordinate_transform;
     
     private final java.util.ResourceBundle resources;
     private final java.text.NumberFormat number_format;

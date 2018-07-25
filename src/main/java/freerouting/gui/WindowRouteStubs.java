@@ -50,14 +50,14 @@ public class WindowRouteStubs extends WindowObjectListWithFilter
     
     protected void fill_list()
     {
-        board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
+        freerouting.board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
         
         SortedSet<RouteStubInfo> route_stub_info_set = new java.util.TreeSet<RouteStubInfo>();
         
         Collection<Item> board_items = routing_board.get_items();
         for (Item curr_item : board_items)
         {
-            if (!(curr_item instanceof board.Trace || curr_item instanceof board.Via))
+            if (!(curr_item instanceof freerouting.board.Trace || curr_item instanceof freerouting.board.Via))
             {
                 continue;
             }
@@ -68,7 +68,7 @@ public class WindowRouteStubs extends WindowObjectListWithFilter
             
             FloatPoint stub_location;
             int stub_layer;
-            if (curr_item instanceof board.Via)
+            if (curr_item instanceof freerouting.board.Via)
             {
                 Collection<Item> contact_list = curr_item.get_all_contacts();
                 if  (contact_list.isEmpty())
@@ -106,11 +106,11 @@ public class WindowRouteStubs extends WindowObjectListWithFilter
                         stub_layer = first_contact_last_layer;
                     }
                 }
-                stub_location = ((board.Via)curr_item).get_center().to_float();
+                stub_location = ((freerouting.board.Via)curr_item).get_center().to_float();
             }
             else
             {
-                board.Trace curr_trace = (board.Trace) curr_item;
+                freerouting.board.Trace curr_trace = (freerouting.board.Trace) curr_item;
                 if  (curr_trace.get_start_contacts().isEmpty())
                 {
                     stub_location = curr_trace.first_corner().to_float();
@@ -143,12 +143,12 @@ public class WindowRouteStubs extends WindowObjectListWithFilter
         {
             return;
         }
-        Set<board.Item> selected_items = new java.util.TreeSet<board.Item>();
+        Set<freerouting.board.Item> selected_items = new java.util.TreeSet<freerouting.board.Item>();
         for (int i = 0; i < selected_list_values.length; ++i)
         {
             selected_items.add(((RouteStubInfo)selected_list_values[i]).stub_item);
         }
-        interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+        freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
         board_handling.select_items(selected_items);
         board_handling.zoom_selection();
     }
@@ -162,7 +162,7 @@ public class WindowRouteStubs extends WindowObjectListWithFilter
     {
         public RouteStubInfo(Item p_stub, FloatPoint p_location, int p_layer_no)
         {
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
             this.stub_item = p_stub;
             this.location = board_handling.coordinate_transform.board_to_user(p_location);
             this.layer_no  = p_layer_no;
@@ -173,7 +173,7 @@ public class WindowRouteStubs extends WindowObjectListWithFilter
         public String toString()
         {
             String item_string;
-            if (this.stub_item instanceof board.Trace)
+            if (this.stub_item instanceof freerouting.board.Trace)
             {
                 item_string = resources.getString("trace");
             }
@@ -207,7 +207,7 @@ public class WindowRouteStubs extends WindowObjectListWithFilter
         }
         
         private final Item stub_item;
-        private final rules.Net net;
+        private final freerouting.rules.Net net;
         private final FloatPoint location;
         private final int layer_no;
     }

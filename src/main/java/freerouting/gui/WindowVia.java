@@ -354,7 +354,7 @@ public class WindowVia extends BoardSavableSubWindow
             {
                 return;
             }
-            library.Padstack new_padstack = pcb.library.padstacks.add(padstack_name, padstack_shapes, true, true);
+            freerouting.library.Padstack new_padstack = pcb.library.padstacks.add(padstack_name, padstack_shapes, true, true);
             pcb.library.add_via_padstack(new_padstack);
         }
     }
@@ -436,12 +436,12 @@ public class WindowVia extends BoardSavableSubWindow
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
             java.util.Collection<WindowObjectInfo.Printable> object_list = new java.util.LinkedList<WindowObjectInfo.Printable>();
-            rules.ViaInfos via_infos = board_frame.board_panel.board_handling.get_routing_board().rules.via_infos;
+            freerouting.rules.ViaInfos via_infos = board_frame.board_panel.board_handling.get_routing_board().rules.via_infos;
             for (int i = 0; i < via_infos.count(); ++i)
             {
                 object_list.add(via_infos.get(i));
             }
-            board.CoordinateTransform coordinate_transform = board_frame.board_panel.board_handling.coordinate_transform;
+            freerouting.board.CoordinateTransform coordinate_transform = board_frame.board_panel.board_handling.coordinate_transform;
             WindowObjectInfo new_window =
                     WindowObjectInfo.display(resources.getString("available_vias"), object_list, board_frame, coordinate_transform);
             java.awt.Point loc = getLocation();

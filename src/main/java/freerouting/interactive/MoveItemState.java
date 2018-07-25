@@ -60,7 +60,7 @@ public class MoveItemState extends InteractiveState
         // extend p_item_list to full  components
         Set<Item> item_list = new TreeSet<Item>();
         Set<Component> component_list = new TreeSet<Component>();
-        board.BasicBoard routing_board = p_board_handling.get_routing_board();
+        freerouting.board.BasicBoard routing_board = p_board_handling.get_routing_board();
         Component grid_snap_component = null;
         for (Item curr_item : p_item_list)
         {
@@ -117,7 +117,7 @@ public class MoveItemState extends InteractiveState
                 {
                     for (Item curr_contact : contacts)
                     {
-                        if (curr_contact instanceof board.ConductionArea)
+                        if (curr_contact instanceof freerouting.board.ConductionArea)
                         {
                             
                             continue;
@@ -187,7 +187,7 @@ public class MoveItemState extends InteractiveState
         {
             logfile.start_scope(LogfileScope.MOVE_ITEMS, p_location);
         }
-        board.BasicBoard routing_board = hdlg.get_routing_board();
+        freerouting.board.BasicBoard routing_board = hdlg.get_routing_board();
         this.observers_activated = !hdlg.get_routing_board().observers_active();
         if (this.observers_activated)
         {
@@ -264,7 +264,7 @@ public class MoveItemState extends InteractiveState
                 return this;
             }
         }
-        board.BasicBoard routing_board = hdlg.get_routing_board();
+        freerouting.board.BasicBoard routing_board = hdlg.get_routing_board();
         for (Item curr_item : this.item_list)
         {
             routing_board.insert_item(curr_item);
@@ -330,7 +330,7 @@ public class MoveItemState extends InteractiveState
             {
                 translate_vector = adjust_to_placement_grid(translate_vector);
             }
-            board.Components components = hdlg.get_routing_board().components;
+            freerouting.board.Components components = hdlg.get_routing_board().components;
             for (Component curr_component : this.component_list)
             {
                 components.move(curr_component.no, translate_vector);
@@ -372,7 +372,7 @@ public class MoveItemState extends InteractiveState
         {
             return;
         }
-        board.Components components = hdlg.get_routing_board().components;
+        freerouting.board.Components components = hdlg.get_routing_board().components;
         for (Component curr_component : this.component_list)
         {
             components.turn_90_degree(curr_component.no, p_factor, current_position);
@@ -401,7 +401,7 @@ public class MoveItemState extends InteractiveState
         {
             return;
         }
-        board.Components components = hdlg.get_routing_board().components;
+        freerouting.board.Components components = hdlg.get_routing_board().components;
         for (Component curr_component : this.component_list)
         {
             components.rotate(curr_component.no, p_angle_in_degree,  this.current_position);
@@ -478,7 +478,7 @@ public class MoveItemState extends InteractiveState
             return;
         }
         
-        board.Components components = hdlg.get_routing_board().components;
+        freerouting.board.Components components = hdlg.get_routing_board().components;
         for (Component curr_component : this.component_list)
         {
             components.change_side(curr_component.no, current_position);

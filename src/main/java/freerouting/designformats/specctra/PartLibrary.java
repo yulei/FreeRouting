@@ -90,7 +90,7 @@ public class PartLibrary  extends ScopeKeyword
     
     public static void write_scope(WriteScopeParameter p_par) throws java.io.IOException
     {
-        library.LogicalParts logical_parts = p_par.board.library.logical_parts;
+        freerouting.library.LogicalParts logical_parts = p_par.board.library.logical_parts;
         if (logical_parts.count() <= 0)
         {
             return;
@@ -102,7 +102,7 @@ public class PartLibrary  extends ScopeKeyword
         
         for (int i = 1; i <=  logical_parts.count(); ++i)
         {
-            library.LogicalPart curr_part =  logical_parts.get(i);
+            freerouting.library.LogicalPart curr_part =  logical_parts.get(i);
             p_par.file.start_scope();
             p_par.file.write("logical_part_mapping ");
             p_par.identifier_type.write(curr_part.name, p_par.file);
@@ -110,7 +110,7 @@ public class PartLibrary  extends ScopeKeyword
             p_par.file.write("(comp");
             for (int j  = 1; j <= p_par.board.components.count(); ++j)
             {
-                board.Component curr_compomnent = p_par.board.components.get(j);
+                freerouting.board.Component curr_compomnent = p_par.board.components.get(j);
                 if (curr_compomnent.get_logical_part() == curr_part)
                 {
                     p_par.file.write(" ");
@@ -125,7 +125,7 @@ public class PartLibrary  extends ScopeKeyword
         
         for (int i = 1; i <=  logical_parts.count(); ++i)
         {
-            library.LogicalPart curr_part =  logical_parts.get(i);
+            freerouting.library.LogicalPart curr_part =  logical_parts.get(i);
             
             p_par.file.start_scope();
             p_par.file.write("logical_part ");
@@ -134,7 +134,7 @@ public class PartLibrary  extends ScopeKeyword
             for (int j = 0; j < curr_part.pin_count(); ++j)
             {
                 p_par.file.new_line();
-                library.LogicalPart.PartPin curr_pin =  curr_part.get_pin(j);
+                freerouting.library.LogicalPart.PartPin curr_pin =  curr_part.get_pin(j);
                 p_par.file.write("(pin ");
                 p_par.identifier_type.write(curr_pin.pin_name, p_par.file);
                 p_par.file.write(" 0 ");

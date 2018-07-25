@@ -88,7 +88,7 @@ public class Component extends ScopeKeyword
         return component_placement;
     }
     
-    public static void write_scope(WriteScopeParameter p_par, board.Component p_component)
+    public static void write_scope(WriteScopeParameter p_par, freerouting.board.Component p_component)
     throws java.io.IOException
     {
         p_par.file.start_scope();
@@ -128,20 +128,20 @@ public class Component extends ScopeKeyword
         p_par.file.end_scope();
     }
     
-    private static void write_pin_info(WriteScopeParameter p_par, board.Component p_component, int p_pin_no)
+    private static void write_pin_info(WriteScopeParameter p_par, freerouting.board.Component p_component, int p_pin_no)
     throws java.io.IOException
     {
         if (!p_component.is_placed())
         {
             return;
         }
-        library.Package.Pin package_pin = p_component.get_package().get_pin(p_pin_no);
+        freerouting.library.Package.Pin package_pin = p_component.get_package().get_pin(p_pin_no);
         if (package_pin == null)
         {
             System.out.println("Component.write_pin_info: package pin not found");
             return;
         }
-        board.Pin component_pin = p_par.board.get_pin(p_component.no, p_pin_no);
+        freerouting.board.Pin component_pin = p_par.board.get_pin(p_component.no, p_pin_no);
         if (component_pin == null)
         {
             System.out.println("Component.write_pin_info: component pin not found");
@@ -161,14 +161,14 @@ public class Component extends ScopeKeyword
         p_par.file.write("))");
     }
     
-    private static void write_keepout_infos(WriteScopeParameter p_par, board.Component p_component)
+    private static void write_keepout_infos(WriteScopeParameter p_par, freerouting.board.Component p_component)
     throws java.io.IOException
     {
         if (!p_component.is_placed())
         {
             return;
         }
-        library.Package.Keepout[] curr_keepout_arr;
+        freerouting.library.Package.Keepout[] curr_keepout_arr;
         String keepout_type;
         for (int j = 0; j < 3; ++j)
         {
@@ -189,8 +189,8 @@ public class Component extends ScopeKeyword
             }
             for (int i = 0; i < curr_keepout_arr.length; ++i)
             {
-                library.Package.Keepout curr_keepout = curr_keepout_arr[i];
-                board.ObstacleArea curr_obstacle_area = get_keepout(p_par.board, p_component.no, curr_keepout.name);
+                freerouting.library.Package.Keepout curr_keepout = curr_keepout_arr[i];
+                freerouting.board.ObstacleArea curr_obstacle_area = get_keepout(p_par.board, p_component.no, curr_keepout.name);
                 if (curr_obstacle_area == null || curr_obstacle_area.clearance_class_no() == 0)
                 {
                     continue;
@@ -211,19 +211,19 @@ public class Component extends ScopeKeyword
         }
     }
     
-    private static board.ObstacleArea get_keepout(board.BasicBoard p_board, int p_component_no, String p_name)
+    private static freerouting.board.ObstacleArea get_keepout(freerouting.board.BasicBoard p_board, int p_component_no, String p_name)
     {
-        java.util.Iterator<datastructures.UndoableObjects.UndoableObjectNode> it = p_board.item_list.start_read_object();
+        java.util.Iterator<freerouting.datastructures.UndoableObjects.UndoableObjectNode> it = p_board.item_list.start_read_object();
         for(;;)
         {
-            board.Item curr_item = (board.Item)p_board.item_list.read_object(it);
+            freerouting.board.Item curr_item = (freerouting.board.Item)p_board.item_list.read_object(it);
             if (curr_item == null)
             {
                 break;
             }
-            if (curr_item.get_component_no() == p_component_no && curr_item instanceof board.ObstacleArea)
+            if (curr_item.get_component_no() == p_component_no && curr_item instanceof freerouting.board.ObstacleArea)
             {
-                board.ObstacleArea curr_area = (board.ObstacleArea) curr_item;
+                freerouting.board.ObstacleArea curr_area = (freerouting.board.ObstacleArea) curr_item;
                 if (curr_area.name != null && curr_area.name.equals(p_name))
                 {
                     return curr_area;

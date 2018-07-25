@@ -188,7 +188,7 @@ public class ExpandTestState extends InteractiveState
         while (it.hasNext())
         {
             Item curr_ob = it.next();
-            if (curr_ob instanceof board.Connectable)
+            if (curr_ob instanceof freerouting.board.Connectable)
             {
                 Item curr_item = curr_ob;
                 if (curr_item.net_count() == 1 && curr_item.get_net_no(0) > 0)
@@ -238,7 +238,7 @@ public class ExpandTestState extends InteractiveState
                     LocateFoundConnectionAlgo.get_instance(search_result, control_settings,
                     this.autoroute_engine.autoroute_search_tree,
                     hdlg.get_routing_board().rules.get_trace_angle_restriction(),
-                    ripped_item_list, board.TestLevel.ALL_DEBUGGING_OUTPUT);
+                    ripped_item_list, freerouting.board.TestLevel.ALL_DEBUGGING_OUTPUT);
             hdlg.get_routing_board().generate_snapshot();
             SortedSet<Item> ripped_connections = new TreeSet<Item>();
             for (Item curr_ripped_item : ripped_item_list)

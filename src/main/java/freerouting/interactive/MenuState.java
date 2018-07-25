@@ -84,12 +84,12 @@ public class MenuState extends InteractiveState
         if (picked_items.size() > 0)
         {
             Item first_item = picked_items.iterator().next();
-            if (!(first_item instanceof board.Pin))
+            if (!(first_item instanceof freerouting.board.Pin))
             {
                 System.out.println("MenuState.swap_pin: Pin expected");
                 return this;
             }
-            board.Pin selected_pin = (board.Pin) first_item;
+            freerouting.board.Pin selected_pin = (freerouting.board.Pin) first_item;
             result = PinSwapState.get_instance(selected_pin, this, hdlg, this.logfile);
         }
         else
@@ -161,7 +161,7 @@ public class MenuState extends InteractiveState
         else if (p_key_char == '+')
         {
             // increase the current layer to the next signal layer
-            board.LayerStructure layer_structure = hdlg.get_routing_board().layer_structure;
+            freerouting.board.LayerStructure layer_structure = hdlg.get_routing_board().layer_structure;
             int current_layer_no = hdlg.settings.layer;
             for(;;)
             {
@@ -179,7 +179,7 @@ public class MenuState extends InteractiveState
         else if (p_key_char == '-')
         {
             // decrease the current layer to the previous signal layer
-            board.LayerStructure layer_structure = hdlg.get_routing_board().layer_structure;
+            freerouting.board.LayerStructure layer_structure = hdlg.get_routing_board().layer_structure;
             int current_layer_no = hdlg.settings.layer;
             for(;;)
             {

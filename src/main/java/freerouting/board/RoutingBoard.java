@@ -934,7 +934,7 @@ public class RoutingBoard extends BasicBoard implements java.io.Serializable
      * is not yet electrically connected.
      * Returns an enum of type AutorouteEngine.AutorouteResult
      */
-    public AutorouteEngine.AutorouteResult autoroute(Item p_item, interactive.Settings p_settings, int p_via_costs, Stoppable p_stoppable_thread, TimeLimit p_time_limit)
+    public AutorouteEngine.AutorouteResult autoroute(Item p_item, freerouting.interactive.Settings p_settings, int p_via_costs, Stoppable p_stoppable_thread, TimeLimit p_time_limit)
     {
         if (!(p_item instanceof Connectable) || p_item.net_count() == 0)
         {
@@ -948,12 +948,12 @@ public class RoutingBoard extends BasicBoard implements java.io.Serializable
         AutorouteControl ctrl_settings = new AutorouteControl(this, route_net_no, p_settings, p_via_costs, p_settings.autoroute_settings.get_trace_cost_arr());
         ctrl_settings.remove_unconnected_vias = false;
         Set<Item> route_start_set = p_item.get_connected_set(route_net_no);
-        rules.Net route_net = rules.nets.get(route_net_no);
+        freerouting.rules.Net route_net = rules.nets.get(route_net_no);
         if (route_net != null && route_net.contains_plane())
         {
             for (Item curr_item : route_start_set)
             {
-                if (curr_item instanceof board.ConductionArea)
+                if (curr_item instanceof freerouting.board.ConductionArea)
                 {
                     return AutorouteEngine.AutorouteResult.ALREADY_CONNECTED; // already connected to plane
                 }
@@ -982,7 +982,7 @@ public class RoutingBoard extends BasicBoard implements java.io.Serializable
      *  has only 1 layer. Ripup is allowed if p_ripup_costs is >= 0.
      *  Returns an enum of type AutorouteEngine.AutorouteResult
      */
-    public AutorouteEngine.AutorouteResult fanout(Pin p_pin, interactive.Settings p_settings, int p_ripup_costs,
+    public AutorouteEngine.AutorouteResult fanout(Pin p_pin, freerouting.interactive.Settings p_settings, int p_ripup_costs,
             Stoppable p_stoppable_thread, TimeLimit p_time_limit)
     {
         if (p_pin.first_layer() != p_pin.last_layer() || p_pin.net_count() != 1)

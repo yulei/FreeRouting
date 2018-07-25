@@ -32,9 +32,9 @@ public class ReadScopeParameter
 {
     
     /** Creates a new instance of ReadScopeParameter */
-    ReadScopeParameter(Scanner p_scanner, interactive.BoardHandling p_board_handling,
-            board.BoardObservers p_observers, 
-            datastructures.IdNoGenerator p_item_id_no_generator,board.TestLevel p_test_level)
+    ReadScopeParameter(Scanner p_scanner, freerouting.interactive.BoardHandling p_board_handling,
+            freerouting.board.BoardObservers p_observers, 
+            freerouting.datastructures.IdNoGenerator p_item_id_no_generator,freerouting.board.TestLevel p_test_level)
     {
         scanner = p_scanner;
         board_handling = p_board_handling;
@@ -44,12 +44,12 @@ public class ReadScopeParameter
     }
     
     final Scanner scanner;
-    final interactive.BoardHandling board_handling;
+    final freerouting.interactive.BoardHandling board_handling;
     final NetList netlist = new NetList();
     
-    final board.BoardObservers  observers;
-    final datastructures.IdNoGenerator item_id_no_generator;
-    final board.TestLevel test_level;
+    final freerouting.board.BoardObservers  observers;
+    final freerouting.datastructures.IdNoGenerator item_id_no_generator;
+    final freerouting.board.TestLevel test_level;
     
     /** Collection of elements of class PlaneInfo.
      * The plane cannot be inserted directly into the boards, because the layers may not be read completely.
@@ -71,7 +71,7 @@ public class ReadScopeParameter
     Collection<String> via_padstack_names = null;
     
     boolean via_at_smd_allowed = false;
-    board.AngleRestriction snap_angle = board.AngleRestriction.FORTYFIVE_DEGREE;
+    freerouting.board.AngleRestriction snap_angle = freerouting.board.AngleRestriction.FORTYFIVE_DEGREE;
     
     /** The logical parts are used for pin and gate swaw */
     java.util.Collection<PartLibrary.LogicalPartMapping> logical_part_mappings
@@ -88,15 +88,15 @@ public class ReadScopeParameter
     boolean board_outline_ok = true;
     
     final Collection<String[]> constants = new LinkedList<String[]>();
-    board.Communication.SpecctraParserInfo.WriteResolution write_resolution = null;
+    freerouting.board.Communication.SpecctraParserInfo.WriteResolution write_resolution = null;
     
     
     /** The following objects will be initialised when the structure scope is read. */
     CoordinateTransform coordinate_transform = null;
     LayerStructure layer_structure = null;
-    interactive.AutorouteSettings autoroute_settings = null;
+    freerouting.interactive.AutorouteSettings autoroute_settings = null;
     
-    board.Unit unit = board.Unit.MIL;
+    freerouting.board.Unit unit = freerouting.board.Unit.MIL;
     int resolution = 100; // default resulution
     
     /** Information for inserting a plane */

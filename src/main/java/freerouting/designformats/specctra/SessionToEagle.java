@@ -30,7 +30,7 @@ public class SessionToEagle extends javax.swing.JFrame
 {
     
     public static boolean get_instance(java.io.InputStream p_session, java.io.OutputStream p_output_stream,
-            board.BasicBoard p_board)
+            freerouting.board.BasicBoard p_board)
     {
         if (p_output_stream == null)
         {
@@ -73,8 +73,8 @@ public class SessionToEagle extends javax.swing.JFrame
         return result;
     }
     
-    SessionToEagle(Scanner p_scanner, java.io.OutputStreamWriter p_out_file, board.BasicBoard p_board,
-            board.Unit p_unit, double p_session_file_scale_dominator, double p_board_scale_factor)
+    SessionToEagle(Scanner p_scanner, java.io.OutputStreamWriter p_out_file, freerouting.board.BasicBoard p_board,
+            freerouting.board.Unit p_unit, double p_session_file_scale_dominator, double p_board_scale_factor)
     {
         scanner = p_scanner;
         out_file = p_out_file;
@@ -139,7 +139,7 @@ public class SessionToEagle extends javax.swing.JFrame
         // Generate Code to remove the complete route.
         // Write a bounding rectangle with GROUP (Min_X-1 Min_Y-1) (Max_X+1 Max_Y+1);
         
-        geometry.planar.IntBox board_bounding_box = this.board.get_bounding_box();
+        freerouting.geometry.planar.IntBox board_bounding_box = this.board.get_bounding_box();
         
         Float min_x = (float) this.board_scale_factor * (board_bounding_box.ll.x - 1);
         Float min_y = (float) this.board_scale_factor * (board_bounding_box.ll.y - 1);
@@ -533,7 +533,7 @@ public class SessionToEagle extends javax.swing.JFrame
             return false;
         }
         
-        library.Padstack via_padstack = this.board.library.padstacks.get(padstack_name);
+        freerouting.library.Padstack via_padstack = this.board.library.padstacks.get(padstack_name);
         
         if (via_padstack == null)
         {
@@ -541,7 +541,7 @@ public class SessionToEagle extends javax.swing.JFrame
             return false;
         }
         
-        geometry.planar.ConvexShape via_shape = via_padstack.get_shape(via_padstack.from_layer());
+        freerouting.geometry.planar.ConvexShape via_shape = via_padstack.get_shape(via_padstack.from_layer());
         
         Double via_diameter = via_shape.max_width() * this.board_scale_factor;
         
@@ -575,11 +575,11 @@ public class SessionToEagle extends javax.swing.JFrame
         this.out_file.write(via_diameter.toString());
         
         //Shape lesen und einsetzen Square / Round / Octagon
-        if (via_shape instanceof geometry.planar.Circle)
+        if (via_shape instanceof freerouting.geometry.planar.Circle)
         {
             this.out_file.write(" round ");
         }
-        else if (via_shape instanceof geometry.planar.IntOctagon)
+        else if (via_shape instanceof freerouting.geometry.planar.IntOctagon)
         {
             this.out_file.write(" octagon ");
         }
@@ -625,9 +625,9 @@ public class SessionToEagle extends javax.swing.JFrame
     
     private boolean process_swapped_pins(int p_component_no) throws java.io.IOException
     {
-        java.util.Collection<board.Pin> component_pins = this.board.get_component_pins(p_component_no);
+        java.util.Collection<freerouting.board.Pin> component_pins = this.board.get_component_pins(p_component_no);
         boolean component_has_swapped_pins = false;
-        for (board.Pin curr_pin : component_pins)
+        for (freerouting.board.Pin curr_pin : component_pins)
         {
             if (curr_pin.get_changed_to() != curr_pin)
             {
@@ -641,7 +641,7 @@ public class SessionToEagle extends javax.swing.JFrame
         }
         PinInfo[] pin_info_arr = new PinInfo[component_pins.size()];
         int i = 0;
-        for (board.Pin curr_pin : component_pins)
+        for (freerouting.board.Pin curr_pin : component_pins)
         {
             pin_info_arr[i] = new PinInfo(curr_pin);
             ++i;
@@ -672,7 +672,7 @@ public class SessionToEagle extends javax.swing.JFrame
         return true;
     }
     
-    private void write_pin_swap( board.Pin p_pin_1, board.Pin p_pin_2) throws java.io.IOException
+    private void write_pin_swap( freerouting.board.Pin p_pin_1, freerouting.board.Pin p_pin_2) throws java.io.IOException
     {
         int layer_no = Math.max(p_pin_1.first_layer(), p_pin_2.first_layer());
         String layer_name = board.layer_structure.arr[layer_no].name;
@@ -711,12 +711,12 @@ public class SessionToEagle extends javax.swing.JFrame
     private final java.io.OutputStreamWriter out_file;
     
     /** Some information is read from the board, because it is not contained in the speccctra session file. */
-    private final board.BasicBoard board;
+    private final freerouting.board.BasicBoard board;
     
     /** The layer structure in specctra format */
     private final LayerStructure specctra_layer_structure;
     
-    private final board.Unit unit;
+    private final freerouting.board.Unit unit;
     
     /** The scale factor for transforming coordinates from the session file to Eagle */
     private final double session_file_scale_denominator;
@@ -726,13 +726,13 @@ public class SessionToEagle extends javax.swing.JFrame
     
     private static class PinInfo
     {
-        PinInfo(board.Pin p_pin)
+        PinInfo(freerouting.board.Pin p_pin)
         {
             pin = p_pin;
             curr_changed_to = p_pin;
         }
-        final board.Pin pin;
-        board.Pin curr_changed_to;
+        final freerouting.board.Pin pin;
+        freerouting.board.Pin curr_changed_to;
     }
 }
 

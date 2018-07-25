@@ -52,7 +52,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
         layer_label.setToolTipText(resources.getString("layer_tooltip"));
         north_panel.add(layer_label);
         
-        interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+        freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
         layer_combo_box = new ComboBoxLayer(board_handling.get_routing_board().layer_structure, p_board_frame.get_locale());
         north_panel.add(this.layer_combo_box);
         this.layer_combo_box.addActionListener(new ComboBoxListener());
@@ -96,7 +96,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
      */
     public void refresh()
     {
-        board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
+        freerouting.board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
         if (this.clearance_table_model.getRowCount() != routing_board.rules.clearance_matrix.get_class_count())
         {
             this.adjust_clearance_table();
@@ -176,8 +176,8 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
                 break;
             }
         }
-        final board.BasicBoard routing_board  = this.board_frame.board_panel.board_handling.get_routing_board();
-        final rules.ClearanceMatrix clearance_matrix = routing_board.rules.clearance_matrix;
+        final freerouting.board.BasicBoard routing_board  = this.board_frame.board_panel.board_handling.get_routing_board();
+        final freerouting.rules.ClearanceMatrix clearance_matrix = routing_board.rules.clearance_matrix;
         
         // Check, if the name exists already.
         boolean name_exists = false;
@@ -194,7 +194,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
             return;
         }
         clearance_matrix.append_class(new_name);
-        if (routing_board.get_test_level() == board.TestLevel.RELEASE_VERSION)
+        if (routing_board.get_test_level() == freerouting.board.TestLevel.RELEASE_VERSION)
         {
             // clearance compensation is only used, if there are only the clearance classes default and null.
             routing_board.search_tree_manager.set_clearance_compensation_used(false);
@@ -207,7 +207,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
      */
     private void prune_clearance_matrix()
     {
-        final board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
+        final freerouting.board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
         ClearanceMatrix clearance_matrix = routing_board.rules.clearance_matrix;
         for (int i = clearance_matrix.get_class_count() - 1; i >= 2; --i)
         {
@@ -224,7 +224,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
                             javax.swing.JOptionPane.showConfirmDialog(this, message, null, javax.swing.JOptionPane.YES_NO_OPTION);
                     if (selected_option == javax.swing.JOptionPane.YES_OPTION)
                     {
-                        java.util.Collection<board.Item> board_items  = routing_board.get_items();
+                        java.util.Collection<freerouting.board.Item> board_items  = routing_board.get_items();
                         routing_board.rules.change_clearance_class_no(i, j, board_items);
                         if (!routing_board.rules.remove_clearance_class(i, board_items))
                         {
@@ -278,7 +278,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
     private int max_name_length()
     {
         int result  = 1;
-        rules.ClearanceMatrix clearance_matrix = board_frame.board_panel.board_handling.get_routing_board().rules.clearance_matrix;
+        freerouting.rules.ClearanceMatrix clearance_matrix = board_frame.board_panel.board_handling.get_routing_board().rules.clearance_matrix;
         for (int i = 0; i < clearance_matrix.get_class_count(); ++i)
         {
             result = Math.max(result, clearance_matrix.get_name(i).length());
@@ -326,9 +326,9 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
      */
     private class ClearanceTableModel extends javax.swing.table.AbstractTableModel implements java.io.Serializable
     {
-        public ClearanceTableModel(interactive.BoardHandling p_board_handling)
+        public ClearanceTableModel(freerouting.interactive.BoardHandling p_board_handling)
         {
-            rules.ClearanceMatrix clearance_matrix = p_board_handling.get_routing_board().rules.clearance_matrix;
+            freerouting.rules.ClearanceMatrix clearance_matrix = p_board_handling.get_routing_board().rules.clearance_matrix;
             
             column_names = new String[clearance_matrix.get_class_count() + 1];
             column_names[0] = resources.getString("class");
@@ -393,14 +393,14 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
             
             // check, if there are items on the board assigned to clearance class i or j.
             
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
-            datastructures.UndoableObjects item_list = board_handling.get_routing_board().item_list;
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.datastructures.UndoableObjects item_list = board_handling.get_routing_board().item_list;
             boolean items_already_assigned_row = false;
             boolean items_already_assigned_column = false;
             java.util.Iterator<UndoableObjects.UndoableObjectNode> it = item_list.start_read_object();
             for(;;)
             {
-                board.Item curr_item = (board.Item) item_list.read_object(it);
+                freerouting.board.Item curr_item = (freerouting.board.Item) item_list.read_object(it);
                 if (curr_item == null)
                 {
                     break;
@@ -491,7 +491,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
          */
         private void set_values(int p_layer)
         {
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
             ClearanceMatrix clearance_matrix = board_handling.get_routing_board().rules.clearance_matrix;
             
             for (int i = 0; i < clearance_matrix.get_class_count(); ++i)

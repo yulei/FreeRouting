@@ -65,7 +65,7 @@ public class WindowAutorouteParameter extends BoardSavableSubWindow
         this.horizontal = resources.getString("horizontal");
         this.vertical = resources.getString("vertical");
 
-        board.LayerStructure layer_structure = board_handling.get_routing_board().layer_structure;
+        freerouting.board.LayerStructure layer_structure = board_handling.get_routing_board().layer_structure;
         int signal_layer_count = layer_structure.signal_layer_count();
         signal_layer_name_arr = new javax.swing.JLabel[signal_layer_count];
         signal_layer_active_arr = new javax.swing.JCheckBox[signal_layer_count];
@@ -73,7 +73,7 @@ public class WindowAutorouteParameter extends BoardSavableSubWindow
         for (int i = 0; i < signal_layer_count; ++i)
         {
             signal_layer_name_arr[i] = new javax.swing.JLabel();
-            board.Layer curr_signal_layer = layer_structure.get_signal_layer(i);
+            freerouting.board.Layer curr_signal_layer = layer_structure.get_signal_layer(i);
             signal_layer_name_arr[i].setText(curr_signal_layer.name);
             gridbag_constraints.gridwidth = 3;
             gridbag.setConstraints(signal_layer_name_arr[i], gridbag_constraints);
@@ -165,8 +165,8 @@ public class WindowAutorouteParameter extends BoardSavableSubWindow
      */
     public void refresh()
     {
-        interactive.AutorouteSettings settings = this.board_handling.settings.autoroute_settings;
-        board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
+        freerouting.interactive.AutorouteSettings settings = this.board_handling.settings.autoroute_settings;
+        freerouting.board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
 
         this.vias_allowed.setSelected(settings.get_vias_allowed());
         this.fanout_pass_button.setSelected(settings.get_with_fanout());
@@ -209,7 +209,7 @@ public class WindowAutorouteParameter extends BoardSavableSubWindow
         detail_window.parent_deiconified();
         super.parent_deiconified();
     }
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     private final javax.swing.JLabel[] signal_layer_name_arr;
     private final javax.swing.JCheckBox[] signal_layer_active_arr;
     private final javax.swing.JComboBox[] combo_box_arr;
@@ -285,7 +285,7 @@ public class WindowAutorouteParameter extends BoardSavableSubWindow
 
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            interactive.AutorouteSettings autoroute_settings = board_handling.settings.autoroute_settings;
+            freerouting.interactive.AutorouteSettings autoroute_settings = board_handling.settings.autoroute_settings;
             autoroute_settings.set_with_fanout(fanout_pass_button.isSelected());
             autoroute_settings.set_pass_no(1);
         }
@@ -296,7 +296,7 @@ public class WindowAutorouteParameter extends BoardSavableSubWindow
 
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            interactive.AutorouteSettings autoroute_settings = board_handling.settings.autoroute_settings;
+            freerouting.interactive.AutorouteSettings autoroute_settings = board_handling.settings.autoroute_settings;
             autoroute_settings.set_with_autoroute(autoroute_pass_button.isSelected());
             autoroute_settings.set_pass_no(1);
         }
@@ -307,7 +307,7 @@ public class WindowAutorouteParameter extends BoardSavableSubWindow
 
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            interactive.AutorouteSettings autoroute_settings = board_handling.settings.autoroute_settings;
+            freerouting.interactive.AutorouteSettings autoroute_settings = board_handling.settings.autoroute_settings;
             autoroute_settings.set_with_postroute(postroute_pass_button.isSelected());
             autoroute_settings.set_pass_no(1);
         }

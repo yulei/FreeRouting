@@ -45,7 +45,7 @@ public class WindowClearanceViolations extends WindowObjectListWithFilter
     
     protected void fill_list()
     {
-        interactive.BoardHandling board_handling = this.board_frame.board_panel.board_handling;
+        freerouting.interactive.BoardHandling board_handling = this.board_frame.board_panel.board_handling;
         
         ClearanceViolations clearance_violations =
                 new ClearanceViolations(board_handling.get_routing_board().get_items());
@@ -68,7 +68,7 @@ public class WindowClearanceViolations extends WindowObjectListWithFilter
         {
             return;
         }
-        java.util.Set<board.Item> selected_items = new java.util.TreeSet<board.Item>();
+        java.util.Set<freerouting.board.Item> selected_items = new java.util.TreeSet<freerouting.board.Item>();
         for (int i = 0; i < selected_violations.length; ++i)
         {
             ClearanceViolation curr_violation = ((ViolationInfo) selected_violations[i]).violation;
@@ -76,44 +76,44 @@ public class WindowClearanceViolations extends WindowObjectListWithFilter
             selected_items.add(curr_violation.second_item);
             
         }
-        interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+        freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
         board_handling.select_items(selected_items);
         board_handling.toggle_selected_item_violations();
         board_handling.zoom_selection();
     }
     
-    private String item_info(board.Item p_item)
+    private String item_info(freerouting.board.Item p_item)
     {
         String result;
-        if (p_item instanceof board.Pin)
+        if (p_item instanceof freerouting.board.Pin)
         {
             result = resources.getString("pin");
         }
-        else if (p_item instanceof board.Via)
+        else if (p_item instanceof freerouting.board.Via)
         {
             result = resources.getString("via");
         }
-        else if (p_item instanceof board.Trace)
+        else if (p_item instanceof freerouting.board.Trace)
         {
             result = resources.getString("trace");
         }
-        else if (p_item instanceof board.ConductionArea)
+        else if (p_item instanceof freerouting.board.ConductionArea)
         {
             result = resources.getString("conduction_area");
         }
-        else if (p_item instanceof board.ObstacleArea)
+        else if (p_item instanceof freerouting.board.ObstacleArea)
         {
             result = resources.getString("keepout");
         }
-        else if (p_item instanceof board.ViaObstacleArea)
+        else if (p_item instanceof freerouting.board.ViaObstacleArea)
         {
             result = resources.getString("via_keepout");
         }
-        else if (p_item instanceof board.ComponentObstacleArea)
+        else if (p_item instanceof freerouting.board.ComponentObstacleArea)
         {
             result = resources.getString("component_keepout");
         }
-        else if (p_item instanceof board.BoardOutline)
+        else if (p_item instanceof freerouting.board.BoardOutline)
         {
             result = resources.getString("board_outline");
         }
@@ -137,14 +137,14 @@ public class WindowClearanceViolations extends WindowObjectListWithFilter
         
         public String toString()
         {
-            board.LayerStructure layer_structure =  board_frame.board_panel.board_handling.get_routing_board().layer_structure;
+            freerouting.board.LayerStructure layer_structure =  board_frame.board_panel.board_handling.get_routing_board().layer_structure;
             String result = item_info(violation.first_item) + " - " + item_info(violation.second_item)
             + " " + resources.getString("at") + " " + location.to_string(board_frame.get_locale()) + " "
                     + resources.getString("on_layer") + " " + layer_structure.arr[violation.layer].name;
             return result;
         }
         
-        public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+        public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
         {
             this.violation.print_info(p_window, p_locale);
         }

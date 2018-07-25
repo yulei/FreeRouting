@@ -137,7 +137,7 @@ public class WindowRouteDetail extends BoardSavableSubWindow
         int accuracy_slider_value = c_max_slider_value - this.board_handling.settings.get_trace_pull_tight_accuracy() / c_accuracy_scale_factor + 1;
         accuracy_slider.setValue(accuracy_slider_value);
     }
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     private final javax.swing.JSlider accuracy_slider;
     private final javax.swing.JRadioButton on_button;
     private final javax.swing.JRadioButton off_button;

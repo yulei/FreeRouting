@@ -44,7 +44,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
         this.main_panel = new javax.swing.JPanel();
         this.main_panel.setLayout(new java.awt.BorderLayout());
 
-        board.BasicBoard routing_board = p_board_frame.board_panel.board_handling.get_routing_board();
+        freerouting.board.BasicBoard routing_board = p_board_frame.board_panel.board_handling.get_routing_board();
 
         this.cl_class_combo_box = new javax.swing.JComboBox();
         this.via_rule_combo_box = new javax.swing.JComboBox();
@@ -162,7 +162,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
 
     private void add_combobox_items()
     {
-        board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+        freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
         for (int i = 0; i < routing_board.rules.clearance_matrix.get_class_count(); ++i)
         {
             cl_class_combo_box.addItem(routing_board.rules.clearance_matrix.get_name(i));
@@ -235,7 +235,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
             // Check, if net_rule is used in a net of the net list
             for (int i = 1; i < board_rules.nets.max_net_no(); ++i)
             {
-                rules.Net curr_net = board_rules.nets.get(i);
+                freerouting.rules.Net curr_net = board_rules.nets.get(i);
                 if (curr_net.get_class() == net_rule)
                 {
                     String message = resources.getString("message_2") + " " + curr_net.name;
@@ -272,21 +272,21 @@ public class WindowNetClasses extends BoardSavableSubWindow
             {
                 return;
             }
-            board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+            freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
             NetClass[] selected_class_arr = new NetClass[selected_rows.length];
             for (int i = 0; i < selected_class_arr.length; ++i)
             {
                 selected_class_arr[i] = routing_board.rules.net_classes.get((String) table.getValueAt(selected_rows[i], ColumnName.NAME.ordinal()));
             }
-            rules.Nets nets = routing_board.rules.nets;
-            java.util.Set<board.Item> selected_items = new java.util.TreeSet<board.Item>();
-            java.util.Collection<board.Item> board_items = routing_board.get_items();
-            for (board.Item curr_item : board_items)
+            freerouting.rules.Nets nets = routing_board.rules.nets;
+            java.util.Set<freerouting.board.Item> selected_items = new java.util.TreeSet<freerouting.board.Item>();
+            java.util.Collection<freerouting.board.Item> board_items = routing_board.get_items();
+            for (freerouting.board.Item curr_item : board_items)
             {
                 boolean item_matches = false;
                 for (int i = 0; i < curr_item.net_count(); ++i)
                 {
-                    rules.NetClass curr_net_class = nets.get(curr_item.get_net_no(i)).get_class();
+                    freerouting.rules.NetClass curr_net_class = nets.get(curr_item.get_net_no(i)).get_class();
                     if (curr_net_class == null)
                     {
                         continue;
@@ -324,8 +324,8 @@ public class WindowNetClasses extends BoardSavableSubWindow
             {
                 return;
             }
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
-            rules.BoardRules board_rules = board_handling.get_routing_board().rules;
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.rules.BoardRules board_rules = board_handling.get_routing_board().rules;
             NetClass[] selected_class_arr = new NetClass[selected_rows.length];
             for (int i = 0; i < selected_class_arr.length; ++i)
             {
@@ -360,8 +360,8 @@ public class WindowNetClasses extends BoardSavableSubWindow
             {
                 return;
             }
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
-            rules.BoardRules board_rules = board_handling.get_routing_board().rules;
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.rules.BoardRules board_rules = board_handling.get_routing_board().rules;
             NetClass[] selected_class_arr = new NetClass[selected_rows.length];
             for (int i = 0; i < selected_class_arr.length; ++i)
             {
@@ -371,7 +371,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
             int max_net_no = board_rules.nets.max_net_no();
             for (int i = 1; i <= max_net_no; ++i)
             {
-                rules.Net curr_net = board_rules.nets.get(i);
+                freerouting.rules.Net curr_net = board_rules.nets.get(i);
                 NetClass curr_net_class = curr_net.get_class();
                 for (int j = 0; j < selected_class_arr.length; ++j)
                 {
@@ -382,7 +382,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
                     }
                 }
             }
-            board.CoordinateTransform coordinate_transform = board_frame.board_panel.board_handling.coordinate_transform;
+            freerouting.board.CoordinateTransform coordinate_transform = board_frame.board_panel.board_handling.coordinate_transform;
             WindowObjectInfo new_window =
                     WindowObjectInfo.display(resources.getString("contained_nets"), contained_nets, board_frame, coordinate_transform);
             java.awt.Point loc = getLocation();
@@ -448,7 +448,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
         /** Calculates the the valus in this table */
         public void set_values()
         {
-            rules.BoardRules board_rules = board_frame.board_panel.board_handling.get_routing_board().rules;
+            freerouting.rules.BoardRules board_rules = board_frame.board_panel.board_handling.get_routing_board().rules;
             this.data = new Object[board_rules.net_classes.count()][];
             for (int i = 0; i < data.length; ++i)
             {
@@ -489,8 +489,8 @@ public class WindowNetClasses extends BoardSavableSubWindow
         void set_trace_width_field(int p_rule_no, ComboBoxLayer.Layer p_layer)
         {
             Float trace_width;
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
-            rules.BoardRules board_rules = board_handling.get_routing_board().rules;
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.rules.BoardRules board_rules = board_handling.get_routing_board().rules;
             NetClass curr_net_class = board_rules.net_classes.get(p_rule_no);
             if (p_layer.index == ComboBoxLayer.ALL_LAYER_INDEX)
             {
@@ -517,7 +517,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
                 else
                 {
                     int first_inner_signal_layer_no = 1;
-                    board.LayerStructure layer_structure = board_handling.get_routing_board().layer_structure;
+                    freerouting.board.LayerStructure layer_structure = board_handling.get_routing_board().layer_structure;
                     while (!layer_structure.arr[first_inner_signal_layer_no].is_signal)
                     {
                         ++first_inner_signal_layer_no;
@@ -563,7 +563,7 @@ public class WindowNetClasses extends BoardSavableSubWindow
 
         public void setValueAt(Object p_value, int p_row, int p_col)
         {
-            board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+            freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
             BoardRules board_rules = routing_board.rules;
             Object net_class_name = getValueAt(p_row, ColumnName.NAME.ordinal());
             if (!(net_class_name instanceof String))

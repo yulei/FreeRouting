@@ -155,7 +155,7 @@ public class Package
         }
     }
     
-    public static void write_scope(WriteScopeParameter p_par, library.Package p_package) throws java.io.IOException
+    public static void write_scope(WriteScopeParameter p_par,freerouting.library.Package p_package) throws java.io.IOException
     {
         p_par.file.start_scope();
         p_par.file.write("image ");
@@ -174,10 +174,10 @@ public class Package
         // write the pins of the package
         for (int i = 0; i < p_package.pin_count(); ++i)
         {
-            library.Package.Pin curr_pin = p_package.get_pin(i);
+            freerouting.library.Package.Pin curr_pin = p_package.get_pin(i);
             p_par.file.new_line();
             p_par.file.write("(pin ");
-            library.Padstack curr_padstack = p_par.board.library.padstacks.get(curr_pin.padstack_no);
+            freerouting.library.Padstack curr_padstack = p_par.board.library.padstacks.get(curr_pin.padstack_no);
             p_par.identifier_type.write(curr_padstack.name, p_par.file);
             p_par.file.write(" ");
             p_par.identifier_type.write(curr_pin.name, p_par.file);
@@ -217,25 +217,25 @@ public class Package
         p_par.file.end_scope();
     }
     
-    private static void write_package_keepout(library.Package.Keepout p_keepout, WriteScopeParameter p_par,
+    private static void write_package_keepout(freerouting.library.Package.Keepout p_keepout, WriteScopeParameter p_par,
             boolean p_is_via_keepout) throws java.io.IOException
     {
         Layer keepout_layer;
         if (p_keepout.layer >= 0)
         {
-            board.Layer board_layer = p_par.board.layer_structure.arr[p_keepout.layer];
+            freerouting.board.Layer board_layer = p_par.board.layer_structure.arr[p_keepout.layer];
             keepout_layer = new Layer(board_layer.name, p_keepout.layer, board_layer.is_signal);
         }
         else
         {
             keepout_layer = Layer.SIGNAL;
         }
-        geometry.planar.Shape boundary_shape;
-        geometry.planar.Shape [] holes;
-        if (p_keepout.area instanceof geometry.planar.Shape)
+        freerouting.geometry.planar.Shape boundary_shape;
+        freerouting.geometry.planar.Shape [] holes;
+        if (p_keepout.area instanceof freerouting.geometry.planar.Shape)
         {
-            boundary_shape = (geometry.planar.Shape) p_keepout.area ;
-            holes = new geometry.planar.Shape [0];
+            boundary_shape = (freerouting.geometry.planar.Shape) p_keepout.area ;
+            holes = new freerouting.geometry.planar.Shape [0];
         }
         else
         {
@@ -411,14 +411,14 @@ public class Package
     /**
      * Writes the placements of p_package to a Specctra dsn-file.
      */
-    public static void write_placement_scope(WriteScopeParameter p_par, library.Package p_package)
+    public static void write_placement_scope(WriteScopeParameter p_par, freerouting.library.Package p_package)
     throws java.io.IOException
     {
         Collection<Item> board_items =  p_par.board.get_items();
         boolean component_found = false;
         for (int i = 1; i <= p_par.board.components.count(); ++i)
         {
-            board.Component curr_component =  p_par.board.components.get(i);
+            freerouting.board.Component curr_component =  p_par.board.components.get(i);
             if (curr_component.get_package() == p_package)
             {
                 // check, if not all items of the component are deleted

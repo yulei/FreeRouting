@@ -47,7 +47,7 @@ public class SnapShot implements java.io.Serializable
         this.name = p_name;
         this.settings = new Settings(p_board_handling.settings);
         this.interactive_state_no = get_no(p_board_handling.interactive_state);
-        this.graphics_context = new boardgraphics.GraphicsContext(p_board_handling.graphics_context);
+        this.graphics_context = new freerouting.boardgraphics.GraphicsContext(p_board_handling.graphics_context);
         this.viewport_position = new java.awt.Point(p_board_handling.get_panel().get_viewport_position());
         this.subwindow_filters = p_board_handling.get_panel().board_frame.get_snapshot_subwindow_selections();
     }
@@ -70,14 +70,14 @@ public class SnapShot implements java.io.Serializable
     /**
      * Goes to this shnapshot in interactive board etiting.
      */
-    public void go_to(interactive.BoardHandling p_board_handling)
+    public void go_to(freerouting.interactive.BoardHandling p_board_handling)
     {
-        interactive.SnapShot.Attributes snapshot_attributes = this.settings.snapshot_attributes;
+        freerouting.interactive.SnapShot.Attributes snapshot_attributes = this.settings.snapshot_attributes;
 
         if (snapshot_attributes.object_visibility)
         {
             p_board_handling.graphics_context.color_intensity_table =
-                    new boardgraphics.ColorIntensityTable(this.graphics_context.color_intensity_table);
+                    new freerouting.boardgraphics.ColorIntensityTable(this.graphics_context.color_intensity_table);
         }
         if (snapshot_attributes.layer_visibility)
         {
@@ -94,7 +94,7 @@ public class SnapShot implements java.io.Serializable
         }
         if (snapshot_attributes.selectable_items)
         {
-            p_board_handling.settings.item_selection_filter = new board.ItemSelectionFilter(this.settings.item_selection_filter);
+            p_board_handling.settings.item_selection_filter = new freerouting.board.ItemSelectionFilter(this.settings.item_selection_filter);
         }
         if (snapshot_attributes.current_layer)
         {
@@ -181,9 +181,9 @@ public class SnapShot implements java.io.Serializable
     private final String name;
     public final Settings settings;
     private final int interactive_state_no;
-    public final boardgraphics.GraphicsContext graphics_context;
+    public final freerouting.boardgraphics.GraphicsContext graphics_context;
     private final java.awt.Point viewport_position;
-    public final gui.BoardFrame.SubwindowSelections subwindow_filters;
+    public final freerouting.gui.BoardFrame.SubwindowSelections subwindow_filters;
     
     /**
      * Defines the data of the snapshot selected for restoring.

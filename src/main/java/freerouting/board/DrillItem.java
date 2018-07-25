@@ -431,10 +431,10 @@ public abstract class DrillItem extends Item implements Connectable, java.io.Ser
     
     public int get_draw_priority()
     {
-        return boardgraphics.Drawable.MIDDLE_DRAW_PRIORITY;
+        return freerouting.boardgraphics.Drawable.MIDDLE_DRAW_PRIORITY;
     }
     
-    public void draw(java.awt.Graphics p_g, boardgraphics.GraphicsContext p_graphics_context,
+    public void draw(java.awt.Graphics p_g, freerouting.boardgraphics.GraphicsContext p_graphics_context,
             java.awt.Color[] p_color_arr, double p_intensity)
     {
         if (p_graphics_context == null|| p_intensity <= 0)

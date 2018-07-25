@@ -695,7 +695,7 @@ public abstract class Shape
      * The first shape in the Collection p_area is the border,
      * the other shapes are holes of the area.
      */
-    public static geometry.planar.Area transform_area_to_board(Collection<Shape> p_area, CoordinateTransform p_coordinate_transform)
+    public static freerouting.geometry.planar.Area transform_area_to_board(Collection<Shape> p_area, CoordinateTransform p_coordinate_transform)
     {
         int hole_count = p_area.size() - 1;
         if (hole_count <= -1)
@@ -705,8 +705,8 @@ public abstract class Shape
         }
         Iterator<Shape> it = p_area.iterator();
         Shape boundary = it.next();
-        geometry.planar.Shape boundary_shape = boundary.transform_to_board(p_coordinate_transform);
-        geometry.planar.Area result;
+        freerouting.geometry.planar.Shape boundary_shape = boundary.transform_to_board(p_coordinate_transform);
+        freerouting.geometry.planar.Area result;
         if (hole_count == 0)
         {
             result = boundary_shape;
@@ -714,7 +714,7 @@ public abstract class Shape
         else
         {
             // Area with holes
-            if (!(boundary_shape instanceof geometry.planar.PolylineShape))
+            if (!(boundary_shape instanceof freerouting.geometry.planar.PolylineShape))
             {
                 System.out.println("Shape.transform_area_to_board: PolylineShape expected");
                 return null;
@@ -723,7 +723,7 @@ public abstract class Shape
             PolylineShape[] holes = new PolylineShape[hole_count];
             for (int i = 0; i < holes.length; ++i)
             {
-                geometry.planar.Shape hole_shape = it.next().transform_to_board(p_coordinate_transform);
+                freerouting.geometry.planar.Shape hole_shape = it.next().transform_to_board(p_coordinate_transform);
                 if (!(hole_shape instanceof PolylineShape))
                 {
                     System.out.println("Shape.transform_area_to_board: PolylineShape expected");
@@ -731,7 +731,7 @@ public abstract class Shape
                 }
                 holes[i] = (PolylineShape) hole_shape;
             }
-            result = new geometry.planar.PolylineArea(border, holes);
+            result = new freerouting.geometry.planar.PolylineArea(border, holes);
         }
         return result;
     }
@@ -741,7 +741,7 @@ public abstract class Shape
      * The first shape in the Collection p_area is the border,
      * the other shapes are holes of the area.
      */
-    public static geometry.planar.Area transform_area_to_board_rel(Collection<Shape> p_area, CoordinateTransform p_coordinate_transform)
+    public static freerouting.geometry.planar.Area transform_area_to_board_rel(Collection<Shape> p_area, CoordinateTransform p_coordinate_transform)
     {
         int hole_count = p_area.size() - 1;
         if (hole_count <= -1)
@@ -751,8 +751,8 @@ public abstract class Shape
         }
         Iterator<Shape> it = p_area.iterator();
         Shape boundary = it.next();
-        geometry.planar.Shape boundary_shape = boundary.transform_to_board_rel(p_coordinate_transform);
-        geometry.planar.Area result;
+        freerouting.geometry.planar.Shape boundary_shape = boundary.transform_to_board_rel(p_coordinate_transform);
+        freerouting.geometry.planar.Area result;
         if (hole_count == 0)
         {
             result = boundary_shape;
@@ -760,7 +760,7 @@ public abstract class Shape
         else
         {
             // Area with holes
-            if (!(boundary_shape instanceof geometry.planar.PolylineShape))
+            if (!(boundary_shape instanceof freerouting.geometry.planar.PolylineShape))
             {
                 System.out.println("Shape.transform_area_to_board_rel: PolylineShape expected");
                 return null;
@@ -769,7 +769,7 @@ public abstract class Shape
             PolylineShape[] holes = new PolylineShape[hole_count];
             for (int i = 0; i < holes.length; ++i)
             {
-                geometry.planar.Shape hole_shape = it.next().transform_to_board_rel(p_coordinate_transform);
+                freerouting.geometry.planar.Shape hole_shape = it.next().transform_to_board_rel(p_coordinate_transform);
                 if (!(hole_shape instanceof PolylineShape))
                 {
                     System.out.println("Shape.transform_area_to_board: PolylineShape expected");
@@ -777,7 +777,7 @@ public abstract class Shape
                 }
                 holes[i] = (PolylineShape) hole_shape;
             }
-            result = new geometry.planar.PolylineArea(border, holes);
+            result = new freerouting.geometry.planar.PolylineArea(border, holes);
         }
         return result;
     }
@@ -793,7 +793,7 @@ public abstract class Shape
     /**
      * Transforms a specctra dsn shape to a geometry.planar.Shape.
      */
-    public abstract geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform);
+    public abstract freerouting.geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform);
 
     /**
      * Returns the smallest axis parallel rectangle containing this shape.
@@ -803,7 +803,7 @@ public abstract class Shape
     /**
      * Transforms the relative (vector) coordinates of a specctra dsn shape to a geometry.planar.Shape.
      */
-    public abstract geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform);
+    public abstract freerouting.geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform);
 
     protected Shape(Layer p_layer)
     {

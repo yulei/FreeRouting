@@ -45,7 +45,7 @@ public class Resolution extends ScopeKeyword
                 System.out.println("Resolution.read_scope: string expected");
                 return false;
             }
-            p_par.unit = board.Unit.from_string((String) next_token);
+            p_par.unit = freerouting.board.Unit.from_string((String) next_token);
             if (p_par.unit == null)
             {
                 System.out.println("Resolution.read_scope: unit mil, inch or mm expected");
@@ -75,7 +75,7 @@ public class Resolution extends ScopeKeyword
         }
     }
     
-    public static void write_scope(datastructures.IndentFileWriter p_file, board.Communication p_board_communication)  throws java.io.IOException
+    public static void write_scope(freerouting.datastructures.IndentFileWriter p_file, freerouting.board.Communication p_board_communication)  throws java.io.IOException
     {
         p_file.new_line();
         p_file.write("(resolution ");

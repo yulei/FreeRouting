@@ -20,7 +20,7 @@
 
 package freerouting.gui;
 
-import boardgraphics.ColorIntensityTable.ObjectNames;
+import freerouting.boardgraphics.ColorIntensityTable.ObjectNames;
 
 /**
  * Interactive Frame to adjust the visibility of the individual board items
@@ -59,7 +59,7 @@ public class WindowObjectVisibility extends WindowVisibility
      */
     public void refresh()
     {
-        boardgraphics.ColorIntensityTable color_intensity_table = this.get_board_handling().graphics_context.color_intensity_table;
+        freerouting.boardgraphics.ColorIntensityTable color_intensity_table = this.get_board_handling().graphics_context.color_intensity_table;
         for (int i = 0; i < ObjectNames.values().length; ++i)
         {
             this.set_slider_value(i, color_intensity_table.get_value(i));

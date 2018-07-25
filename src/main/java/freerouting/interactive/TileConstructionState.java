@@ -23,17 +23,17 @@ package freerouting.interactive;
 
 import java.util.Iterator;
 
-import geometry.planar.FloatPoint;
-import geometry.planar.IntPoint;
-import geometry.planar.Line;
-import geometry.planar.Side;
-import geometry.planar.TileShape;
+import freerouting.geometry.planar.FloatPoint;
+import freerouting.geometry.planar.IntPoint;
+import freerouting.geometry.planar.Line;
+import freerouting.geometry.planar.Side;
+import freerouting.geometry.planar.TileShape;
 
-import rules.BoardRules;
+import freerouting.rules.BoardRules;
 
-import board.AngleRestriction;
-import board.RoutingBoard;
-import board.FixedState;
+import freerouting.board.AngleRestriction;
+import freerouting.board.RoutingBoard;
+import freerouting.board.FixedState;
 
 /**
  * Class for interactive construction of a tile shaped obstacle

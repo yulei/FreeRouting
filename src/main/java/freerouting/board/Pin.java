@@ -454,12 +454,12 @@ public class Pin extends DrillItem implements java.io.Serializable
         {
             return result;
         }
-        library.LogicalPart logical_part = component.get_logical_part();
+        freerouting.library.LogicalPart logical_part = component.get_logical_part();
         if (logical_part == null)
         {
             return result;
         }
-        library.LogicalPart.PartPin this_part_pin = logical_part.get_pin(this.pin_no);
+        freerouting.library.LogicalPart.PartPin this_part_pin = logical_part.get_pin(this.pin_no);
         if (this_part_pin == null)
         {
             return result;
@@ -475,7 +475,7 @@ public class Pin extends DrillItem implements java.io.Serializable
             {
                 continue;
             }
-            library.LogicalPart.PartPin curr_part_pin =  logical_part.get_pin(i);
+            freerouting.library.LogicalPart.PartPin curr_part_pin =  logical_part.get_pin(i);
             if (curr_part_pin != null && curr_part_pin.gate_pin_swap_code == this_part_pin.gate_pin_swap_code
                     && curr_part_pin.gate_name.equals(this_part_pin.gate_name))
             {
@@ -502,7 +502,7 @@ public class Pin extends DrillItem implements java.io.Serializable
         return p_filter.is_selected(ItemSelectionFilter.SelectableChoices.PINS);
     }
     
-    public java.awt.Color[] get_draw_colors(boardgraphics.GraphicsContext p_graphics_context)
+    public java.awt.Color[] get_draw_colors(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         java.awt.Color[] result;
         if (this.net_count() > 0)
@@ -517,7 +517,7 @@ public class Pin extends DrillItem implements java.io.Serializable
         return result;
     }
     
-    public double get_draw_intensity(boardgraphics.GraphicsContext p_graphics_context)
+    public double get_draw_intensity(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         return p_graphics_context.get_pin_color_intensity();
     }
@@ -605,7 +605,7 @@ public class Pin extends DrillItem implements java.io.Serializable
             System.out.println("Pin.get_min_width: padstack_shape is null");
             return 0;
         }
-        geometry.planar.IntBox padstack_bounding_box = padstack_shape.bounding_box();
+        freerouting.geometry.planar.IntBox padstack_bounding_box = padstack_shape.bounding_box();
         if (padstack_bounding_box == null)
         {
             System.out.println("Pin.get_min_width: padstack_bounding_box is null");
@@ -637,7 +637,7 @@ public class Pin extends DrillItem implements java.io.Serializable
             System.out.println("Pin.get_max_width: padstack_shape is null");
             return 0;
         }
-        geometry.planar.IntBox padstack_bounding_box = padstack_shape.bounding_box();
+        freerouting.geometry.planar.IntBox padstack_bounding_box = padstack_shape.bounding_box();
         if (padstack_bounding_box == null)
         {
             System.out.println("Pin.get_max_width: padstack_bounding_box is null");
@@ -657,7 +657,7 @@ public class Pin extends DrillItem implements java.io.Serializable
         p_window.append(", " + resources.getString("pin_2") + " ");
         p_window.append(component.get_package().get_pin(this.pin_no).name);
         p_window.append(", " + resources.getString("padstack") + " ");
-        library.Padstack padstack = this.get_padstack();
+        freerouting.library.Padstack padstack = this.get_padstack();
         p_window.append(padstack.name, resources.getString("padstack_info"), padstack);
         p_window.append(" " +  resources.getString("at") + " ");
         p_window.append(this.get_center().to_float());

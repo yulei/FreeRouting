@@ -129,7 +129,7 @@ public class BoardLibrary implements java.io.Serializable
      * Returns false, if p_padstack was not found in the list.
      * If the padstack is no more used on the board, it will also be removed from the board padstacks. 
      */
-    public boolean remove_via_padstack(Padstack p_padstack, board.BasicBoard p_board)
+    public boolean remove_via_padstack(Padstack p_padstack, freerouting.board.BasicBoard p_board)
     {
         boolean result = via_padstacks.remove(p_padstack);
         return result;
@@ -162,19 +162,19 @@ public class BoardLibrary implements java.io.Serializable
     /**
      * Looks, if the input padstack is used on p_board in a Package or in drill.
      */
-    public boolean is_used (Padstack p_padstack, board.BasicBoard p_board)
+    public boolean is_used (Padstack p_padstack, freerouting.board.BasicBoard p_board)
     {
-        java.util.Iterator<datastructures.UndoableObjects.UndoableObjectNode> it = p_board.item_list.start_read_object();
+        java.util.Iterator<freerouting.datastructures.UndoableObjects.UndoableObjectNode> it = p_board.item_list.start_read_object();
         for(;;)
         {
-            datastructures.UndoableObjects.Storable curr_item = p_board.item_list.read_object(it);
+            freerouting.datastructures.UndoableObjects.Storable curr_item = p_board.item_list.read_object(it);
             if (curr_item == null)
             {
                 break;
             }
-            if (curr_item instanceof board.DrillItem)
+            if (curr_item instanceof freerouting.board.DrillItem)
             {
-                if (((board.DrillItem) curr_item).get_padstack() == p_padstack)
+                if (((freerouting.board.DrillItem) curr_item).get_padstack() == p_padstack)
                 {
                     return true;
                 }

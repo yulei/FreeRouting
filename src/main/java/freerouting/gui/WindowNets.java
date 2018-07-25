@@ -20,8 +20,8 @@
 
 package freerouting.gui;
 
-import rules.Net;
-import rules.Nets;
+import freerouting.rules.Net;
+import freerouting.rules.Nets;
 
 
 
@@ -86,10 +86,10 @@ public class WindowNets extends WindowObjectListWithFilter
         {
             selected_net_numbers[i] = ((Net) selected_nets[i]).net_number;
         }
-        board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
-        java.util.Set<board.Item> selected_items = new java.util.TreeSet<board.Item>();
-        java.util.Collection<board.Item> board_items = routing_board.get_items();
-        for (board.Item curr_item : board_items)
+        freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+        java.util.Set<freerouting.board.Item> selected_items = new java.util.TreeSet<freerouting.board.Item>();
+        java.util.Collection<freerouting.board.Item> board_items = routing_board.get_items();
+        for (freerouting.board.Item curr_item : board_items)
         {
             boolean item_matches = false;
             for (int curr_net_no : selected_net_numbers)
@@ -120,8 +120,8 @@ public class WindowNets extends WindowObjectListWithFilter
             {
                 return;
             }
-            rules.NetClasses net_classes = board_frame.board_panel.board_handling.get_routing_board().rules.net_classes;
-            rules.NetClass [] class_arr = new rules.NetClass [net_classes.count()];
+            freerouting.rules.NetClasses net_classes = board_frame.board_panel.board_handling.get_routing_board().rules.net_classes;
+            freerouting.rules.NetClass [] class_arr = new freerouting.rules.NetClass [net_classes.count()];
             for(int i = 0; i < class_arr.length; ++i)
             {
                 class_arr[i] = net_classes.get(i);
@@ -129,11 +129,11 @@ public class WindowNets extends WindowObjectListWithFilter
             Object selected_value = javax.swing.JOptionPane.showInputDialog(null, resources.getString("message_1"), 
                     resources.getString("message_2"), javax.swing.JOptionPane.INFORMATION_MESSAGE, 
                     null, class_arr, class_arr[0]);
-            if (!(selected_value instanceof rules.NetClass))
+            if (!(selected_value instanceof freerouting.rules.NetClass))
             {
                 return;
             }
-            rules.NetClass selected_class = (rules.NetClass) selected_value;
+            freerouting.rules.NetClass selected_class = (freerouting.rules.NetClass) selected_value;
             for (int i = 0; i < selected_nets.length; ++i)
             {
                 ((Net) selected_nets[i]).set_class(selected_class);
@@ -151,7 +151,7 @@ public class WindowNets extends WindowObjectListWithFilter
             {
                 return;
             }
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
             int max_net_no = board_handling.get_routing_board().rules.nets.max_net_no();
             for (int i = 1; i <= max_net_no; ++i)
             {

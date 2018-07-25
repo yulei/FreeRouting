@@ -20,10 +20,10 @@
 
 package freerouting.gui;
 
-import datastructures.UndoableObjects;
+import freerouting.datastructures.UndoableObjects;
 
-import library.Padstack;
-import library.Padstacks;
+import freerouting.library.Padstack;
+import freerouting.library.Padstacks;
 
 /**
  * Window displaying the library padstacks.
@@ -74,24 +74,24 @@ public class WindowPadstacks extends WindowObjectListWithFilter
         {
             padstack_list.add((Padstack)selected_padstacks[i]);
         }
-        board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
-        java.util.Set<board.Item> board_instances = new java.util.TreeSet<board.Item>();
+        freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+        java.util.Set<freerouting.board.Item> board_instances = new java.util.TreeSet<freerouting.board.Item>();
         java.util.Iterator<UndoableObjects.UndoableObjectNode> it = routing_board.item_list.start_read_object();
         for(;;)
         {
-            datastructures.UndoableObjects.Storable curr_object = routing_board.item_list.read_object(it);
+            freerouting.datastructures.UndoableObjects.Storable curr_object = routing_board.item_list.read_object(it);
             if (curr_object == null)
             {
                 break;
             }
-            if (curr_object instanceof board.DrillItem)
+            if (curr_object instanceof freerouting.board.DrillItem)
             {
-                library.Padstack curr_padstack = ((board.DrillItem) curr_object).get_padstack();
+                freerouting.library.Padstack curr_padstack = ((freerouting.board.DrillItem) curr_object).get_padstack();
                 for (Padstack curr_selected_padstack : padstack_list)
                 {
                     if (curr_padstack == curr_selected_padstack)
                     {
-                        board_instances.add((board.Item)curr_object);
+                        board_instances.add((freerouting.board.Item)curr_object);
                         break;
                     }
                 }

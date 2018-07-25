@@ -25,7 +25,7 @@ package freerouting.board;
  *
  * @author  Alfons Wirtz
  */
-public interface SearchTreeObject extends datastructures.ShapeTree.Storable
+public interface SearchTreeObject extends freerouting.datastructures.ShapeTree.Storable
 {
     /**
      * Returns true if this object is an obstacle to objects containing

@@ -118,10 +118,10 @@ public class ItemSelectionFilter implements java.io.Serializable
     /**
      * Filters a collection of items with this filter.
      */
-    public Set<Item> filter(java.util.Set<board.Item> p_items)
+    public Set<Item> filter(java.util.Set<freerouting.board.Item> p_items)
     {
         Set<Item> result = new TreeSet<Item>();
-        for (board.Item curr_item : p_items)
+        for (freerouting.board.Item curr_item : p_items)
         {
             if (curr_item.is_selected_by_filter(this))
             {

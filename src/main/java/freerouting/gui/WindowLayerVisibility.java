@@ -35,7 +35,7 @@ public class WindowLayerVisibility extends WindowVisibility
                 java.util.ResourceBundle.getBundle("gui.resources.Default", p_board_frame.get_locale());
         String title = resources.getString("layer_visibility");
         String header_message = resources.getString("layer_visibility_header");
-        board.LayerStructure layer_structure = board_panel.board_handling.get_routing_board().layer_structure;
+        freerouting.board.LayerStructure layer_structure = board_panel.board_handling.get_routing_board().layer_structure;
         String [] message_arr = new String [layer_structure.arr.length];
         for (int i = 0; i < message_arr.length; ++i)
         {
@@ -80,7 +80,7 @@ public class WindowLayerVisibility extends WindowVisibility
      */
     public void refresh()
     {
-        boardgraphics.GraphicsContext graphics_context = this.get_board_handling().graphics_context;
+        freerouting.boardgraphics.GraphicsContext graphics_context = this.get_board_handling().graphics_context;
         for (int i = 0; i < graphics_context.layer_count(); ++i)
         {
             this.set_slider_value(i, graphics_context.get_raw_layer_visibility(i));

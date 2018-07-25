@@ -386,7 +386,7 @@ public class ClearanceMatrix implements java.io.Serializable
      */
     private int class_count;
     
-    private final board.LayerStructure layer_structure;
+    private final freerouting.board.LayerStructure layer_structure;
     private Row [] row; // vector of class_count rows of the clearance matrix
     private int [] max_value_on_layer; //  maximum clearance value for each layer
     
@@ -394,7 +394,7 @@ public class ClearanceMatrix implements java.io.Serializable
     /**
      * contains a row of entries of the clearance matrix
      */
-    private class Row implements board.ObjectInfoPanel.Printable, java.io.Serializable
+    private class Row implements freerouting.board.ObjectInfoPanel.Printable, java.io.Serializable
     {
         private Row(String p_name)
         {
@@ -407,7 +407,7 @@ public class ClearanceMatrix implements java.io.Serializable
             max_value = new int[layer_structure.arr.length];
         }
         
-        public void print_info(board.ObjectInfoPanel p_window, java.util.Locale p_locale)
+        public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
         {
             java.util.ResourceBundle resources = 
                     java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);

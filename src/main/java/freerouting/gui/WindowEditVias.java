@@ -96,7 +96,7 @@ public class WindowEditVias extends BoardSavableSubWindow
     
     private void add_combobox_items()
     {
-        board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+        freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
         for (int i = 0; i < routing_board.rules.clearance_matrix.get_class_count(); ++i)
         {
             cl_class_combo_box.addItem(routing_board.rules.clearance_matrix.get_name(i));
@@ -140,7 +140,7 @@ public class WindowEditVias extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
+            freerouting.board.RoutingBoard routing_board = board_frame.board_panel.board_handling.get_routing_board();
             ViaInfos via_infos = routing_board.rules.via_infos;
             Integer no = 1;
             String new_name = null;
@@ -154,9 +154,9 @@ public class WindowEditVias extends BoardSavableSubWindow
                 }
                 ++no;
             }
-            rules.NetClass default_net_class = routing_board.rules.get_default_net_class();
+            freerouting.rules.NetClass default_net_class = routing_board.rules.get_default_net_class();
             ViaInfo new_via = new ViaInfo(new_name, routing_board.library.get_via_padstack(0),
-                    default_net_class.default_item_clearance_classes.get(rules.DefaultItemClearanceClasses.ItemClass.VIA),
+                    default_net_class.default_item_clearance_classes.get(freerouting.rules.DefaultItemClearanceClasses.ItemClass.VIA),
                     false, routing_board.rules);
             via_infos.add(new_via);
             adjust_table();
@@ -185,7 +185,7 @@ public class WindowEditVias extends BoardSavableSubWindow
             BoardRules board_rules = board_frame.board_panel.board_handling.get_routing_board().rules;
             ViaInfo via_info = board_rules.via_infos.get((String) via_name);
             // Check, if via_info is used in a via rule.
-            for (rules.ViaRule curr_rule : board_rules.via_rules)
+            for (freerouting.rules.ViaRule curr_rule : board_rules.via_rules)
             {
                 if (curr_rule.contains(via_info))
                 {
@@ -217,7 +217,7 @@ public class WindowEditVias extends BoardSavableSubWindow
             {
                column_names[i] =  resources.getString((ColumnName.values()[i]).toString());
             }
-            rules.BoardRules board_rules = board_frame.board_panel.board_handling.get_routing_board().rules;
+            freerouting.rules.BoardRules board_rules = board_frame.board_panel.board_handling.get_routing_board().rules;
             data = new Object[board_rules.via_infos.count()][];
             for (int i = 0; i < data.length; ++i)
             {
@@ -229,7 +229,7 @@ public class WindowEditVias extends BoardSavableSubWindow
         /** Calculates the the valus in this table */
         public void set_values()
         {
-            rules.BoardRules board_rules = board_frame.board_panel.board_handling.get_routing_board().rules;
+            freerouting.rules.BoardRules board_rules = board_frame.board_panel.board_handling.get_routing_board().rules;
             for (int i = 0; i < data.length; ++i)
             {
                 ViaInfo curr_via = board_rules.via_infos.get(i);
@@ -262,7 +262,7 @@ public class WindowEditVias extends BoardSavableSubWindow
         
         public void setValueAt(Object p_value, int p_row, int p_col)
         {
-            board.RoutingBoard routing_board =  board_frame.board_panel.board_handling.get_routing_board();
+            freerouting.board.RoutingBoard routing_board =  board_frame.board_panel.board_handling.get_routing_board();
             BoardRules board_rules = routing_board.rules;
             Object via_name = getValueAt(p_row, ColumnName.NAME.ordinal());
             if (!(via_name instanceof String))
@@ -298,7 +298,7 @@ public class WindowEditVias extends BoardSavableSubWindow
                     return;
                 }
                 String new_name = (String) p_value;
-                library.Padstack new_padstack = routing_board.library.get_via_padstack(new_name);
+                freerouting.library.Padstack new_padstack = routing_board.library.get_via_padstack(new_name);
                 if (new_padstack == null)
                 {
                     System.out.println("ViaVindow.setValueAt: via padstack not found");

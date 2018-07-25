@@ -83,7 +83,7 @@ public class PolygonPath extends Path
         p_file.end_scope();
     }
     
-    public geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board(CoordinateTransform p_coordinate_transform)
     {
         FloatPoint [] corner_arr = new FloatPoint[this.coordinate_arr.length / 2];
         double [] curr_point = new double [2];
@@ -104,7 +104,7 @@ public class PolygonPath extends Path
         {
             rounded_corner_arr[i] = corner_arr[i].round();
         }
-        geometry.planar.Shape result = new geometry.planar.PolygonShape(rounded_corner_arr);
+        freerouting.geometry.planar.Shape result = new freerouting.geometry.planar.PolygonShape(rounded_corner_arr);
         if (offset > 0)
         {
             result = result.bounding_tile().enlarge(offset);
@@ -112,7 +112,7 @@ public class PolygonPath extends Path
         return result;
     }
     
-    public geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
+    public freerouting.geometry.planar.Shape transform_to_board_rel(CoordinateTransform p_coordinate_transform)
     {
         FloatPoint [] corner_arr = new FloatPoint[this.coordinate_arr.length / 2];
         double [] curr_point = new double [2];
@@ -133,7 +133,7 @@ public class PolygonPath extends Path
         {
             rounded_corner_arr[i] = corner_arr[i].round();
         }
-        geometry.planar.Shape result = new geometry.planar.PolygonShape(rounded_corner_arr);
+        freerouting.geometry.planar.Shape result = new freerouting.geometry.planar.PolygonShape(rounded_corner_arr);
         if (offset > 0)
         {
             result = result.bounding_tile().enlarge(offset);

@@ -183,8 +183,8 @@ public class Parser extends ScopeKeyword
     /**
      * p_reduced is true if the scope is written to a session file.
      */
-    public static void write_scope(datastructures.IndentFileWriter p_file, SpecctraParserInfo p_parser_info,
-            datastructures.IdentifierType p_identifier_type, boolean p_reduced) throws java.io.IOException
+    public static void write_scope(freerouting.datastructures.IndentFileWriter p_file, SpecctraParserInfo p_parser_info,
+            freerouting.datastructures.IdentifierType p_identifier_type, boolean p_reduced) throws java.io.IOException
     {
         p_file.start_scope();
         p_file.write("parser");

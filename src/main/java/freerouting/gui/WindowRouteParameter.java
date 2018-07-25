@@ -264,7 +264,7 @@ public class WindowRouteParameter extends BoardSavableSubWindow
         this.detail_listener = new DetailListener();
         detail_button.addActionListener(detail_listener);
         gridbag.setConstraints(detail_button, gridbag_constraints);
-        if (this.board_handling.get_routing_board().get_test_level() != board.TestLevel.RELEASE_VERSION)
+        if (this.board_handling.get_routing_board().get_test_level() != freerouting.board.TestLevel.RELEASE_VERSION)
         {
             main_panel.add(detail_button);
         }
@@ -327,13 +327,13 @@ public class WindowRouteParameter extends BoardSavableSubWindow
      */
     public void refresh()
     {
-        board.AngleRestriction snap_angle = this.board_handling.get_routing_board().rules.get_trace_angle_restriction();
+        freerouting.board.AngleRestriction snap_angle = this.board_handling.get_routing_board().rules.get_trace_angle_restriction();
         
-        if (snap_angle == board.AngleRestriction.NINETY_DEGREE)
+        if (snap_angle == freerouting.board.AngleRestriction.NINETY_DEGREE)
         {
             snap_angle_90_button.setSelected(true);
         }
-        else if (snap_angle == board.AngleRestriction.FORTYFIVE_DEGREE)
+        else if (snap_angle == freerouting.board.AngleRestriction.FORTYFIVE_DEGREE)
         {
             snap_angle_45_button.setSelected(true);
         }
@@ -425,7 +425,7 @@ public class WindowRouteParameter extends BoardSavableSubWindow
     }
     
     
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     private final java.util.Locale current_locale;
     final WindowManualRules manual_rule_window;
     final WindowRouteDetail detail_window;
@@ -459,17 +459,17 @@ public class WindowRouteParameter extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            if (board_handling.get_routing_board().rules.get_trace_angle_restriction() == board.AngleRestriction.NINETY_DEGREE)
+            if (board_handling.get_routing_board().rules.get_trace_angle_restriction() == freerouting.board.AngleRestriction.NINETY_DEGREE)
             {
                 return;
             }
-            Collection<board.Trace> trace_list = board_handling.get_routing_board().get_traces();
+            Collection<freerouting.board.Trace> trace_list = board_handling.get_routing_board().get_traces();
             boolean free_angle_traces_found = false;
-            for (board.Trace curr_trace : trace_list)
+            for (freerouting.board.Trace curr_trace : trace_list)
             {
-                if (curr_trace instanceof board.PolylineTrace)
+                if (curr_trace instanceof freerouting.board.PolylineTrace)
                 {
-                    if (!((board.PolylineTrace)curr_trace).polyline().is_orthogonal())
+                    if (!((freerouting.board.PolylineTrace)curr_trace).polyline().is_orthogonal())
                     {
                         free_angle_traces_found = true;
                         break;
@@ -487,7 +487,7 @@ public class WindowRouteParameter extends BoardSavableSubWindow
                     return;
                 }
             }
-            board_handling.set_current_snap_angle(board.AngleRestriction.NINETY_DEGREE);
+            board_handling.set_current_snap_angle(freerouting.board.AngleRestriction.NINETY_DEGREE);
         }
     }
     
@@ -495,17 +495,17 @@ public class WindowRouteParameter extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            if (board_handling.get_routing_board().rules.get_trace_angle_restriction() == board.AngleRestriction.FORTYFIVE_DEGREE)
+            if (board_handling.get_routing_board().rules.get_trace_angle_restriction() == freerouting.board.AngleRestriction.FORTYFIVE_DEGREE)
             {
                 return;
             }
-            Collection<board.Trace> trace_list = board_handling.get_routing_board().get_traces();
+            Collection<freerouting.board.Trace> trace_list = board_handling.get_routing_board().get_traces();
             boolean free_angle_traces_found = false;
-            for (board.Trace curr_trace : trace_list)
+            for (freerouting.board.Trace curr_trace : trace_list)
             {
-                if (curr_trace instanceof board.PolylineTrace)
+                if (curr_trace instanceof freerouting.board.PolylineTrace)
                 {
-                    if (!((board.PolylineTrace)curr_trace).polyline().is_multiple_of_45_degree())
+                    if (!((freerouting.board.PolylineTrace)curr_trace).polyline().is_multiple_of_45_degree())
                     {
                         free_angle_traces_found = true;
                         break;
@@ -523,7 +523,7 @@ public class WindowRouteParameter extends BoardSavableSubWindow
                     return;
                 }
             }
-            board_handling.set_current_snap_angle(board.AngleRestriction.FORTYFIVE_DEGREE);
+            board_handling.set_current_snap_angle(freerouting.board.AngleRestriction.FORTYFIVE_DEGREE);
         }
     }
     
@@ -531,7 +531,7 @@ public class WindowRouteParameter extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            board_handling.set_current_snap_angle(board.AngleRestriction.NONE);
+            board_handling.set_current_snap_angle(freerouting.board.AngleRestriction.NONE);
         }
     }
     
@@ -650,7 +650,7 @@ public class WindowRouteParameter extends BoardSavableSubWindow
         {
             if (restrict_pin_exit_directions_check_box.isSelected())
             {
-                rules.BoardRules board_rules = board_handling.get_routing_board().rules;
+                freerouting.rules.BoardRules board_rules = board_handling.get_routing_board().rules;
                 double edge_to_turn_dist =
                         board_handling.coordinate_transform.board_to_user(board_rules.get_min_trace_half_width());
                 board_handling.set_pin_edge_to_turn_dist(edge_to_turn_dist);

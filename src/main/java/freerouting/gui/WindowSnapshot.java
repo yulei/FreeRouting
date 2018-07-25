@@ -187,17 +187,17 @@ public class WindowSnapshot extends BoardSavableSubWindow
         int index = list.getSelectedIndex();
         if (index >= 0 && list_model.getSize() > index)
         {
-            interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
-            interactive.SnapShot curr_snapshot =  (interactive.SnapShot) list_model.elementAt(index);
+            freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+            freerouting.interactive.SnapShot curr_snapshot =  (freerouting.interactive.SnapShot) list_model.elementAt(index);
             
             curr_snapshot.go_to(board_handling);
             
             if (curr_snapshot.settings.get_snapshot_attributes().object_colors)
             {
                 board_handling.graphics_context.item_color_table =
-                        new boardgraphics.ItemColorTableModel(curr_snapshot.graphics_context.item_color_table);
+                        new freerouting.boardgraphics.ItemColorTableModel(curr_snapshot.graphics_context.item_color_table);
                 board_handling.graphics_context.other_color_table =
-                        new boardgraphics.OtherColorTableModel(curr_snapshot.graphics_context.other_color_table);
+                        new freerouting.boardgraphics.OtherColorTableModel(curr_snapshot.graphics_context.other_color_table);
                 
                 board_frame.color_manager.set_table_models(board_handling.graphics_context);
             }
@@ -207,7 +207,7 @@ public class WindowSnapshot extends BoardSavableSubWindow
                 java.awt.Point viewport_position = curr_snapshot.copy_viewport_position();
                 if (viewport_position != null)
                 {
-                    board_handling.graphics_context.coordinate_transform = new boardgraphics.CoordinateTransform(curr_snapshot.graphics_context.coordinate_transform);
+                    board_handling.graphics_context.coordinate_transform = new freerouting.boardgraphics.CoordinateTransform(curr_snapshot.graphics_context.coordinate_transform);
                     java.awt.Dimension panel_size = board_handling.graphics_context.get_panel_size();
                     board_frame.board_panel.setSize(panel_size);
                     board_frame.board_panel.setPreferredSize(panel_size);
@@ -243,7 +243,7 @@ public class WindowSnapshot extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            interactive.SnapShot new_snapshot = interactive.SnapShot.get_instance(name_field.getText(), board_frame.board_panel.board_handling);
+            freerouting.interactive.SnapShot new_snapshot = freerouting.interactive.SnapShot.get_instance(name_field.getText(), board_frame.board_panel.board_handling);
             if (new_snapshot != null)
             {
                 ++snapshot_count;

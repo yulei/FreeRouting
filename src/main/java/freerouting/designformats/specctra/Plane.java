@@ -66,7 +66,7 @@ public class Plane extends ScopeKeyword
         return true;
     }
     
-    public static void write_scope(WriteScopeParameter p_par, board.ConductionArea p_conduction) throws java.io.IOException
+    public static void write_scope(WriteScopeParameter p_par, freerouting.board.ConductionArea p_conduction) throws java.io.IOException
     {
         int net_count = p_conduction.net_count();
         if (net_count <= 0 || net_count > 1)
@@ -75,16 +75,16 @@ public class Plane extends ScopeKeyword
             return;
         }
         String net_name = p_par.board.rules.nets.get(p_conduction.get_net_no(0)).name;
-        geometry.planar.Area curr_area = p_conduction.get_area();
+        freerouting.geometry.planar.Area curr_area = p_conduction.get_area();
         int layer_no = p_conduction.get_layer();
-        board.Layer board_layer = p_par.board.layer_structure.arr[ layer_no];
+        freerouting.board.Layer board_layer = p_par.board.layer_structure.arr[ layer_no];
         Layer plane_layer = new Layer(board_layer.name, layer_no, board_layer.is_signal);
-        geometry.planar.Shape boundary_shape;
-        geometry.planar.Shape [] holes;
-        if (curr_area instanceof geometry.planar.Shape)
+        freerouting.geometry.planar.Shape boundary_shape;
+        freerouting.geometry.planar.Shape [] holes;
+        if (curr_area instanceof freerouting.geometry.planar.Shape)
         {
-            boundary_shape = (geometry.planar.Shape) curr_area;
-            holes = new geometry.planar.Shape [0];
+            boundary_shape = (freerouting.geometry.planar.Shape) curr_area;
+            holes = new freerouting.geometry.planar.Shape [0];
         }
         else
         {

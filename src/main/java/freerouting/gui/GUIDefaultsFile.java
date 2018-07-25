@@ -55,8 +55,8 @@ public class GUIDefaultsFile
      * Writes the GUI setting of p_board_frame as default to p_file.
      * Returns false, if an error occured.
      */
-    public static boolean write(gui.BoardFrame p_board_frame,
-            interactive.BoardHandling p_board_handling, java.io.OutputStream p_output_stream)
+    public static boolean write( freerouting.gui.BoardFrame p_board_frame,
+            freerouting.interactive.BoardHandling p_board_handling, java.io.OutputStream p_output_stream)
     {
         if (p_output_stream == null)
         {
@@ -92,8 +92,8 @@ public class GUIDefaultsFile
      * Reads the GUI setting of p_board_frame from file.
      * Returns false, if an error occured while reading the file.
      */
-    public static boolean read(gui.BoardFrame p_board_frame,
-            interactive.BoardHandling p_board_handling, java.io.InputStream p_input_stream)
+    public static boolean read(freerouting.gui.BoardFrame p_board_frame,
+            freerouting.interactive.BoardHandling p_board_handling, java.io.InputStream p_input_stream)
     {
         if (p_input_stream == null)
         {
@@ -114,7 +114,7 @@ public class GUIDefaultsFile
         return result;
     }
     
-    private GUIDefaultsFile(gui.BoardFrame p_board_frame, interactive.BoardHandling p_board_handling,
+    private GUIDefaultsFile(freerouting.gui.BoardFrame p_board_frame, freerouting.interactive.BoardHandling p_board_handling,
             GUIDefaultsScanner p_scanner, IndentFileWriter p_output_file)
     {
         board_frame = p_board_frame;
@@ -921,7 +921,7 @@ public class GUIDefaultsFile
     
     private void write_colors_scope() throws java.io.IOException
     {
-        boardgraphics.GraphicsContext graphics_context = this.board_handling.graphics_context;
+        freerouting.boardgraphics.GraphicsContext graphics_context = this.board_handling.graphics_context;
         out_file.start_scope();
         out_file.write("colors");
         out_file.start_scope();
@@ -1691,7 +1691,7 @@ public class GUIDefaultsFile
     
     private void write_deselected_snapshot_attributes() throws java.io.IOException
     {
-        interactive.SnapShot.Attributes attributes = this.board_handling.settings.get_snapshot_attributes();
+       freerouting.interactive.SnapShot.Attributes attributes = this.board_handling.settings.get_snapshot_attributes();
         out_file.start_scope();
         out_file.write("deselected_snapshot_attributes ");
         if (!attributes.object_colors)
@@ -1769,7 +1769,7 @@ public class GUIDefaultsFile
     
     private boolean read_deselected_snapshot_attributes() throws java.io.IOException
     {
-        interactive.SnapShot.Attributes attributes = this.board_handling.settings.get_snapshot_attributes();
+        freerouting.interactive.SnapShot.Attributes attributes = this.board_handling.settings.get_snapshot_attributes();
         for (;;)
         {
             Object next_token = this.scanner.next_token();
@@ -1879,8 +1879,8 @@ public class GUIDefaultsFile
         return true;
     }
     
-    private final gui.BoardFrame board_frame;
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.gui.BoardFrame board_frame;
+    private final freerouting.interactive.BoardHandling board_handling;
     /** Used, when reading a defaults file, null otherwise. */
     private final GUIDefaultsScanner scanner;
     /** Used, when writing a defaults file; null otherwise. */

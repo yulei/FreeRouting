@@ -1212,11 +1212,11 @@ public abstract class Item implements Drawable, SearchTreeObject, ObjectInfoPane
      * Gets the information for the autoroute algorithm.
      * Creates it, if it does not yet exist.
      */
-    public autoroute.ItemAutorouteInfo get_autoroute_info()
+    public freerouting.autoroute.ItemAutorouteInfo get_autoroute_info()
     {
         if (autoroute_info == null)
         {
-            autoroute_info = new autoroute.ItemAutorouteInfo(this);
+            autoroute_info = new freerouting.autoroute.ItemAutorouteInfo(this);
         }
         return autoroute_info;
     }
@@ -1224,7 +1224,7 @@ public abstract class Item implements Drawable, SearchTreeObject, ObjectInfoPane
     /**
      * Gets the information for the autoroute algorithm.
      */
-    public autoroute.ItemAutorouteInfo get_autoroute_info_pur()
+    public freerouting.autoroute.ItemAutorouteInfo get_autoroute_info_pur()
     {
         return autoroute_info;
     }
@@ -1260,7 +1260,7 @@ public abstract class Item implements Drawable, SearchTreeObject, ObjectInfoPane
         for (int i = 0; i < this.net_count(); ++i)
         {
             p_window.append(", " + resources.getString("net") + " ");
-            rules.Net curr_net = board.rules.nets.get(this.get_net_no(i));
+            freerouting.rules.Net curr_net = board.rules.nets.get(this.get_net_no(i));
             p_window.append(curr_net.name, resources.getString("net_info"), curr_net);
         }
     }
@@ -1465,7 +1465,7 @@ public abstract class Item implements Drawable, SearchTreeObject, ObjectInfoPane
      */
     private boolean on_the_board = false;
     /** Temporary data used in the autoroute algorithm. */
-    transient private autoroute.ItemAutorouteInfo autoroute_info = null;
+    transient private freerouting.autoroute.ItemAutorouteInfo autoroute_info = null;
     private static double PROTECT_FANOUT_LENGTH = 400;
 
     /**

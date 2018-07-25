@@ -116,7 +116,7 @@ public class WindowAutorouteDetailParameter extends BoardSavableSubWindow
         speed_combo_box.addItem(this.speed_slow);
         speed_combo_box.addActionListener(new SpeedListener());
 
-        if (this.board_handling.get_routing_board().get_test_level() != board.TestLevel.RELEASE_VERSION)
+        if (this.board_handling.get_routing_board().get_test_level() != freerouting.board.TestLevel.RELEASE_VERSION)
         {
             gridbag_constraints.gridwidth = 2;
             javax.swing.JLabel speed_label = new javax.swing.JLabel();
@@ -150,7 +150,7 @@ public class WindowAutorouteDetailParameter extends BoardSavableSubWindow
         gridbag.setConstraints(against_pref_dir_label, gridbag_constraints);
         main_panel.add(against_pref_dir_label);
 
-        board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
+        freerouting.board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
         int signal_layer_count = layer_structure.signal_layer_count();
         layer_name_arr = new javax.swing.JLabel[signal_layer_count];
         preferred_direction_trace_cost_arr = new javax.swing.JFormattedTextField[signal_layer_count];
@@ -163,7 +163,7 @@ public class WindowAutorouteDetailParameter extends BoardSavableSubWindow
         for (int i = 0; i < signal_layer_count; ++i)
         {
             layer_name_arr[i] = new javax.swing.JLabel();
-            board.Layer curr_signal_layer = layer_structure.get_signal_layer(i);
+            freerouting.board.Layer curr_signal_layer = layer_structure.get_signal_layer(i);
             layer_name_arr[i].setText(curr_signal_layer.name);
             gridbag_constraints.gridwidth = 3;
             gridbag.setConstraints(layer_name_arr[i], gridbag_constraints);
@@ -197,8 +197,8 @@ public class WindowAutorouteDetailParameter extends BoardSavableSubWindow
      */
     public void refresh()
     {
-        interactive.AutorouteSettings settings = this.board_handling.settings.autoroute_settings;
-        board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
+        freerouting.interactive.AutorouteSettings settings = this.board_handling.settings.autoroute_settings;
+        freerouting.board.LayerStructure layer_structure = this.board_handling.get_routing_board().layer_structure;
         this.via_cost_field.setValue(settings.get_via_costs());
         this.plane_via_cost_field.setValue(settings.get_plane_via_costs());
         this.start_ripup_costs.setValue(settings.get_start_ripup_costs());
@@ -212,7 +212,7 @@ public class WindowAutorouteDetailParameter extends BoardSavableSubWindow
             this.against_preferred_direction_trace_cost_arr[i].setValue(settings.get_against_preferred_direction_trace_costs(layer_structure.get_layer_no(i)));
         }
     }
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     private final javax.swing.JFormattedTextField via_cost_field;
     private final javax.swing.JFormattedTextField plane_via_cost_field;
     private final javax.swing.JFormattedTextField start_ripup_costs;

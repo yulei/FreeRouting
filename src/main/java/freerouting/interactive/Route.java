@@ -315,12 +315,12 @@ public class Route
     {
         ItemSelectionFilter selection_filter = new ItemSelectionFilter(ItemSelectionFilter.SelectableChoices.PINS);
         java.util.Collection<Item> picked_items = board.pick_items(this.prev_corner, p_layer, selection_filter);
-        board.Pin found_smd_pin = null;
+        freerouting.board.Pin found_smd_pin = null;
         for (Item curr_item : picked_items)
         {
-            if (curr_item instanceof board.Pin && curr_item.shares_net_no(this.net_no_arr))
+            if (curr_item instanceof freerouting.board.Pin && curr_item.shares_net_no(this.net_no_arr))
             {
-                board.Pin curr_pin = (board.Pin) curr_item;
+                freerouting.board.Pin curr_pin = (freerouting.board.Pin) curr_item;
                 if (curr_pin.first_layer() == p_layer && curr_pin.last_layer() == p_layer)
                 {
                     found_smd_pin = curr_pin;
@@ -463,10 +463,10 @@ public class Route
         }
         for (Item curr_item : this.target_set)
         {
-            if (curr_item instanceof board.Pin)
+            if (curr_item instanceof freerouting.board.Pin)
             {
-                Collection<board.Pin> curr_swapppable_pins = ((board.Pin) curr_item).get_swappable_pins();
-                for (board.Pin curr_swappable_pin : curr_swapppable_pins)
+                Collection<freerouting.board.Pin> curr_swapppable_pins = ((freerouting.board.Pin) curr_item).get_swappable_pins();
+                for (freerouting.board.Pin curr_swappable_pin : curr_swapppable_pins)
                 {
                     result.add(new SwapPinInfo(curr_swappable_pin));
                 }
@@ -477,10 +477,10 @@ public class Route
         java.util.Collection<Item> picked_items = board.pick_items(this.prev_corner, this.layer, selection_filter);
         for (Item curr_item : picked_items)
         {
-            if (curr_item instanceof board.Pin)
+            if (curr_item instanceof freerouting.board.Pin)
             {
-                Collection<board.Pin> curr_swapppable_pins = ((board.Pin) curr_item).get_swappable_pins();
-                for (board.Pin curr_swappable_pin : curr_swapppable_pins)
+                Collection<freerouting.board.Pin> curr_swapppable_pins = ((freerouting.board.Pin) curr_item).get_swappable_pins();
+                for (freerouting.board.Pin curr_swappable_pin : curr_swapppable_pins)
                 {
                     result.add(new SwapPinInfo(curr_swappable_pin));
                 }
@@ -550,7 +550,7 @@ public class Route
                 if (max_trace_length <= 0)
                 {
                     // max_trace_length not provided. Create an ellipse containing the whole board.
-                    max_trace_length = 0.3 * geometry.planar.Limits.CRIT_INT;
+                    max_trace_length = 0.3 * freerouting.geometry.planar.Limits.CRIT_INT;
                 }
                 double curr_max_trace_length = max_trace_length - (curr_net.get_trace_length() + trace_length_add);
                 double curr_min_trace_length = min_trace_length - (curr_net.get_trace_length() + trace_length_add);
@@ -772,11 +772,11 @@ public class Route
      */
     private Point try_neckdown_at_start(IntPoint p_to_corner)
     {
-        if (!(this.start_item instanceof board.Pin))
+        if (!(this.start_item instanceof freerouting.board.Pin))
         {
             return this.prev_corner;
         }
-        board.Pin start_pin = (board.Pin) this.start_item;
+        freerouting.board.Pin start_pin = (freerouting.board.Pin) this.start_item;
         if (!start_pin.is_on_layer(this.layer))
         {
             return this.prev_corner;
@@ -824,11 +824,11 @@ public class Route
      */
     private Point try_neckdown_at_end(Point p_from_corner, Point p_to_corner)
     {
-        if (!(this.nearest_target_item instanceof board.Pin))
+        if (!(this.nearest_target_item instanceof freerouting.board.Pin))
         {
             return p_from_corner;
         }
-        board.Pin target_pin = (board.Pin) this.nearest_target_item;
+        freerouting.board.Pin target_pin = (freerouting.board.Pin) this.nearest_target_item;
         if (!target_pin.is_on_layer(this.layer))
         {
             return p_from_corner;
@@ -903,7 +903,7 @@ public class Route
     private class SwapPinInfo implements Comparable<SwapPinInfo>
     {
 
-        SwapPinInfo(board.Pin p_pin)
+        SwapPinInfo(freerouting.board.Pin p_pin)
         {
             pin = p_pin;
             incomplete = null;
@@ -932,7 +932,7 @@ public class Route
             }
             if (nearest_point != null)
             {
-                incomplete = new geometry.planar.FloatLine(pin_center, nearest_point);
+                incomplete = new freerouting.geometry.planar.FloatLine(pin_center, nearest_point);
             }
         }
 
@@ -940,7 +940,7 @@ public class Route
         {
             return this.pin.compareTo(p_other.pin);
         }
-        final board.Pin pin;
-        geometry.planar.FloatLine incomplete;
+        final freerouting.board.Pin pin;
+        freerouting.geometry.planar.FloatLine incomplete;
     }
 }

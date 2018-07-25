@@ -203,7 +203,7 @@ public class Via extends DrillItem implements java.io.Serializable
         return p_filter.is_selected(ItemSelectionFilter.SelectableChoices.VIAS);
     }
 
-    public java.awt.Color[] get_draw_colors(boardgraphics.GraphicsContext p_graphics_context)
+    public java.awt.Color[] get_draw_colors(freerouting.boardgraphics.GraphicsContext p_graphics_context)
     {
         java.awt.Color[] result;
         if (this.net_count() == 0)

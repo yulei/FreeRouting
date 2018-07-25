@@ -50,7 +50,7 @@ public class WindowManualRules extends BoardSavableSubWindow
         gridbag.setConstraints(via_rule_label, gridbag_constraints);
         main_panel.add(via_rule_label);
 
-        board.RoutingBoard routing_board = this.board_handling.get_routing_board();
+        freerouting.board.RoutingBoard routing_board = this.board_handling.get_routing_board();
         this.via_rule_combo_box = new javax.swing.JComboBox(routing_board.rules.via_rules);
         gridbag_constraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
         gridbag.setConstraints(this.via_rule_combo_box, gridbag_constraints);
@@ -116,10 +116,10 @@ public class WindowManualRules extends BoardSavableSubWindow
      */
     public void refresh()
     {
-        board.RoutingBoard routing_board = board_handling.get_routing_board();
+        freerouting.board.RoutingBoard routing_board = board_handling.get_routing_board();
         javax.swing.ComboBoxModel new_model = new javax.swing.DefaultComboBoxModel(routing_board.rules.via_rules);
         this.via_rule_combo_box.setModel(new_model);
-        rules.ClearanceMatrix clearance_matrix = board_handling.get_routing_board().rules.clearance_matrix;
+        freerouting.rules.ClearanceMatrix clearance_matrix = board_handling.get_routing_board().rules.clearance_matrix;
         if (this.clearance_combo_box.get_class_count() != routing_board.rules.clearance_matrix.get_class_count())
         {
             this.clearance_combo_box.adjust(clearance_matrix);
@@ -204,7 +204,7 @@ public class WindowManualRules extends BoardSavableSubWindow
         set_trace_width_field(curr_half_width);
     }
 
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     private final ComboBoxLayer layer_combo_box;
     private final ComboBoxClearance clearance_combo_box;
     private final javax.swing.JComboBox via_rule_combo_box;

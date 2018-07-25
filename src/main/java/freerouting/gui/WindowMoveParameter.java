@@ -151,7 +151,7 @@ public class WindowMoveParameter extends BoardSavableSubWindow
     }
     
     
-    private final interactive.BoardHandling board_handling;
+    private final freerouting.interactive.BoardHandling board_handling;
     private final javax.swing.JFormattedTextField horizontal_grid_field;
     private final javax.swing.JFormattedTextField vertical_grid_field;
     private boolean key_input_completed = true;

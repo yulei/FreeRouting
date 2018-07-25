@@ -170,7 +170,7 @@ public class BoardMenuFile extends javax.swing.JMenu
             }
         });
 
-        if ((routing_board.get_test_level() != board.TestLevel.RELEASE_VERSION || !host_cad_is_eagle))
+        if ((routing_board.get_test_level() != freerouting.board.TestLevel.RELEASE_VERSION || !host_cad_is_eagle))
         {
             this.add(write_session_file_item);
         }

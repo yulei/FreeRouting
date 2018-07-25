@@ -56,7 +56,7 @@ public class ZoomRegionState extends SelectRegionState
         super(p_parent_state, p_board_handling, p_logfile);
         if (this.logfile != null)
         {
-            logfile.start_scope(interactive.LogfileScope.ZOOM_FRAME);
+            logfile.start_scope(freerouting.interactive.LogfileScope.ZOOM_FRAME);
         }
     }
     

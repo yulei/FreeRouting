@@ -75,7 +75,7 @@ public class Layer
     {
         p_par.file.start_scope();
         p_par.file.write("layer ");
-        board.Layer board_layer = p_par.board.layer_structure.arr[p_layer_no];
+        freerouting.board.Layer board_layer = p_par.board.layer_structure.arr[p_layer_no];
         p_par.identifier_type.write(board_layer.name, p_par.file);
         p_par.file.new_line();
         p_par.file.write("(type ");

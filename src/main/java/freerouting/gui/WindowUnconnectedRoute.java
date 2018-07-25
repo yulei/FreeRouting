@@ -46,7 +46,7 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
     
     protected void fill_list()
     {
-        board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
+        freerouting.board.BasicBoard routing_board = this.board_frame.board_panel.board_handling.get_routing_board();
         
         Set<Item> handled_items = new java.util.TreeSet<Item>();
         
@@ -55,7 +55,7 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
         Collection<Item> board_items = routing_board.get_items();
         for (Item curr_item : board_items)
         {
-            if (!(curr_item instanceof board.Trace || curr_item instanceof board.Via))
+            if (!(curr_item instanceof freerouting.board.Trace || curr_item instanceof freerouting.board.Via))
             {
                 continue;
             }
@@ -68,7 +68,7 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
             for (Item curr_connnected_item : curr_connected_set)
             {
                 handled_items.add(curr_connnected_item);
-                if (!(curr_connnected_item instanceof board.Trace || curr_connnected_item instanceof board.Via))
+                if (!(curr_connnected_item instanceof freerouting.board.Trace || curr_connnected_item instanceof freerouting.board.Via))
                 {
                     terminal_item_found = true;
                 }
@@ -78,7 +78,7 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
                 // We have found unconnnected route
                 if (curr_item.net_count() == 1)
                 {
-                    rules.Net curr_net = routing_board.rules.nets.get(curr_item.get_net_no(0));
+                    freerouting.rules.Net curr_net = routing_board.rules.nets.get(curr_item.get_net_no(0));
                     if (curr_net != null)
                     {
                         UnconnectedRouteInfo curr_unconnected_route_info =
@@ -107,12 +107,12 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
         {
             return;
         }
-        Set<board.Item> selected_items = new java.util.TreeSet<board.Item>();
+        Set<freerouting.board.Item> selected_items = new java.util.TreeSet<freerouting.board.Item>();
         for (int i = 0; i < selected_list_values.length; ++i)
         {
             selected_items.addAll(((UnconnectedRouteInfo)selected_list_values[i]).item_list);
         }
-        interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
+        freerouting.interactive.BoardHandling board_handling = board_frame.board_panel.board_handling;
         board_handling.select_items(selected_items);
         board_handling.zoom_selection();
     }
@@ -125,7 +125,7 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
      */
     private class UnconnectedRouteInfo implements Comparable<UnconnectedRouteInfo>
     {
-        public UnconnectedRouteInfo(rules.Net p_net, Collection<Item> p_item_list)
+        public UnconnectedRouteInfo(freerouting.rules.Net p_net, Collection<Item> p_item_list)
         {
             this.net = p_net;
             this.item_list = p_item_list;
@@ -135,11 +135,11 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
             int curr_via_count = 0;
             for (Item curr_item: p_item_list)
             {
-                if (curr_item instanceof board.Trace)
+                if (curr_item instanceof freerouting.board.Trace)
                 {
                     ++curr_trace_count;
                 }
-                else if (curr_item instanceof board.Via)
+                else if (curr_item instanceof freerouting.board.Via)
                 {
                     ++curr_via_count;
                 }
@@ -168,7 +168,7 @@ public class WindowUnconnectedRoute extends WindowObjectListWithFilter
             return result;
         }
         
-        private final rules.Net net;
+        private final freerouting.rules.Net net;
         private final Collection<Item> item_list;
         private final int id_no;
         private final Integer trace_count;

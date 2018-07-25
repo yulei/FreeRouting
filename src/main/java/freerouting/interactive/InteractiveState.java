@@ -174,7 +174,7 @@ public class InteractiveState
         else if (Character.isDigit(p_key_char))
         {
             // change the current layer to the p_key_char-ths signal layer
-            board.LayerStructure layer_structure = hdlg.get_routing_board().layer_structure;
+            freerouting.board.LayerStructure layer_structure = hdlg.get_routing_board().layer_structure;
             int d = Character.digit(p_key_char, 10);
             d = Math.min(d, layer_structure.signal_layer_count());
             // Board layers start at 0, keyboard input for layers starts at 1.

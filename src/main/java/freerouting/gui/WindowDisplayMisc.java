@@ -260,7 +260,7 @@ public class WindowDisplayMisc extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            boardgraphics.CoordinateTransform coordinate_transform
+            freerouting.boardgraphics.CoordinateTransform coordinate_transform
                     = panel.board_handling.graphics_context.coordinate_transform;
             coordinate_transform.set_rotation(0);
             panel.repaint();
@@ -271,7 +271,7 @@ public class WindowDisplayMisc extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            boardgraphics.CoordinateTransform coordinate_transform
+            freerouting.boardgraphics.CoordinateTransform coordinate_transform
                     = panel.board_handling.graphics_context.coordinate_transform;
             coordinate_transform.set_rotation(0.5 * Math.PI);
             panel.repaint();
@@ -282,7 +282,7 @@ public class WindowDisplayMisc extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            boardgraphics.CoordinateTransform coordinate_transform
+            freerouting.boardgraphics.CoordinateTransform coordinate_transform
                     = panel.board_handling.graphics_context.coordinate_transform;
             coordinate_transform.set_rotation(Math.PI);
             panel.repaint();
@@ -293,7 +293,7 @@ public class WindowDisplayMisc extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            boardgraphics.CoordinateTransform coordinate_transform
+            freerouting.boardgraphics.CoordinateTransform coordinate_transform
                     = panel.board_handling.graphics_context.coordinate_transform;
             coordinate_transform.set_rotation(1.5 * Math.PI);
             panel.repaint();
@@ -304,14 +304,14 @@ public class WindowDisplayMisc extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            boardgraphics.CoordinateTransform coordinate_transform
+            freerouting.boardgraphics.CoordinateTransform coordinate_transform
                     = panel.board_handling.graphics_context.coordinate_transform;
             if(!(coordinate_transform.is_mirror_left_right() || coordinate_transform.is_mirror_top_bottom()))
             {
                 return; // mirroring already switched off
             }
             // remember the old viewort center to retain the displayed section of the board.
-            geometry.planar.FloatPoint old_viewport_center =
+            freerouting.geometry.planar.FloatPoint old_viewport_center =
                     coordinate_transform.screen_to_board(panel.get_viewport_center());
             coordinate_transform.set_mirror_left_right(false);
             coordinate_transform.set_mirror_top_bottom(false);
@@ -325,14 +325,14 @@ public class WindowDisplayMisc extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            boardgraphics.CoordinateTransform coordinate_transform
+            freerouting.boardgraphics.CoordinateTransform coordinate_transform
                     = panel.board_handling.graphics_context.coordinate_transform;
             if (coordinate_transform.is_mirror_left_right())
             {
                 return; // already mirrored
             }
             // remember the old viewort center to retain the displayed section of the board.
-            geometry.planar.FloatPoint old_viewport_center =
+            freerouting.geometry.planar.FloatPoint old_viewport_center =
                     coordinate_transform.screen_to_board(panel.get_viewport_center());
             coordinate_transform.set_mirror_left_right(true);
             coordinate_transform.set_mirror_top_bottom(false);
@@ -345,14 +345,14 @@ public class WindowDisplayMisc extends BoardSavableSubWindow
     {
         public void actionPerformed(java.awt.event.ActionEvent p_evt)
         {
-            boardgraphics.CoordinateTransform coordinate_transform
+            freerouting.boardgraphics.CoordinateTransform coordinate_transform
                     = panel.board_handling.graphics_context.coordinate_transform;
             if (coordinate_transform.is_mirror_top_bottom())
             {
                 return; // already mirrored
             }
             // remember the old viewort center to retain the displayed section of the board.
-            geometry.planar.FloatPoint old_viewport_center =
+            freerouting.geometry.planar.FloatPoint old_viewport_center =
                     coordinate_transform.screen_to_board(panel.get_viewport_center());
             coordinate_transform.set_mirror_top_bottom(true);
             coordinate_transform.set_mirror_left_right(false);

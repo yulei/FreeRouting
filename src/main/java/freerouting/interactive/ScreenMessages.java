@@ -121,7 +121,7 @@ public class ScreenMessages
         }
     }
     
-    public void set_mouse_position(geometry.planar.FloatPoint p_pos)
+    public void set_mouse_position(freerouting.geometry.planar.FloatPoint p_pos)
     {
         if (p_pos == null || this.mouse_position == null || this.write_protected)
         {
