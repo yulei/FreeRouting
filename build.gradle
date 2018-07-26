@@ -9,7 +9,7 @@ apply plugin: 'java'
 
 jar {
     manifest {
-        attributes 'Main-Class': 'gui.MainApplication'
+        attributes 'Main-Class': 'freerouting.gui.MainApplication'
     }
 }
 

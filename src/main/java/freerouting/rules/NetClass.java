@@ -270,7 +270,7 @@ public class NetClass implements java.io.Serializable, freerouting.board.ObjectI
     public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources =
-                java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);
+                java.util.ResourceBundle.getBundle("freerouting.board.ObjectInfoPanel", p_locale);
         p_window.append_bold(resources.getString("net_class_2") + " ");
         p_window.append_bold(this.name);
         p_window.append_bold(":");

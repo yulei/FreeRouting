@@ -39,7 +39,7 @@ public class InteractiveState
         this.hdlg = p_board_handling;
         this.logfile = p_logfile;
         this.resources =
-                java.util.ResourceBundle.getBundle("interactive.resources.InteractiveState", p_board_handling.get_locale());
+                java.util.ResourceBundle.getBundle("freerouting.interactive.InteractiveState", p_board_handling.get_locale());
     }
     
     /**

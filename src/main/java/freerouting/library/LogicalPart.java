@@ -59,7 +59,7 @@ public class LogicalPart implements freerouting.board.ObjectInfoPanel.Printable,
     public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
-                java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);
+                java.util.ResourceBundle.getBundle("freerouting.board.ObjectInfoPanel", p_locale);
         p_window.append_bold(resources.getString("logical_part_2") + " ");
         p_window.append_bold(this.name);
         for (int i = 0; i < this.part_pin_arr.length; ++i)

@@ -34,7 +34,7 @@ class BoardToolbar extends javax.swing.JPanel
         this.board_frame = p_board_frame;
         
         java.util.ResourceBundle resources = 
-                java.util.ResourceBundle.getBundle("gui.resources.BoardToolbar", p_board_frame.get_locale());
+                java.util.ResourceBundle.getBundle("freerouting.gui.BoardToolbar", p_board_frame.get_locale());
         
         this.setLayout(new java.awt.BorderLayout());
         

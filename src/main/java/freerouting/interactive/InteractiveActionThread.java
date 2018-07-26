@@ -155,7 +155,7 @@ public abstract class InteractiveActionThread extends Thread implements freerout
         {
 
             java.util.ResourceBundle resources =
-                    java.util.ResourceBundle.getBundle("interactive.resources.InteractiveState", hdlg.get_locale());
+                    java.util.ResourceBundle.getBundle("freerouting.interactive.InteractiveState", hdlg.get_locale());
             boolean saved_board_read_only = hdlg.is_board_read_only();
             hdlg.set_board_read_only(true);
             String start_message = resources.getString("logfile") + " " + resources.getString("stop_message");

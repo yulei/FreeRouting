@@ -155,7 +155,7 @@ public class Padstack implements Comparable<Padstack>, freerouting.board.ObjectI
     public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
-                java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);
+                java.util.ResourceBundle.getBundle("freerouting.board.ObjectInfoPanel", p_locale);
         p_window.append_bold(resources.getString("padstack") + " ");
         p_window.append_bold(this.name);
         for (int i = 0; i < shapes.length; ++i)

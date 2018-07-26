@@ -110,7 +110,7 @@ public class BoardFrame extends javax.swing.JFrame
         this.board_observers = p_observers;
         this.item_id_no_generator = p_item_id_no_generator;
         this.locale = p_locale;
-        this.resources = java.util.ResourceBundle.getBundle("gui.resources.BoardFrame", p_locale);
+        this.resources = java.util.ResourceBundle.getBundle("freerouting.gui.BoardFrame", p_locale);
         BoardMenuBar curr_menubar;
         boolean session_file_option = (p_option == Option.SESSION_FILE);
         boolean curr_help_system_used =  true;

@@ -36,7 +36,7 @@ public class PopupMenuMove extends PopupMenuDisplay
     {
         super(p_board_frame);
         java.util.ResourceBundle resources = 
-                java.util.ResourceBundle.getBundle("gui.resources.PopupMenuMove", p_board_frame.get_locale());
+                java.util.ResourceBundle.getBundle("freerouting.gui.PopupMenuMove", p_board_frame.get_locale());
         
         // Add menu for turning the items by a multiple of 90 degree
         

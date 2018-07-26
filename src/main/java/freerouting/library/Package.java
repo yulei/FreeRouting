@@ -106,7 +106,7 @@ public class Package implements Comparable<Package>, freerouting.board.ObjectInf
     public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources = 
-                java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);
+                java.util.ResourceBundle.getBundle("freerouting.board.ObjectInfoPanel", p_locale);
         p_window.append_bold(resources.getString("package") + " ");
         p_window.append_bold(this.name);
         for (int i = 0; i < this.pin_arr.length; ++i)

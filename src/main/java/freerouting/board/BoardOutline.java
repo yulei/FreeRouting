@@ -268,7 +268,7 @@ public class BoardOutline extends Item implements java.io.Serializable
     public void print_info(ObjectInfoPanel p_window, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources =
-                java.util.ResourceBundle.getBundle("board.resources.ObjectInfoPanel", p_locale);
+                java.util.ResourceBundle.getBundle("freerouting.board.ObjectInfoPanel", p_locale);
         p_window.append_bold(resources.getString("board_outline"));
         print_clearance_info(p_window, p_locale);
         p_window.newline();

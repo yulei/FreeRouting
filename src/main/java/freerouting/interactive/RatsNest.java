@@ -270,7 +270,7 @@ public class RatsNest
         private String item_info(Item p_item)
         {
             java.util.ResourceBundle resources =
-                    java.util.ResourceBundle.getBundle("interactive.resources.RatsNest", this.locale);
+                    java.util.ResourceBundle.getBundle("freerouting.interactive.RatsNest", this.locale);
             String result;
             if (p_item instanceof freerouting.board.Pin)
             {
@@ -299,7 +299,7 @@ public class RatsNest
         public void print_info(freerouting.board.ObjectInfoPanel p_window, java.util.Locale p_locale)
         {
             java.util.ResourceBundle resources =
-                    java.util.ResourceBundle.getBundle("interactive.resources.RatsNest", p_locale);
+                    java.util.ResourceBundle.getBundle("freerouting.interactive.RatsNest", p_locale);
             p_window.append_bold(resources.getString("incomplete"));
             p_window.append(" " + resources.getString("net") + " ");
             p_window.append(net.name);

@@ -71,7 +71,7 @@ public class BoardHandling
         this.screen_messages = p_panel.screen_messages;
         this.logfile = new Logfile();
         this.set_interactive_state(SelectMenuState.get_instance(this, logfile));
-        this.resources = java.util.ResourceBundle.getBundle("interactive.resources.BoardHandling", p_locale);
+        this.resources = java.util.ResourceBundle.getBundle("freerouting.interactive.BoardHandling", p_locale);
     }
 
     /**

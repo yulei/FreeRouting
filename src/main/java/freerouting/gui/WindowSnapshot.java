@@ -33,7 +33,7 @@ public class WindowSnapshot extends BoardSavableSubWindow
     {
         this.board_frame = p_board_frame;
         this.settings_window = new WindowSnapshotSettings(p_board_frame);
-        this.resources = java.util.ResourceBundle.getBundle("gui.resources.WindowSnapshot", p_board_frame.get_locale());
+        this.resources = java.util.ResourceBundle.getBundle("freerouting.gui.WindowSnapshot", p_board_frame.get_locale());
         this.setTitle(resources.getString("title"));
         
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE );

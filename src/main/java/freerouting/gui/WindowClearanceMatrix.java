@@ -36,7 +36,7 @@ public class WindowClearanceMatrix extends BoardSavableSubWindow
     public WindowClearanceMatrix(BoardFrame p_board_frame)
     {
         this.board_frame = p_board_frame;
-        this.resources = java.util.ResourceBundle.getBundle("gui.resources.WindowClearanceMatrix", p_board_frame.get_locale());
+        this.resources = java.util.ResourceBundle.getBundle("freerouting.gui.WindowClearanceMatrix", p_board_frame.get_locale());
         
         this.setTitle(resources.getString("title"));
         

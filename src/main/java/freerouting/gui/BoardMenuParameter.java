@@ -89,7 +89,7 @@ public class BoardMenuParameter extends javax.swing.JMenu
     private BoardMenuParameter(BoardFrame p_board_frame)
     {
         board_frame = p_board_frame;
-        resources = java.util.ResourceBundle.getBundle("gui.resources.BoardMenuParameter", p_board_frame.get_locale());
+        resources = java.util.ResourceBundle.getBundle("freerouting.gui.BoardMenuParameter", p_board_frame.get_locale());
     }
     
     private final BoardFrame board_frame;

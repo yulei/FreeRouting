@@ -35,7 +35,7 @@ public class WindowEditVias extends BoardSavableSubWindow
     /** Creates a new instance of ViaTablePanel */
     public WindowEditVias(BoardFrame p_board_frame)
     {
-        this.resources = java.util.ResourceBundle.getBundle("gui.resources.WindowEditVias", p_board_frame.get_locale());
+        this.resources = java.util.ResourceBundle.getBundle("freerouting.gui.WindowEditVias", p_board_frame.get_locale());
         this.setTitle(resources.getString("title"));
         
         this.board_frame = p_board_frame;

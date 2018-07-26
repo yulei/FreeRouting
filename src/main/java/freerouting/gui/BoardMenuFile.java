@@ -318,7 +318,7 @@ public class BoardMenuFile extends javax.swing.JMenu
     {
         session_file_option = p_session_file_option;
         board_frame = p_board_frame;
-        resources = java.util.ResourceBundle.getBundle("gui.resources.BoardMenuFile", p_board_frame.get_locale());
+        resources = java.util.ResourceBundle.getBundle("freerouting.gui.BoardMenuFile", p_board_frame.get_locale());
     }
     private final BoardFrame board_frame;
     private final boolean session_file_option;

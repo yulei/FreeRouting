@@ -91,7 +91,7 @@ public class MainApplication extends javax.swing.JFrame
         if (single_design_option)
         {
             java.util.ResourceBundle resources =
-                    java.util.ResourceBundle.getBundle("gui.resources.MainApplication", current_locale);
+                    java.util.ResourceBundle.getBundle("freerouting.gui.MainApplication", current_locale);
             BoardFrame.Option board_option;
             if (session_file_option)
             {
@@ -145,7 +145,7 @@ public class MainApplication extends javax.swing.JFrame
         this.is_webstart = p_webstart_option;
         this.locale = p_current_locale;
         this.resources =
-                java.util.ResourceBundle.getBundle("gui.resources.MainApplication", p_current_locale);
+                java.util.ResourceBundle.getBundle("freerouting.gui.MainApplication", p_current_locale);
         main_panel = new javax.swing.JPanel();
         getContentPane().add(main_panel);
         java.awt.GridBagLayout gridbag = new java.awt.GridBagLayout();
@@ -320,7 +320,7 @@ public class MainApplication extends javax.swing.JFrame
             BoardFrame.Option p_option, boolean p_is_test_version, java.util.Locale p_locale)
     {
         java.util.ResourceBundle resources =
-                java.util.ResourceBundle.getBundle("gui.resources.MainApplication", p_locale);
+                java.util.ResourceBundle.getBundle("freerouting.gui.MainApplication", p_locale);
 
         java.io.InputStream input_stream = p_design_file.get_input_stream();
         if (input_stream == null)
