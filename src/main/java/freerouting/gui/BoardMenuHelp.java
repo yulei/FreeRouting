@@ -66,11 +66,11 @@ public class BoardMenuHelp extends BoardMenuHelpReduced
             String helpset_name;
             if (language.equalsIgnoreCase("de"))
             {
-                helpset_name = "helpset/de/Help.hs";
+                helpset_name = "freerouting/helpset/de/Help.hs";
             }
             else
             {
-                helpset_name = "helpset/en/Help.hs";
+                helpset_name = "freerouting/helpset/en/Help.hs";
             }
             try
             {
